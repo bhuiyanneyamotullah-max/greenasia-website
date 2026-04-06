@@ -4,654 +4,610 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Green Asia Limited Liability Company</title>
-  <meta name="description" content="Green Asia Limited Liability Company provides professional manpower supply, industrial support, project coordination, equipment support, and documentation services across Saudi Arabia." />
+  <meta
+    name="description"
+    content="Green Asia Limited Liability Company provides skilled manpower supply, industrial support, project coordination, equipment support, and documentation services across Saudi Arabia."
+  />
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
-    :root {
-      --bg: #f6f8f7;
-      --white: #ffffff;
-      --dark: #071d15;
-      --dark-2: #0b2b20;
-      --green: #127247;
-      --green-2: #1fa05f;
-      --soft: #eef5f1;
-      --text: #1b2430;
-      --muted: #62707c;
-      --line: #e4ebe7;
-      --shadow: 0 18px 45px rgba(0,0,0,0.08);
-      --shadow-soft: 0 10px 28px rgba(0,0,0,0.05);
-      --radius: 26px;
-      --max: 1260px;
+    :root{
+      --bg:#0a1411;
+      --bg-2:#0f1f19;
+      --card:#ffffff;
+      --card-soft:#f7f8f7;
+      --line:#e4e9e6;
+      --text:#18212b;
+      --muted:#61707b;
+      --green:#16824f;
+      --green-2:#21a364;
+      --green-dark:#0d3426;
+      --gold:#c9a96a;
+      --white:#ffffff;
+      --shadow:0 18px 40px rgba(0,0,0,.10);
+      --shadow-soft:0 10px 24px rgba(0,0,0,.05);
+      --radius:26px;
+      --max:1280px;
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--text);
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(31,160,95,0.08), transparent 22%),
-        radial-gradient(circle at top right, rgba(18,114,71,0.06), transparent 18%),
+        radial-gradient(circle at top left, rgba(33,163,100,.10), transparent 22%),
+        linear-gradient(180deg, #f5f7f6 0%, #edf2ef 100%);
+    }
+
+    a{ text-decoration:none; color:inherit; }
+    img{ max-width:100%; display:block; }
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(228,233,230,.9);
+    }
+
+    .topbar-inner{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      padding:12px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand img{
+      width:62px;
+      height:62px;
+      object-fit:contain;
+      background:#fff;
+      border-radius:16px;
+      padding:6px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .brand-text h1{
+      margin:0;
+      font-size:20px;
+      line-height:1.2;
+      color:var(--green-dark);
+    }
+
+    .brand-text p{
+      margin:4px 0 0;
+      font-size:13px;
+      color:var(--green);
+      letter-spacing:.2px;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      font-size:14px;
+      font-weight:700;
+      color:#334150;
+    }
+
+    .nav .cta{
+      padding:12px 18px;
+      border-radius:999px;
+      color:#fff;
+      background:linear-gradient(135deg, var(--green), var(--green-2));
+      box-shadow:0 12px 24px rgba(22,130,79,.22);
+    }
+
+    section{ padding:56px 0; }
+
+    .hero{
+      padding-top:28px;
+    }
+
+    .hero-shell{
+      position:relative;
+      overflow:hidden;
+      border-radius:36px;
+      background:
+        linear-gradient(135deg, rgba(8,20,17,.98), rgba(15,31,25,.96) 48%, rgba(13,52,38,.95)),
         var(--bg);
+      color:#fff;
+      box-shadow:0 30px 65px rgba(0,0,0,.18);
     }
 
-    a { text-decoration: none; color: inherit; }
-    img { display: block; max-width: 100%; }
-
-    .container {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
+    .hero-shell::before,
+    .hero-shell::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,255,255,.05);
     }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(228,235,231,0.9);
+    .hero-shell::before{
+      width:340px;
+      height:340px;
+      right:-120px;
+      top:-120px;
     }
 
-    .topbar-inner {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding: 12px 0;
+    .hero-shell::after{
+      width:260px;
+      height:260px;
+      left:-80px;
+      bottom:-90px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
+    .hero-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:34px;
+      align-items:center;
+      padding:64px 50px;
     }
 
-    .brand img {
-      width: 62px;
-      height: 62px;
-      object-fit: contain;
-      background: #fff;
-      border-radius: 16px;
-      padding: 6px;
-      box-shadow: var(--shadow-soft);
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 15px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      color:#dff7e8;
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:18px;
     }
 
-    .brand-text h1 {
-      margin: 0;
-      font-size: 20px;
-      line-height: 1.2;
-      color: #0d3426;
+    .hero-logo{
+      width:126px;
+      background:rgba(255,255,255,.96);
+      border-radius:22px;
+      padding:10px;
+      margin-bottom:22px;
+      box-shadow:0 14px 30px rgba(0,0,0,.16);
     }
 
-    .brand-text p {
-      margin: 4px 0 0;
-      font-size: 13px;
-      color: var(--green);
-      letter-spacing: 0.2px;
+    .hero h2{
+      margin:0;
+      font-size:60px;
+      line-height:1.02;
+      letter-spacing:-1.2px;
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
+    .hero .tagline{
+      margin-top:16px;
+      font-size:23px;
+      color:#def7e7;
     }
 
-    .nav a {
-      font-size: 14px;
-      font-weight: 700;
-      color: #334150;
+    .hero .desc{
+      margin-top:20px;
+      max-width:760px;
+      font-size:17px;
+      line-height:1.95;
+      color:#effff4;
     }
 
-    .nav .cta {
-      padding: 12px 18px;
-      border-radius: 999px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--green), var(--green-2));
-      box-shadow: 0 12px 24px rgba(18,114,71,0.22);
-    }
-
-    section { padding: 54px 0; }
-
-    .hero {
-      padding-top: 34px;
-    }
-
-    .hero-wrap {
-      position: relative;
-      overflow: hidden;
-      border-radius: 34px;
-      background:
-        linear-gradient(135deg, rgba(7,29,21,0.98), rgba(11,43,32,0.96) 52%, rgba(18,114,71,0.92)),
-        var(--dark);
-      color: #fff;
-      box-shadow: 0 28px 60px rgba(0,0,0,0.16);
-    }
-
-    .hero-wrap::before,
-    .hero-wrap::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-    }
-
-    .hero-wrap::before {
-      width: 320px;
-      height: 320px;
-      top: -100px;
-      right: -100px;
-    }
-
-    .hero-wrap::after {
-      width: 220px;
-      height: 220px;
-      left: -70px;
-      bottom: -70px;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 34px;
-      align-items: center;
-      padding: 62px 48px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 999px;
-      padding: 9px 14px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #dcf7e7;
-      margin-bottom: 18px;
-    }
-
-    .hero-logo {
-      width: 126px;
-      background: rgba(255,255,255,0.96);
-      border-radius: 20px;
-      padding: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.14);
-    }
-
-    .hero h2 {
-      margin: 0;
-      font-size: 58px;
-      line-height: 1.03;
-      letter-spacing: -1.1px;
-    }
-
-    .hero .tagline {
-      margin-top: 16px;
-      font-size: 23px;
-      color: #dff8e8;
-    }
-
-    .hero .desc {
-      margin-top: 20px;
-      max-width: 760px;
-      font-size: 17px;
-      line-height: 1.95;
-      color: #effff4;
-    }
-
-    .hero-actions {
-      margin-top: 28px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+    .hero-actions{
+      margin-top:28px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
     }
 
     .btn-main,
-    .btn-alt {
-      min-height: 50px;
-      padding: 14px 22px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 15px;
+    .btn-alt{
+      min-height:50px;
+      padding:14px 22px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:15px;
     }
 
-    .btn-main {
-      background: #fff;
-      color: #0c3728;
-      box-shadow: 0 12px 24px rgba(255,255,255,0.14);
+    .btn-main{
+      background:#fff;
+      color:var(--green-dark);
+      box-shadow:0 12px 24px rgba(255,255,255,.12);
     }
 
-    .btn-alt {
-      background: rgba(255,255,255,0.06);
-      color: #fff;
-      border: 1.5px solid rgba(255,255,255,0.48);
+    .btn-alt{
+      background:rgba(255,255,255,.05);
+      color:#fff;
+      border:1.5px solid rgba(255,255,255,.38);
     }
 
-    .hero-side {
-      display: grid;
-      gap: 16px;
+    .hero-side{
+      display:grid;
+      gap:18px;
     }
 
-    .metric-card,
-    .glass-card {
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 22px;
-      backdrop-filter: blur(10px);
+    .glass-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      padding:24px;
+      backdrop-filter:blur(12px);
     }
 
-    .glass-card {
-      padding: 22px;
+    .glass-card h3{
+      margin:0 0 10px;
+      color:#fff;
+      font-size:21px;
     }
 
-    .glass-card h3 {
-      margin: 0 0 10px;
-      font-size: 21px;
-      color: #fff;
+    .glass-card p{
+      margin:0;
+      color:#e7fff0;
+      font-size:14px;
+      line-height:1.85;
     }
 
-    .glass-card p {
-      margin: 0;
-      color: #e7fff0;
-      font-size: 14px;
-      line-height: 1.85;
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
     }
 
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+    .metric{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.11);
+      border-radius:20px;
+      padding:18px 14px;
+      text-align:center;
     }
 
-    .metric-card {
-      padding: 18px 14px;
-      text-align: center;
+    .metric strong{
+      display:block;
+      font-size:24px;
+      margin-bottom:6px;
+      color:#fff;
     }
 
-    .metric-card strong {
-      display: block;
-      font-size: 24px;
-      margin-bottom: 6px;
-      color: #fff;
+    .metric span{
+      font-size:13px;
+      line-height:1.6;
+      color:#ddf8e7;
     }
 
-    .metric-card span {
-      font-size: 13px;
-      line-height: 1.6;
-      color: #dcf7e7;
+    .trust-strip{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
     }
 
-    .trust-strip {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+    .trust{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px 16px;
+      box-shadow:var(--shadow-soft);
+      text-align:center;
     }
 
-    .trust-item {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px 16px;
-      box-shadow: var(--shadow-soft);
-      text-align: center;
+    .trust strong{
+      display:block;
+      color:#103628;
+      font-size:20px;
+      margin-bottom:6px;
     }
 
-    .trust-item strong {
-      display: block;
-      color: #103628;
-      font-size: 20px;
-      margin-bottom: 6px;
+    .trust span{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
     }
 
-    .trust-item span {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
+    .section-head{
+      text-align:center;
+      margin-bottom:34px;
     }
 
-    .section-head {
-      text-align: center;
-      margin-bottom: 34px;
+    .section-head h2{
+      margin:0;
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-.7px;
+      color:#0d3426;
     }
 
-    .section-head h2 {
-      margin: 0;
-      font-size: 40px;
-      line-height: 1.1;
-      letter-spacing: -0.6px;
-      color: #0d3426;
+    .section-head p{
+      max-width:920px;
+      margin:14px auto 0;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:16px;
     }
 
-    .section-head p {
-      max-width: 920px;
-      margin: 14px auto 0;
-      color: var(--muted);
-      line-height: 1.9;
-      font-size: 16px;
+    .panel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:32px;
+      padding:38px;
+      box-shadow:var(--shadow);
     }
 
-    .panel {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      padding: 36px;
-      box-shadow: var(--shadow);
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:24px;
+      align-items:start;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
-      align-items: start;
+    .about-copy{
+      color:#394551;
+      font-size:16px;
+      line-height:2;
     }
 
-    .about-copy {
-      color: #3a4651;
-      font-size: 16px;
-      line-height: 2;
-    }
-
-    .mini-stack {
-      display: grid;
-      gap: 16px;
+    .mini-stack{
+      display:grid;
+      gap:16px;
     }
 
     .mini-card,
-    .service-card,
-    .project-card,
-    .why-card,
-    .contact-card,
-    .manpower-card,
-    .equipment-card,
+    .card,
     .logo-card,
-    .gallery-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow-soft);
-      transition: transform .2s ease, box-shadow .2s ease;
+    .gallery-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:26px;
+      box-shadow:var(--shadow-soft);
+      transition:transform .2s ease, box-shadow .2s ease;
     }
 
     .mini-card:hover,
-    .service-card:hover,
-    .project-card:hover,
-    .why-card:hover,
-    .contact-card:hover,
-    .manpower-card:hover,
-    .equipment-card:hover,
+    .card:hover,
     .logo-card:hover,
-    .gallery-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 34px rgba(0,0,0,0.08);
+    .gallery-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 34px rgba(0,0,0,.08);
     }
 
     .mini-card,
-    .service-card,
-    .project-card,
-    .why-card,
-    .contact-card,
-    .manpower-card,
-    .equipment-card {
-      padding: 24px 22px;
+    .card{
+      padding:24px 22px;
     }
 
     .mini-card h3,
-    .service-card h3,
-    .project-card h3,
-    .why-card h3,
-    .contact-card h3,
-    .manpower-card h3,
-    .equipment-card h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-      line-height: 1.3;
-      color: #103628;
+    .card h3{
+      margin:0 0 12px;
+      font-size:22px;
+      line-height:1.3;
+      color:#103628;
     }
 
     .mini-card p,
-    .service-card p,
-    .project-card p,
-    .why-card p,
-    .contact-card p,
-    .equipment-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.9;
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.9;
     }
 
     .grid-4,
-    .grid-projects,
-    .grid-why,
-    .grid-contact {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+    .grid-3,
+    .client-grid,
+    .gallery-grid{
+      display:grid;
+      gap:20px;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    .grid-4{ grid-template-columns:repeat(4,1fr); }
+    .grid-3{ grid-template-columns:repeat(3,1fr); }
+    .client-grid{ grid-template-columns:repeat(6,1fr); }
+
+    .logo-card{
+      padding:20px;
+      text-align:center;
     }
 
-    .client-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 18px;
+    .logo-card img{
+      width:100%;
+      max-width:140px;
+      height:90px;
+      object-fit:contain;
+      margin:0 auto 12px;
+      border-radius:10px;
     }
 
-    .logo-card {
-      padding: 20px;
-      text-align: center;
+    .logo-card p{
+      margin:0;
+      font-size:14px;
+      line-height:1.6;
+      font-weight:700;
+      color:#334150;
     }
 
-    .logo-card img {
-      width: 100%;
-      max-width: 140px;
-      height: 90px;
-      object-fit: contain;
-      margin: 0 auto 12px;
-      border-radius: 10px;
+    .featured{
+      background:linear-gradient(180deg, #f7fcf8, #ffffff);
+      border-left:5px solid var(--green-2);
     }
 
-    .logo-card p {
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.6;
-      font-weight: 700;
-      color: #334150;
+    .manpower-list{
+      list-style:none;
+      padding:0;
+      margin:0;
     }
 
-    .featured {
-      background: linear-gradient(180deg, #f7fcf8, #ffffff);
-      border-left: 5px solid var(--green-2);
+    .manpower-list li{
+      padding:10px 0;
+      border-bottom:1px solid #edf2ee;
+      color:#3a4651;
+      font-size:15px;
+      line-height:1.7;
     }
 
-    .manpower-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .manpower-list li:last-child{
+      border-bottom:none;
     }
 
-    .manpower-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid #edf2ee;
-      color: #3a4651;
-      font-size: 15px;
-      line-height: 1.7;
+    .gallery-grid{
+      grid-template-columns:repeat(3,1fr);
     }
 
-    .manpower-list li:last-child {
-      border-bottom: none;
+    .gallery-card{
+      overflow:hidden;
+      position:relative;
+      padding:0;
     }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    .gallery-card img{
+      width:100%;
+      height:270px;
+      object-fit:cover;
     }
 
-    .gallery-card {
-      overflow: hidden;
-      position: relative;
+    .gallery-overlay{
+      position:absolute;
+      inset:auto 0 0 0;
+      background:linear-gradient(to top, rgba(7,29,21,.9), rgba(7,29,21,.08));
+      padding:18px;
     }
 
-    .gallery-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
+    .gallery-overlay p{
+      margin:0;
+      color:#eefef4;
+      font-size:14px;
+      line-height:1.7;
     }
 
-    .gallery-overlay {
-      position: absolute;
-      inset: auto 0 0 0;
-      background: linear-gradient(to top, rgba(7,29,21,0.88), rgba(7,29,21,0.05));
-      padding: 18px;
+    .contact-card a{
+      color:var(--green);
+      font-weight:700;
+      word-break:break-word;
     }
 
-    .gallery-overlay p {
-      margin: 0;
-      color: #eefef4;
-      font-size: 14px;
-      line-height: 1.7;
+    .cta-panel{
+      background:linear-gradient(135deg, #071d15, #11573d);
+      color:#fff;
+      text-align:center;
+      border-radius:34px;
+      padding:48px 28px;
+      box-shadow:0 24px 50px rgba(0,0,0,.14);
     }
 
-    .contact-card a {
-      color: var(--green);
-      font-weight: 700;
-      word-break: break-word;
+    .cta-panel h2{
+      margin:0;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-.7px;
     }
 
-    .cta-panel {
-      background: linear-gradient(135deg, #071d15, #11573d);
-      color: #fff;
-      text-align: center;
-      border-radius: 32px;
-      padding: 44px 28px;
-      box-shadow: 0 24px 50px rgba(0,0,0,0.14);
+    .cta-panel p{
+      max-width:860px;
+      margin:14px auto 0;
+      color:#e4fff0;
+      font-size:16px;
+      line-height:1.95;
     }
 
-    .cta-panel h2 {
-      margin: 0;
-      font-size: 42px;
-      line-height: 1.1;
-      letter-spacing: -0.6px;
+    .footer{
+      margin-top:42px;
+      background:#081f17;
+      color:#fff;
+      padding:42px 20px;
+      text-align:center;
     }
 
-    .cta-panel p {
-      max-width: 860px;
-      margin: 14px auto 0;
-      color: #e4fff0;
-      font-size: 16px;
-      line-height: 1.95;
+    .footer p{
+      margin:8px 0;
+      color:#dff5e7;
+      line-height:1.8;
     }
 
-    .footer {
-      margin-top: 42px;
-      background: #081f17;
-      color: #fff;
-      padding: 42px 20px;
-      text-align: center;
-    }
-
-    .footer p {
-      margin: 8px 0;
-      color: #dff5e7;
-      line-height: 1.8;
-    }
-
-    @media (max-width: 1180px) {
+    @media (max-width:1180px){
       .hero-grid,
-      .about-grid {
-        grid-template-columns: 1fr;
+      .about-grid{
+        grid-template-columns:1fr;
       }
 
-      .client-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
+      .client-grid{ grid-template-columns:repeat(4,1fr); }
       .grid-4,
-      .grid-projects,
-      .grid-why,
-      .grid-contact,
       .grid-3,
       .gallery-grid,
       .trust-strip,
-      .metrics {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .metrics{ grid-template-columns:repeat(2,1fr); }
     }
 
-    @media (max-width: 768px) {
-      .topbar-inner {
-        flex-direction: column;
-        align-items: flex-start;
+    @media (max-width:768px){
+      .topbar-inner{
+        flex-direction:column;
+        align-items:flex-start;
       }
 
-      .nav {
-        gap: 12px;
+      .nav{ gap:12px; }
+
+      .hero-grid{
+        padding:40px 20px;
       }
 
-      .hero-grid {
-        padding: 40px 20px;
+      .hero h2{
+        font-size:36px;
       }
 
-      .hero h2 {
-        font-size: 36px;
-      }
-
-      .hero .tagline {
-        font-size: 20px;
+      .hero .tagline{
+        font-size:20px;
       }
 
       .hero .desc,
       .section-head p,
       .about-copy,
-      .cta-panel p {
-        font-size: 15px;
+      .cta-panel p{
+        font-size:15px;
       }
 
       .section-head h2,
-      .cta-panel h2 {
-        font-size: 30px;
+      .cta-panel h2{
+        font-size:30px;
       }
 
       .grid-4,
-      .grid-projects,
-      .grid-why,
-      .grid-contact,
       .grid-3,
       .gallery-grid,
       .client-grid,
       .trust-strip,
-      .metrics {
-        grid-template-columns: 1fr;
+      .metrics{
+        grid-template-columns:1fr;
       }
 
-      .panel {
-        padding: 24px 18px;
+      .panel{
+        padding:24px 18px;
       }
 
-      .brand-text h1 {
-        font-size: 18px;
+      .brand-text h1{
+        font-size:18px;
       }
 
-      .gallery-card img {
-        height: 220px;
+      .gallery-card img{
+        height:220px;
       }
     }
   </style>
@@ -689,7 +645,7 @@
           <div>
             <span class="eyebrow">Saudi Arabia Based Industrial Support Company</span>
             <img class="hero-logo" src="logo.png" alt="Green Asia LLC Logo">
-            <h2>Modern Manpower & Industrial Support for Serious Projects</h2>
+            <h2>Luxury-Grade Industrial Support for Modern Projects</h2>
             <div class="tagline">Driven to Support Your Success</div>
             <p class="desc">
               Green Asia Limited Liability Company provides dependable manpower supply, industrial support services,
@@ -705,27 +661,27 @@
 
           <div class="hero-side">
             <div class="glass-card">
-              <h3>What We Support</h3>
-              <p>Manpower supply, field workforce deployment, project support, industrial assistance, equipment support, and organized coordination for operational continuity.</p>
+              <h3>What We Deliver</h3>
+              <p>Skilled manpower supply, field workforce deployment, project support, industrial assistance, equipment support, and organized coordination for operational continuity.</p>
             </div>
             <div class="glass-card">
               <h3>Where We Add Value</h3>
               <p>Oil & gas, industrial plants, construction sites, maintenance shutdowns, utilities, infrastructure projects, piping works, and project execution environments.</p>
             </div>
             <div class="metrics">
-              <div class="metric-card"><strong>100+</strong><span>workforce categories</span></div>
-              <div class="metric-card"><strong>12+</strong><span>major client logos</span></div>
-              <div class="metric-card"><strong>24/7</strong><span>support mindset</span></div>
+              <div class="metric"><strong>100+</strong><span>workforce categories</span></div>
+              <div class="metric"><strong>12+</strong><span>client references</span></div>
+              <div class="metric"><strong>24/7</strong><span>support mindset</span></div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="trust-strip">
-        <div class="trust-item"><strong>Professional</strong><span>business-focused communication and coordination</span></div>
-        <div class="trust-item"><strong>Reliable</strong><span>dependable manpower and support response</span></div>
-        <div class="trust-item"><strong>Flexible</strong><span>support across varied industrial disciplines</span></div>
-        <div class="trust-item"><strong>Responsive</strong><span>fast follow-up for active requirements</span></div>
+        <div class="trust"><strong>Professional</strong><span>business-focused coordination and communication</span></div>
+        <div class="trust"><strong>Reliable</strong><span>dependable manpower and support response</span></div>
+        <div class="trust"><strong>Flexible</strong><span>support across varied industrial disciplines</span></div>
+        <div class="trust"><strong>Responsive</strong><span>fast follow-up for active requirements</span></div>
       </div>
     </div>
   </section>
@@ -744,8 +700,7 @@
             tailored to the needs of project-based and operational clients. We help businesses with manpower deployment, project
             coordination, documentation services, equipment support, and industrial assistance to keep operations efficient and
             project workflows organized. Our business approach is based on service quality, professionalism, structured communication,
-            dependable follow-up, and long-term relationship building. We aim to add value by helping clients meet workforce and
-            support requirements with reliability, flexibility, and consistency.
+            dependable follow-up, and long-term relationship building.
           </div>
 
           <div class="mini-stack">
@@ -775,14 +730,14 @@
       </div>
 
       <div class="grid-4">
-        <div class="service-card"><h3>Skilled Manpower Supply</h3><p>Providing dependable workforce solutions based on project requirements, operational demands, and client expectations.</p></div>
-        <div class="service-card"><h3>Industrial Support Services</h3><p>Supporting industrial works and field activities with organized assistance, practical response, and reliable coordination.</p></div>
-        <div class="service-card"><h3>Project Coordination</h3><p>Helping maintain follow-up, communication flow, and support coordination for smoother project execution and continuity.</p></div>
-        <div class="service-card"><h3>Documentation Support</h3><p>Assisting with documentation requirements and related processes for better organization, readiness, and workflow support.</p></div>
-        <div class="service-card"><h3>Equipment Support Solutions</h3><p>Supporting site and project equipment-related requirements as part of wider industrial and operational support services.</p></div>
-        <div class="service-card"><h3>Business Assistance</h3><p>Providing support for inquiries, coordination, client communications, and day-to-day business requirements.</p></div>
-        <div class="service-card"><h3>Shutdown & Maintenance Support</h3><p>Helping clients meet maintenance and shutdown needs through responsive workforce supply and organized execution support.</p></div>
-        <div class="service-card"><h3>Field Workforce Support</h3><p>Supplying site-level support across civil, mechanical, piping, electrical, structural, safety, QA/QC, and related disciplines.</p></div>
+        <div class="card"><h3>Skilled Manpower Supply</h3><p>Providing dependable workforce solutions based on project requirements, operational demands, and client expectations.</p></div>
+        <div class="card"><h3>Industrial Support Services</h3><p>Supporting industrial works and field activities with organized assistance, practical response, and reliable coordination.</p></div>
+        <div class="card"><h3>Project Coordination</h3><p>Helping maintain follow-up, communication flow, and support coordination for smoother project execution and continuity.</p></div>
+        <div class="card"><h3>Documentation Support</h3><p>Assisting with documentation requirements and related processes for better organization, readiness, and workflow support.</p></div>
+        <div class="card"><h3>Equipment Support Solutions</h3><p>Supporting site and project equipment-related requirements as part of wider industrial and operational support services.</p></div>
+        <div class="card"><h3>Business Assistance</h3><p>Providing support for inquiries, coordination, client communications, and day-to-day business requirements.</p></div>
+        <div class="card"><h3>Shutdown & Maintenance Support</h3><p>Helping clients meet maintenance and shutdown needs through responsive workforce supply and organized execution support.</p></div>
+        <div class="card"><h3>Field Workforce Support</h3><p>Supplying site-level support across civil, mechanical, piping, electrical, structural, safety, QA/QC, and related disciplines.</p></div>
       </div>
     </div>
   </section>
@@ -818,11 +773,11 @@
         <p>Supporting industrial, oil & gas, construction, pipeline, utility, maintenance, and infrastructure-related operations across Saudi Arabia.</p>
       </div>
 
-      <div class="grid-projects">
-        <div class="project-card featured"><h3>Oil & Gas Support Projects</h3><p>Support solutions for industrial plants, process facilities, production environments, and energy-related operations requiring dependable manpower and organized coordination.</p></div>
-        <div class="project-card"><h3>Construction & Industrial Projects</h3><p>Providing manpower and site support for industrial construction, structural works, contractor activities, and field execution requirements.</p></div>
-        <div class="project-card"><h3>Pipeline & Mechanical Works</h3><p>Assisting with pipeline installation, welding activities, fit-up work, fabrication, and mechanical site support for project environments.</p></div>
-        <div class="project-card"><h3>Maintenance & Shutdown Works</h3><p>Helping clients meet shutdown and maintenance needs through responsive workforce support and reliable project coordination.</p></div>
+      <div class="grid-4">
+        <div class="card featured"><h3>Oil & Gas Support Projects</h3><p>Support solutions for industrial plants, process facilities, production environments, and energy-related operations requiring dependable manpower and organized coordination.</p></div>
+        <div class="card"><h3>Construction & Industrial Projects</h3><p>Providing manpower and site support for industrial construction, structural works, contractor activities, and field execution requirements.</p></div>
+        <div class="card"><h3>Pipeline & Mechanical Works</h3><p>Assisting with pipeline installation, welding activities, fit-up work, fabrication, and mechanical site support for project environments.</p></div>
+        <div class="card"><h3>Maintenance & Shutdown Works</h3><p>Helping clients meet shutdown and maintenance needs through responsive workforce support and reliable project coordination.</p></div>
       </div>
     </div>
   </section>
@@ -835,66 +790,24 @@
       </div>
 
       <div class="grid-3">
-        <div class="manpower-card">
+        <div class="card">
           <h3>Civil & General Construction</h3>
           <ul class="manpower-list">
             <li>Helper</li><li>Carpenter</li><li>Steel Fixer</li><li>Tiles Mason</li><li>Concrete Mason</li><li>Block Mason</li><li>Plaster Mason</li><li>Carpenter Foreman</li><li>Steel Fixer Foreman</li><li>Plumber</li><li>Plumber Foreman</li><li>Civil QCI</li><li>Civil QCI (Aramco)</li><li>Civil Engineer</li><li>Civil Engineer (Aramco)</li><li>Civil Foreman</li><li>Civil Supervisor</li><li>Land Surveyor</li>
           </ul>
         </div>
 
-        <div class="manpower-card">
+        <div class="card">
           <h3>Scaffolding & Access</h3>
           <ul class="manpower-list">
             <li>Scaffolder</li><li>Scaffolding Foreman</li><li>Scaffolding Inspector</li><li>Scaffolding Inspector (Aramco)</li><li>Scaffolding Supervisor</li><li>Scaffolding Supervisor (Aramco)</li>
           </ul>
         </div>
 
-        <div class="manpower-card">
+        <div class="card">
           <h3>Mechanical & HVAC</h3>
           <ul class="manpower-list">
             <li>Mechanical Fitter</li><li>Mechanical Technician</li><li>Mechanical Foreman</li><li>Mechanical Supervisor</li><li>Mechanical Engineer</li><li>Mechanical Engineer (Aramco)</li><li>Mechanical QCI</li><li>Mechanical QCI (Aramco)</li><li>HVAC Technician</li><li>HVAC Foreman</li><li>HVAC Supervisor</li><li>Millwright</li><li>Hydro Supervisor</li>
-          </ul>
-        </div>
-
-        <div class="manpower-card">
-          <h3>Electrical & Instrumentation</h3>
-          <ul class="manpower-list">
-            <li>Electrician</li><li>Electrical Technician</li><li>Electrical Foreman</li><li>Electrical Supervisor</li><li>Electrical QCI</li><li>Electrical QCI (Aramco)</li><li>Instrument Technician</li><li>Instrument Foreman</li><li>Instrument Supervisor</li><li>Tube Fitter</li>
-          </ul>
-        </div>
-
-        <div class="manpower-card">
-          <h3>Piping & Welding</h3>
-          <ul class="manpower-list">
-            <li>Pipe Fitter</li><li>Pipe Fabricator</li><li>Piping Foreman</li><li>Piping Supervisor</li><li>Piping Engineer</li><li>Piping QCI</li><li>Piping QCI (Aramco)</li><li>Welder 3G/4G</li><li>6G Welder</li><li>Multi Welder</li><li>Alloy Welder</li><li>Welding Foreman</li><li>Welding Supervisor</li><li>Welding QCI</li><li>Welding QCI (Aramco)</li>
-          </ul>
-        </div>
-
-        <div class="manpower-card">
-          <h3>Painting, Coating & Insulation</h3>
-          <ul class="manpower-list">
-            <li>Roller Painter</li><li>Touch Up Painter</li><li>Spray Painter</li><li>Painting Foreman</li><li>Painting Supervisor</li><li>Painting Supervisor (Aramco)</li><li>Painting/Coating QCI</li><li>Painting/Coating QCI (Aramco)</li><li>Insulator</li><li>Cladder</li><li>Insulator Foreman</li><li>Cladding Foreman</li><li>Insulator Supervisor</li>
-          </ul>
-        </div>
-
-        <div class="manpower-card">
-          <h3>Structural, Tank & Ducting</h3>
-          <ul class="manpower-list">
-            <li>Steel Erector</li><li>Structural Fitter</li><li>Structural Fabricator</li><li>Structural Foreman</li><li>Structural Supervisor</li><li>Tank Fitter</li><li>Tank Fabricator</li><li>Tank Foreman</li><li>Tank Supervisor</li><li>Duct Fitter</li><li>Duct Fabricator</li><li>Duct Foreman</li><li>Duct Supervisor</li><li>Grinder Man</li>
-          </ul>
-        </div>
-
-        <div class="manpower-card">
-          <h3>Safety, QA/QC & Control</h3>
-          <ul class="manpower-list">
-            <li>Safety Officer</li><li>Safety Officer (Aramco)</li><li>Safety Supervisor</li><li>Safety Supervisor (Aramco)</li><li>Rigger I (Aramco)</li><li>Rigger II (Aramco)</li><li>Rigger III (Aramco)</li><li>NDT Coordinator</li><li>WPR</li><li>WPR (Aramco)</li><li>Fire Watcher</li><li>Flag Man</li>
-          </ul>
-        </div>
-
-        <div class="manpower-card">
-          <h3>Administration & Site Support</h3>
-          <ul class="manpower-list">
-            <li>Material Controller</li><li>Document Controller</li><li>Time Keeper</li><li>Store Keeper</li><li>Male Nurse</li><li>Office Cleaner</li><li>Office Boy</li><li>Light Driver</li><li>Heavy Driver</li><li>Forklift Operator</li><li>Manlift Operator</li><li>Boom Truck Operator</li>
           </ul>
         </div>
       </div>
@@ -909,7 +822,7 @@
       </div>
 
       <div class="grid-3">
-        <div class="equipment-card">
+        <div class="card">
           <h3>Lifting & Access Equipment</h3>
           <ul class="manpower-list">
             <li>Forklift Support</li>
@@ -919,7 +832,7 @@
             <li>Access Platform Support</li>
           </ul>
         </div>
-        <div class="equipment-card">
+        <div class="card">
           <h3>Construction & Field Support Equipment</h3>
           <ul class="manpower-list">
             <li>Material Handling Support</li>
@@ -929,7 +842,7 @@
             <li>Mechanical Worksite Support</li>
           </ul>
         </div>
-        <div class="equipment-card">
+        <div class="card">
           <h3>Project Support Solutions</h3>
           <ul class="manpower-list">
             <li>Equipment Mobilization Assistance</li>
@@ -986,16 +899,16 @@
         <p>Reach out to Green Asia LLC for manpower support, business inquiries, project coordination, industrial assistance, and equipment-related requirements.</p>
       </div>
 
-      <div class="grid-contact">
-        <div class="contact-card"><h3>Email Address</h3><p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p></div>
-        <div class="contact-card"><h3>Phone Number 1</h3><p><a href="tel:+966539379095">+966 53 937 9095</a></p></div>
-        <div class="contact-card"><h3>Phone Number 2</h3><p><a href="tel:+966599027308">+966 59 902 7308</a></p></div>
-        <div class="contact-card"><h3>WhatsApp</h3><p><a href="https://wa.me/966599027308" target="_blank">Chat with us directly on WhatsApp</a></p></div>
+      <div class="grid-4">
+        <div class="card contact-card"><h3>Email Address</h3><p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p></div>
+        <div class="card contact-card"><h3>Phone Number 1</h3><p><a href="tel:+966539379095">+966 53 937 9095</a></p></div>
+        <div class="card contact-card"><h3>Phone Number 2</h3><p><a href="tel:+966599027308">+966 59 902 7308</a></p></div>
+        <div class="card contact-card"><h3>WhatsApp</h3><p><a href="https://wa.me/966599027308" target="_blank">Chat with us directly on WhatsApp</a></p></div>
       </div>
     </div>
   </section>
 
-  <section class="cta-section">
+  <section>
     <div class="container">
       <div class="cta-panel">
         <h2>Ready to Support Your Business</h2>
