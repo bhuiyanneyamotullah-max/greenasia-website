@@ -6,20 +6,18 @@
   <title>Green Asia Limited Liability Company</title>
   <style>
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f3f7f4;
+      background: #f4f7f5;
       color: #1f2937;
     }
 
     a { text-decoration: none; }
 
     .container {
-      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
@@ -40,6 +38,7 @@
       align-items: center;
       padding: 14px 0;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .brand {
@@ -88,21 +87,20 @@
     }
 
     .hero {
-      padding: 60px 0 40px;
+      padding: 60px 0 35px;
     }
 
     .hero-box {
       background: linear-gradient(135deg, #0d442b, #1f8a4c);
       color: white;
       border-radius: 28px;
-      padding: 60px 40px;
+      padding: 65px 40px;
       box-shadow: 0 18px 40px rgba(0,0,0,0.12);
       text-align: center;
     }
 
     .hero-logo {
       width: 120px;
-      max-width: 100%;
       background: rgba(255,255,255,0.96);
       border-radius: 18px;
       padding: 10px;
@@ -123,7 +121,7 @@
     }
 
     .hero .desc {
-      max-width: 880px;
+      max-width: 900px;
       margin: 22px auto 0;
       font-size: 17px;
       line-height: 1.9;
@@ -158,27 +156,27 @@
       border: 2px solid rgba(255,255,255,0.8);
     }
 
-    .stats {
+    .hero-points {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
-      margin-top: 30px;
+      margin-top: 32px;
     }
 
-    .stat-box {
+    .hero-point {
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.15);
       border-radius: 18px;
       padding: 20px;
     }
 
-    .stat-box h3 {
+    .hero-point h3 {
       margin: 0 0 8px;
       font-size: 22px;
-      color: #ffffff;
+      color: #fff;
     }
 
-    .stat-box p {
+    .hero-point p {
       margin: 0;
       color: #e6fff0;
       line-height: 1.7;
@@ -186,7 +184,7 @@
     }
 
     section {
-      padding: 35px 0;
+      padding: 40px 0;
     }
 
     .section-title {
@@ -221,7 +219,7 @@
     }
 
     .services-grid {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     .why-grid,
@@ -292,10 +290,6 @@
       font-size: 16px;
     }
 
-    .cta-box .hero-actions {
-      margin-top: 24px;
-    }
-
     .footer {
       margin-top: 40px;
       background: #0a3526;
@@ -311,15 +305,6 @@
     }
 
     @media (max-width: 768px) {
-      .topbar-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav {
-        width: 100%;
-      }
-
       .hero-box {
         padding: 40px 22px;
       }
@@ -371,28 +356,28 @@
         <h2>Professional Manpower & Industrial Support Solutions</h2>
         <div class="tagline">Driven to Support Your Success</div>
         <p class="desc">
-          Green Asia Limited Liability Company is a Saudi Arabia-based business providing dependable
-          manpower support, industrial services, documentation assistance, and project coordination
-          with a strong commitment to quality, professionalism, and timely response.
+          Green Asia Limited Liability Company is a Saudi Arabia-based business committed to delivering
+          reliable manpower support, industrial assistance, documentation services, project coordination,
+          and responsive business solutions for clients who value quality, professionalism, and efficiency.
         </p>
 
         <div class="hero-actions">
-          <a class="btn-primary" href="https://wa.me/966599027308" target="_blank">Contact on WhatsApp</a>
-          <a class="btn-secondary" href="mailto:info@greenasia.llc">Email Us</a>
+          <a class="btn-primary" href="mailto:info@greenasia.llc">Send Email</a>
+          <a class="btn-secondary" href="https://wa.me/966599027308" target="_blank">Chat on WhatsApp</a>
         </div>
 
-        <div class="stats">
-          <div class="stat-box">
-            <h3>Reliable Support</h3>
-            <p>Focused on helping clients with responsive business and operational support.</p>
+        <div class="hero-points">
+          <div class="hero-point">
+            <h3>Professional</h3>
+            <p>Organized support with a business-focused and service-driven approach.</p>
           </div>
-          <div class="stat-box">
-            <h3>Quality Service</h3>
-            <p>Committed to delivering organized, professional, and dependable assistance.</p>
+          <div class="hero-point">
+            <h3>Reliable</h3>
+            <p>Committed to timely coordination and dependable client support.</p>
           </div>
-          <div class="stat-box">
-            <h3>Timely Response</h3>
-            <p>We value fast communication and efficient coordination for project needs.</p>
+          <div class="hero-point">
+            <h3>Responsive</h3>
+            <p>Quick communication and practical support for project and business needs.</p>
           </div>
         </div>
       </div>
@@ -403,15 +388,15 @@
     <div class="container">
       <h2 class="section-title">About Green Asia</h2>
       <p class="section-subtitle">
-        A trusted support partner for manpower, coordination, documentation, and industrial service needs.
+        A trusted support partner for manpower supply, project coordination, industrial support, and business assistance.
       </p>
 
       <div class="about-box">
-        Green Asia Limited Liability Company works to support businesses and projects through reliable
-        manpower supply, organized documentation assistance, industrial support services, and responsive
-        project coordination. Our objective is to provide professional service that adds value to our
-        clients’ operations while maintaining high standards of communication, responsibility, and quality.
-        We believe in long-term business relationships built on trust, consistency, and timely support.
+        Green Asia Limited Liability Company provides dependable support solutions for businesses and projects
+        operating across Saudi Arabia. We focus on supplying manpower, supporting industrial operations,
+        helping with documentation requirements, coordinating project-related needs, and delivering responsive
+        client service. Our objective is to add real value through professionalism, service quality, organized
+        execution, and long-term business reliability.
       </div>
     </div>
   </section>
@@ -420,38 +405,38 @@
     <div class="container">
       <h2 class="section-title">Our Services</h2>
       <p class="section-subtitle">
-        Comprehensive support services designed to help projects and businesses operate more smoothly and effectively.
+        We provide practical and professional support services designed to help companies operate more smoothly and effectively.
       </p>
 
       <div class="grid services-grid">
         <div class="card">
           <h3>Skilled Manpower Supply</h3>
-          <p>Supplying dependable manpower support according to project and operational requirements.</p>
+          <p>Providing manpower support according to project requirements, operational demands, and client expectations.</p>
         </div>
 
         <div class="card">
           <h3>Industrial Support Services</h3>
-          <p>Providing organized support for industrial works and related business activities.</p>
+          <p>Offering support services that help industrial and project-based activities move forward efficiently.</p>
         </div>
 
         <div class="card">
           <h3>Project Coordination</h3>
-          <p>Helping maintain clear coordination and communication throughout project execution.</p>
+          <p>Assisting with business communication, follow-up, and coordination to support project workflow and continuity.</p>
         </div>
 
         <div class="card">
           <h3>Documentation Support</h3>
-          <p>Assisting with documentation processes to improve structure, workflow, and readiness.</p>
+          <p>Helping organize documentation tasks and requirements for smoother internal and client-related processes.</p>
         </div>
 
         <div class="card">
           <h3>Equipment Support Solutions</h3>
-          <p>Supporting equipment-related requirements as part of broader operational assistance.</p>
+          <p>Supporting equipment-related needs as part of wider operational and project assistance services.</p>
         </div>
 
         <div class="card">
           <h3>Business Assistance</h3>
-          <p>Providing responsive support for inquiries, coordination, and client communication needs.</p>
+          <p>Providing responsive support for inquiries, coordination, communication, and client service needs.</p>
         </div>
       </div>
     </div>
@@ -461,28 +446,28 @@
     <div class="container">
       <h2 class="section-title">Why Choose Us</h2>
       <p class="section-subtitle">
-        We focus on professionalism, organized service, and dependable business support.
+        Our service approach is based on professionalism, responsiveness, and dependable support.
       </p>
 
       <div class="grid why-grid">
         <div class="card feature">
-          <h3>Professional Approach</h3>
-          <p>We maintain professionalism in communication, coordination, and service delivery.</p>
+          <h3>Professional Service Approach</h3>
+          <p>We emphasize clear communication, organized handling, and business professionalism in every interaction.</p>
+        </div>
+
+        <div class="card">
+          <h3>Timely Response</h3>
+          <p>We understand the importance of fast communication and prompt support when business needs arise.</p>
         </div>
 
         <div class="card">
           <h3>Dependable Coordination</h3>
-          <p>Our support is structured to help clients manage tasks and communication more effectively.</p>
+          <p>We aim to support clients with structured coordination and practical assistance for ongoing activities.</p>
         </div>
 
         <div class="card">
-          <h3>Client-Focused Service</h3>
-          <p>We aim to understand client needs and respond with practical, organized support.</p>
-        </div>
-
-        <div class="card">
-          <h3>Quality & Responsiveness</h3>
-          <p>We emphasize timely response, service quality, and long-term business value.</p>
+          <h3>Long-Term Business Focus</h3>
+          <p>Our goal is to build lasting business relationships based on trust, service quality, and consistency.</p>
         </div>
       </div>
     </div>
@@ -492,28 +477,28 @@
     <div class="container">
       <h2 class="section-title">Contact Us</h2>
       <p class="section-subtitle">
-        Reach out for inquiries, coordination, and project support discussions.
+        Reach out to Green Asia LLC for business inquiries, project discussions, and support requirements.
       </p>
 
       <div class="grid contact-grid">
         <div class="card contact-card">
-          <h3>Email</h3>
+          <h3>Email Address</h3>
           <p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p>
         </div>
 
         <div class="card contact-card">
-          <h3>Phone 1</h3>
+          <h3>Phone Number 1</h3>
           <p><a href="tel:+966539379095">+966 53 937 9095</a></p>
         </div>
 
         <div class="card contact-card">
-          <h3>Phone 2</h3>
+          <h3>Phone Number 2</h3>
           <p><a href="tel:+966599027308">+966 59 902 7308</a></p>
         </div>
 
         <div class="card contact-card">
           <h3>WhatsApp</h3>
-          <p><a href="https://wa.me/966599027308" target="_blank">Chat with us on WhatsApp</a></p>
+          <p><a href="https://wa.me/966599027308" target="_blank">Chat with us directly on WhatsApp</a></p>
         </div>
 
         <div class="card contact-card">
@@ -529,11 +514,11 @@
       <div class="cta-box">
         <h2>Ready to Support Your Business</h2>
         <p>
-          Green Asia LLC is ready to support your requirements with professionalism, responsiveness,
-          and dependable service. Contact us today to discuss how we can assist your project or business needs.
+          Green Asia LLC is ready to support your operational and project requirements with responsive service,
+          dependable coordination, and a strong commitment to professional business support.
         </p>
         <div class="hero-actions">
-          <a class="btn-primary" href="mailto:info@greenasia.llc">Send Email</a>
+          <a class="btn-primary" href="mailto:info@greenasia.llc">Email Us Now</a>
           <a class="btn-secondary" href="https://wa.me/966599027308" target="_blank">Start WhatsApp Chat</a>
         </div>
       </div>
