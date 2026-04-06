@@ -5,32 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Green Asia Limited Liability Company</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #eef3ef;
+      background: #f3f7f4;
       color: #1f2937;
     }
 
+    a { text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     .topbar {
-      background: #ffffff;
-      border-bottom: 1px solid #dfe7df;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .topbar-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 14px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
       gap: 20px;
     }
 
@@ -41,345 +49,493 @@
     }
 
     .brand img {
-      width: 58px;
-      height: 58px;
+      width: 60px;
+      height: 60px;
       object-fit: contain;
     }
 
-    .brand-text h2 {
+    .brand-text h1 {
       margin: 0;
       font-size: 20px;
       color: #0b3d2e;
+      line-height: 1.2;
     }
 
     .brand-text p {
       margin: 4px 0 0;
+      color: #1b7a46;
       font-size: 13px;
-      color: #166534;
     }
 
-    .nav-btn {
-      text-decoration: none;
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav .cta {
       background: #166534;
-      color: #ffffff;
+      color: #fff;
       padding: 12px 18px;
       border-radius: 10px;
-      font-weight: bold;
-      font-size: 14px;
     }
 
     .hero {
-      max-width: 1200px;
-      margin: 40px auto 20px;
-      padding: 0 20px;
+      padding: 60px 0 40px;
     }
 
     .hero-box {
-      background: linear-gradient(135deg, #0f5132, #1b7a46);
-      color: #ffffff;
-      border-radius: 24px;
+      background: linear-gradient(135deg, #0d442b, #1f8a4c);
+      color: white;
+      border-radius: 28px;
       padding: 60px 40px;
-      box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
       text-align: center;
     }
 
-    .hero-box img {
+    .hero-logo {
       width: 120px;
       max-width: 100%;
-      margin-bottom: 20px;
-      background: rgba(255,255,255,0.95);
-      padding: 10px;
+      background: rgba(255,255,255,0.96);
       border-radius: 18px;
+      padding: 10px;
+      margin-bottom: 24px;
     }
 
-    .hero-box h1 {
+    .hero h2 {
       margin: 0;
-      font-size: 46px;
+      font-size: 48px;
       line-height: 1.2;
     }
 
-    .hero-box .tagline {
+    .hero .tagline {
       margin-top: 14px;
       font-size: 24px;
-      font-weight: normal;
-      color: #dff5e5;
+      color: #dff7e7;
+      font-weight: 500;
     }
 
-    .hero-box .desc {
-      max-width: 850px;
+    .hero .desc {
+      max-width: 880px;
       margin: 22px auto 0;
       font-size: 17px;
-      line-height: 1.8;
-      color: #f4fff6;
+      line-height: 1.9;
+      color: #f5fff8;
     }
 
     .hero-actions {
-      margin-top: 28px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 14px;
+      margin-top: 30px;
     }
 
     .btn-primary,
     .btn-secondary {
-      text-decoration: none;
-      padding: 14px 22px;
-      border-radius: 10px;
-      font-weight: bold;
       display: inline-block;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
     }
 
     .btn-primary {
       background: #ffffff;
-      color: #0f5132;
+      color: #0d442b;
     }
 
     .btn-secondary {
       background: transparent;
       color: #ffffff;
-      border: 2px solid rgba(255,255,255,0.75);
+      border: 2px solid rgba(255,255,255,0.8);
     }
 
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 30px 20px;
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .stat-box {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .stat-box h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      color: #ffffff;
+    }
+
+    .stat-box p {
+      margin: 0;
+      color: #e6fff0;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    section {
+      padding: 35px 0;
     }
 
     .section-title {
       text-align: center;
+      margin: 0;
       font-size: 34px;
       color: #0b3d2e;
-      margin: 0 0 14px;
     }
 
     .section-subtitle {
       text-align: center;
-      max-width: 850px;
-      margin: 0 auto 35px;
+      max-width: 860px;
+      margin: 14px auto 35px;
       color: #4b5563;
-      line-height: 1.8;
       font-size: 16px;
+      line-height: 1.8;
     }
 
     .about-box {
       background: #ffffff;
-      border-radius: 22px;
+      border-radius: 24px;
       padding: 35px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
       line-height: 1.9;
+      color: #374151;
       font-size: 16px;
     }
 
-    .services-grid,
-    .why-grid,
-    .contact-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 20px;
     }
 
-    .service-card,
-    .why-card,
-    .contact-card {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 26px 22px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-      border: 1px solid #e4ebe4;
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 
-    .service-card h3,
-    .why-card h3,
-    .contact-card h3 {
+    .why-grid,
+    .contact-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 26px 22px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      border: 1px solid #e7ece8;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
       margin: 0 0 12px;
       color: #0b3d2e;
       font-size: 21px;
     }
 
-    .service-card p,
-    .why-card p,
-    .contact-card p {
+    .card p {
       margin: 0;
       color: #4b5563;
       line-height: 1.8;
       font-size: 15px;
     }
 
-    .highlight {
-      background: #f6fbf7;
+    .feature {
       border-left: 5px solid #1b7a46;
-    }
-
-    .contact-section {
-      margin-bottom: 50px;
+      background: #f7fcf8;
     }
 
     .contact-card a {
       color: #166534;
-      text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+    }
+
+    .cta-section {
+      margin-top: 10px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #0b3d2e, #166534);
+      border-radius: 24px;
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+    }
+
+    .cta-box h2 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .cta-box p {
+      margin: 14px auto 0;
+      max-width: 780px;
+      line-height: 1.9;
+      color: #e6fff0;
+      font-size: 16px;
+    }
+
+    .cta-box .hero-actions {
+      margin-top: 24px;
     }
 
     .footer {
-      background: #0b3d2e;
-      color: #ffffff;
+      margin-top: 40px;
+      background: #0a3526;
+      color: white;
+      padding: 35px 20px;
       text-align: center;
-      padding: 28px 20px;
-      margin-top: 30px;
     }
 
     .footer p {
-      margin: 6px 0;
-      color: #d9f3df;
+      margin: 8px 0;
+      color: #dff5e7;
+      line-height: 1.7;
     }
 
     @media (max-width: 768px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        width: 100%;
+      }
+
       .hero-box {
         padding: 40px 22px;
       }
 
-      .hero-box h1 {
-        font-size: 32px;
+      .hero h2 {
+        font-size: 34px;
       }
 
-      .hero-box .tagline {
+      .hero .tagline {
         font-size: 20px;
       }
 
-      .brand-text h2 {
-        font-size: 17px;
+      .section-title {
+        font-size: 28px;
       }
 
-      .topbar-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      .cta-box h2 {
+        font-size: 28px;
       }
     }
   </style>
 </head>
 <body>
+
   <header class="topbar">
-    <div class="topbar-inner">
+    <div class="container topbar-inner">
       <div class="brand">
-        <img src="logo.png" alt="Green Asia LLC Logo" />
+        <img src="logo.png" alt="Green Asia LLC Logo">
         <div class="brand-text">
-          <h2>Green Asia Limited Liability Company</h2>
+          <h1>Green Asia Limited Liability Company</h1>
           <p>Driven to Support Your Success</p>
         </div>
       </div>
-      <a class="nav-btn" href="https://wa.me/966599027308" target="_blank">WhatsApp Us</a>
+
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="https://wa.me/966599027308" target="_blank">WhatsApp Us</a>
+      </nav>
     </div>
   </header>
 
   <section class="hero">
-    <div class="hero-box">
-      <img src="logo.png" alt="Green Asia LLC Logo" />
-      <h1>Reliable Manpower & Industrial Support Solutions</h1>
-      <div class="tagline">Driven to Support Your Success</div>
-      <p class="desc">
-        Green Asia LLC is a Saudi Arabia-based company delivering skilled manpower supply,
-        industrial support services, documentation assistance, project coordination,
-        and equipment support solutions with professionalism, quality, and timely response.
+    <div class="container">
+      <div class="hero-box">
+        <img class="hero-logo" src="logo.png" alt="Green Asia LLC Logo">
+        <h2>Professional Manpower & Industrial Support Solutions</h2>
+        <div class="tagline">Driven to Support Your Success</div>
+        <p class="desc">
+          Green Asia Limited Liability Company is a Saudi Arabia-based business providing dependable
+          manpower support, industrial services, documentation assistance, and project coordination
+          with a strong commitment to quality, professionalism, and timely response.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://wa.me/966599027308" target="_blank">Contact on WhatsApp</a>
+          <a class="btn-secondary" href="mailto:info@greenasia.llc">Email Us</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat-box">
+            <h3>Reliable Support</h3>
+            <p>Focused on helping clients with responsive business and operational support.</p>
+          </div>
+          <div class="stat-box">
+            <h3>Quality Service</h3>
+            <p>Committed to delivering organized, professional, and dependable assistance.</p>
+          </div>
+          <div class="stat-box">
+            <h3>Timely Response</h3>
+            <p>We value fast communication and efficient coordination for project needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Green Asia</h2>
+      <p class="section-subtitle">
+        A trusted support partner for manpower, coordination, documentation, and industrial service needs.
       </p>
-      <div class="hero-actions">
-        <a class="btn-primary" href="https://wa.me/966599027308" target="_blank">Contact on WhatsApp</a>
-        <a class="btn-secondary" href="mailto:info@greenasia.llc">Email Us</a>
+
+      <div class="about-box">
+        Green Asia Limited Liability Company works to support businesses and projects through reliable
+        manpower supply, organized documentation assistance, industrial support services, and responsive
+        project coordination. Our objective is to provide professional service that adds value to our
+        clients’ operations while maintaining high standards of communication, responsibility, and quality.
+        We believe in long-term business relationships built on trust, consistency, and timely support.
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2 class="section-title">About Green Asia</h2>
-    <p class="section-subtitle">
-      We are committed to supporting projects with dependable service, strong coordination,
-      and a workforce prepared to meet client standards.
-    </p>
-    <div class="about-box">
-      Green Asia Limited Liability Company provides professional support for industrial and
-      project-based operations across Saudi Arabia. Our focus is on supplying reliable manpower,
-      supporting documentation requirements, assisting with project coordination, and delivering
-      responsive service that helps clients move forward with confidence. We aim to build long-term
-      business relationships through quality, professionalism, and trust.
-    </div>
-  </section>
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">
+        Comprehensive support services designed to help projects and businesses operate more smoothly and effectively.
+      </p>
 
-  <section class="section">
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-subtitle">
-      Practical support services designed to help businesses operate smoothly and efficiently.
-    </p>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Skilled Manpower Supply</h3>
-        <p>Providing dependable manpower support based on project and operational requirements.</p>
-      </div>
-      <div class="service-card">
-        <h3>Industrial Support Services</h3>
-        <p>Supporting industrial works with responsive coordination and service assistance.</p>
-      </div>
-      <div class="service-card">
-        <h3>Project Coordination</h3>
-        <p>Helping maintain smooth communication and organized support throughout project activities.</p>
-      </div>
-      <div class="service-card">
-        <h3>Documentation Support</h3>
-        <p>Assisting with documentation tasks to improve workflow, compliance, and organization.</p>
-      </div>
-      <div class="service-card">
-        <h3>Equipment Support Solutions</h3>
-        <p>Providing support related to equipment needs as part of broader project assistance.</p>
-      </div>
-    </div>
-  </section>
+      <div class="grid services-grid">
+        <div class="card">
+          <h3>Skilled Manpower Supply</h3>
+          <p>Supplying dependable manpower support according to project and operational requirements.</p>
+        </div>
 
-  <section class="section">
-    <h2 class="section-title">Why Choose Us</h2>
-    <p class="section-subtitle">
-      We focus on service quality, timely response, and dependable business support.
-    </p>
-    <div class="why-grid">
-      <div class="why-card highlight">
-        <h3>Professional Approach</h3>
-        <p>We value professionalism in communication, coordination, and service delivery.</p>
-      </div>
-      <div class="why-card">
-        <h3>Timely Response</h3>
-        <p>We aim to respond quickly and support client requirements without unnecessary delay.</p>
-      </div>
-      <div class="why-card">
-        <h3>Reliable Support</h3>
-        <p>Our goal is to become a dependable support partner for ongoing and upcoming needs.</p>
-      </div>
-      <div class="why-card">
-        <h3>Quality Focus</h3>
-        <p>We emphasize organized, careful, and responsible service across every task we handle.</p>
+        <div class="card">
+          <h3>Industrial Support Services</h3>
+          <p>Providing organized support for industrial works and related business activities.</p>
+        </div>
+
+        <div class="card">
+          <h3>Project Coordination</h3>
+          <p>Helping maintain clear coordination and communication throughout project execution.</p>
+        </div>
+
+        <div class="card">
+          <h3>Documentation Support</h3>
+          <p>Assisting with documentation processes to improve structure, workflow, and readiness.</p>
+        </div>
+
+        <div class="card">
+          <h3>Equipment Support Solutions</h3>
+          <p>Supporting equipment-related requirements as part of broader operational assistance.</p>
+        </div>
+
+        <div class="card">
+          <h3>Business Assistance</h3>
+          <p>Providing responsive support for inquiries, coordination, and client communication needs.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section contact-section">
-    <h2 class="section-title">Contact Us</h2>
-    <p class="section-subtitle">
-      Reach out to us for business inquiries, support requests, and project discussions.
-    </p>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>Email</h3>
-        <p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p>
+  <section id="why-us">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us</h2>
+      <p class="section-subtitle">
+        We focus on professionalism, organized service, and dependable business support.
+      </p>
+
+      <div class="grid why-grid">
+        <div class="card feature">
+          <h3>Professional Approach</h3>
+          <p>We maintain professionalism in communication, coordination, and service delivery.</p>
+        </div>
+
+        <div class="card">
+          <h3>Dependable Coordination</h3>
+          <p>Our support is structured to help clients manage tasks and communication more effectively.</p>
+        </div>
+
+        <div class="card">
+          <h3>Client-Focused Service</h3>
+          <p>We aim to understand client needs and respond with practical, organized support.</p>
+        </div>
+
+        <div class="card">
+          <h3>Quality & Responsiveness</h3>
+          <p>We emphasize timely response, service quality, and long-term business value.</p>
+        </div>
       </div>
-      <div class="contact-card">
-        <h3>Phone 1</h3>
-        <p><a href="tel:+966539379095">+966 53 937 9095</a></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">
+        Reach out for inquiries, coordination, and project support discussions.
+      </p>
+
+      <div class="grid contact-grid">
+        <div class="card contact-card">
+          <h3>Email</h3>
+          <p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p>
+        </div>
+
+        <div class="card contact-card">
+          <h3>Phone 1</h3>
+          <p><a href="tel:+966539379095">+966 53 937 9095</a></p>
+        </div>
+
+        <div class="card contact-card">
+          <h3>Phone 2</h3>
+          <p><a href="tel:+966599027308">+966 59 902 7308</a></p>
+        </div>
+
+        <div class="card contact-card">
+          <h3>WhatsApp</h3>
+          <p><a href="https://wa.me/966599027308" target="_blank">Chat with us on WhatsApp</a></p>
+        </div>
+
+        <div class="card contact-card">
+          <h3>Office Address</h3>
+          <p>8289 Hofof St., Al Safah Dist., Jubail, Kingdom of Saudi Arabia</p>
+        </div>
       </div>
-      <div class="contact-card">
-        <h3>Phone 2</h3>
-        <p><a href="tel:+966599027308">+966 59 902 7308</a></p>
-      </div>
-      <div class="contact-card">
-        <h3>WhatsApp</h3>
-        <p><a href="https://wa.me/966599027308" target="_blank">Chat with us on WhatsApp</a></p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to Support Your Business</h2>
+        <p>
+          Green Asia LLC is ready to support your requirements with professionalism, responsiveness,
+          and dependable service. Contact us today to discuss how we can assist your project or business needs.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="mailto:info@greenasia.llc">Send Email</a>
+          <a class="btn-secondary" href="https://wa.me/966599027308" target="_blank">Start WhatsApp Chat</a>
+        </div>
       </div>
     </div>
   </section>
@@ -387,7 +543,10 @@
   <footer class="footer">
     <p><strong>Green Asia Limited Liability Company</strong></p>
     <p>Driven to Support Your Success</p>
-    <p>Email: info@greenasia.llc | Phone: +966 53 937 9095 / +966 59 902 7308</p>
+    <p>Email: info@greenasia.llc</p>
+    <p>Phone: +966 53 937 9095 / +966 59 902 7308</p>
+    <p>Office: 8289 Hofof St., Al Safah Dist., Jubail, Kingdom of Saudi Arabia</p>
   </footer>
+
 </body>
 </html>
