@@ -229,13 +229,15 @@
       justify-content:center;
       font-weight:700;
       font-size:15px;
-      transition:transform .25s ease, box-shadow .25s ease;
+      transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
     }
 
     .btn-main{
       background:#fff;
       color:#0d3426;
       box-shadow:0 12px 24px rgba(255,255,255,.12);
+      border:none;
+      cursor:pointer;
     }
 
     .btn-main:hover{ transform:translateY(-2px); }
@@ -390,7 +392,8 @@
     .logo-card,
     .gallery-card,
     .showcase-card,
-    .service-photo-card{
+    .service-photo-card,
+    .form-box{
       background:#fff;
       border:1px solid var(--line);
       border-radius:28px;
@@ -403,7 +406,8 @@
     .logo-card:hover,
     .gallery-card:hover,
     .showcase-card:hover,
-    .service-photo-card:hover{
+    .service-photo-card:hover,
+    .form-box:hover{
       transform:translateY(-6px);
       box-shadow:0 18px 34px rgba(0,0,0,.08);
     }
@@ -434,7 +438,9 @@
     .client-grid,
     .gallery-grid,
     .showcase-grid,
-    .service-photo-grid{
+    .service-photo-grid,
+    .careers-grid,
+    .form-grid{
       display:grid;
       gap:20px;
     }
@@ -444,6 +450,8 @@
     .client-grid{ grid-template-columns:repeat(6,1fr); }
     .showcase-grid{ grid-template-columns:1.08fr .92fr; }
     .service-photo-grid{ grid-template-columns:repeat(4,1fr); }
+    .careers-grid{ grid-template-columns:1fr 1fr; }
+    .form-grid{ grid-template-columns:1fr 1fr; gap:14px; }
 
     .logo-card{
       padding:20px;
@@ -468,7 +476,8 @@
       color:#334150;
     }
 
-    .featured{
+    .featured,
+    .note-box{
       background:linear-gradient(180deg, #f7fcf8, #ffffff);
       border-left:5px solid var(--green-2);
     }
@@ -593,10 +602,62 @@
       line-height:1.7;
     }
 
-    .contact-card a{
+    .contact-card a,
+    .jobs-link{
       color:var(--green);
       font-weight:700;
       word-break:break-word;
+    }
+
+    .form-box{
+      padding:24px;
+    }
+
+    .form-box h3{
+      margin:0 0 12px;
+      font-size:24px;
+      color:#103628;
+    }
+
+    .form-box p{
+      margin:0 0 18px;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:15px;
+    }
+
+    .form-grid .full{
+      grid-column:1 / -1;
+    }
+
+    .input,
+    .textarea{
+      width:100%;
+      border:1px solid #dbe4df;
+      border-radius:16px;
+      padding:14px 14px;
+      font:inherit;
+      color:var(--text);
+      background:#fbfdfb;
+      outline:none;
+    }
+
+    .input:focus,
+    .textarea:focus{
+      border-color:var(--green);
+      box-shadow:0 0 0 4px rgba(22,130,79,.08);
+    }
+
+    .textarea{
+      min-height:130px;
+      resize:vertical;
+    }
+
+    .form-actions{
+      margin-top:16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
     }
 
     .cta-panel{
@@ -663,7 +724,8 @@
     @media (max-width:1180px){
       .hero-grid,
       .about-grid,
-      .showcase-grid{
+      .showcase-grid,
+      .careers-grid{
         grid-template-columns:1fr;
       }
 
@@ -673,7 +735,8 @@
       .gallery-grid,
       .service-photo-grid,
       .trust-strip,
-      .metrics{
+      .metrics,
+      .form-grid{
         grid-template-columns:repeat(2,1fr);
       }
     }
@@ -714,11 +777,13 @@
       .client-grid,
       .service-photo-grid,
       .trust-strip,
-      .metrics{
+      .metrics,
+      .form-grid{
         grid-template-columns:1fr;
       }
 
-      .panel{ padding:24px 18px; }
+      .panel,
+      .form-box{ padding:24px 18px; }
       .brand-text h1{ font-size:18px; }
       .gallery-card img{ height:230px; }
       .showcase-card img{ min-height:260px; }
@@ -749,6 +814,7 @@
         <a href="#manpower">Manpower</a>
         <a href="#equipment">Equipment</a>
         <a href="#gallery">Gallery</a>
+        <a href="#careers">Apply for Job</a>
         <a href="#contact">Contact</a>
         <a class="cta" href="https://wa.me/966599027308" target="_blank">WhatsApp Us</a>
       </nav>
@@ -1227,6 +1293,79 @@
     </div>
   </section>
 
+  <section id="careers" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <h2>Apply for Job</h2>
+        <p>
+          Green Asia LLC welcomes job applications from skilled, semi-skilled, and professional candidates for industrial, construction, commercial, camp, transportation, catering, and support-related roles.
+        </p>
+      </div>
+
+      <div class="careers-grid">
+        <div class="form-box note-box">
+          <h3>Career Opportunities at Green Asia LLC</h3>
+          <p>
+            We are always interested in hearing from qualified candidates for manpower, industrial support, operational support, field services, and business support roles. Applicants may apply for current or future opportunities depending on project and client requirements.
+          </p>
+          <p>
+            You may send your CV directly to:
+            <br><strong><a class="jobs-link" href="mailto:jobs@greenasia.llc">jobs@greenasia.llc</a></strong>
+          </p>
+          <p>
+            You may also contact us on WhatsApp for quick application support:
+            <br><strong><a class="jobs-link" href="https://wa.me/966599027308" target="_blank">+966 59 902 7308</a></strong>
+          </p>
+          <p>
+            Common positions include civil, mechanical, piping, electrical, welding, scaffolding, coating, safety, documentation, logistics, transportation, camp services, catering, and general support roles.
+          </p>
+        </div>
+
+        <div class="form-box">
+          <h3>Quick Job Application</h3>
+          <p>
+            Fill in your basic information and then send your CV to <strong>jobs@greenasia.llc</strong>.
+          </p>
+
+          <form action="mailto:jobs@greenasia.llc" method="post" enctype="text/plain">
+            <div class="form-grid">
+              <div>
+                <input class="input" type="text" name="Full Name" placeholder="Full Name" required>
+              </div>
+              <div>
+                <input class="input" type="text" name="Nationality" placeholder="Nationality">
+              </div>
+              <div>
+                <input class="input" type="tel" name="Phone Number" placeholder="Phone Number" required>
+              </div>
+              <div>
+                <input class="input" type="email" name="Email" placeholder="Email Address" required>
+              </div>
+              <div class="full">
+                <input class="input" type="text" name="Position Applied For" placeholder="Position Applied For">
+              </div>
+              <div>
+                <input class="input" type="text" name="Current Location" placeholder="Current Location">
+              </div>
+              <div>
+                <input class="input" type="text" name="Years of Experience" placeholder="Years of Experience">
+              </div>
+              <div class="full">
+                <textarea class="textarea" name="Message" placeholder="Write your experience, skills, certificates, or any details here"></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-main">Apply by Email</button>
+              <a class="btn-alt" href="mailto:jobs@greenasia.llc">Send CV to jobs@greenasia.llc</a>
+              <a class="btn-alt" href="https://wa.me/966599027308" target="_blank">Apply on WhatsApp</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="reveal">
     <div class="container">
       <div class="section-head">
@@ -1242,16 +1381,16 @@
           <p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p>
         </div>
         <div class="card contact-card">
+          <h3>Jobs Email</h3>
+          <p><a href="mailto:jobs@greenasia.llc">jobs@greenasia.llc</a></p>
+        </div>
+        <div class="card contact-card">
           <h3>Phone Number 1</h3>
           <p><a href="tel:+966539379095">+966 53 937 9095</a></p>
         </div>
         <div class="card contact-card">
           <h3>Phone Number 2</h3>
           <p><a href="tel:+966599027308">+966 59 902 7308</a></p>
-        </div>
-        <div class="card contact-card">
-          <h3>WhatsApp</h3>
-          <p><a href="https://wa.me/966599027308" target="_blank">Chat with us directly on WhatsApp</a></p>
         </div>
       </div>
     </div>
@@ -1278,6 +1417,7 @@
     <p><strong>Green Asia Limited Liability Company</strong></p>
     <p>Driven to Support Your Success</p>
     <p>Email: info@greenasia.llc</p>
+    <p>Jobs: jobs@greenasia.llc</p>
     <p>Phone: +966 53 937 9095 / +966 59 902 7308</p>
     <p>Office: 8289 Hofof St., Al Safah Dist., Jubail, Kingdom of Saudi Arabia</p>
   </footer>
