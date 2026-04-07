@@ -14,13 +14,10 @@
 
     :root{
       --bg:#f5f7f6;
-      --bg-soft:#edf2ef;
       --white:#ffffff;
       --dark:#081a14;
-      --dark-2:#103528;
       --green:#16824f;
       --green-2:#22a565;
-      --gold:#c7a868;
       --text:#18212b;
       --muted:#62707b;
       --line:#e3e9e6;
@@ -393,7 +390,8 @@
     .gallery-card,
     .showcase-card,
     .service-photo-card,
-    .form-box{
+    .form-box,
+    .request-box{
       background:#fff;
       border:1px solid var(--line);
       border-radius:28px;
@@ -407,7 +405,8 @@
     .gallery-card:hover,
     .showcase-card:hover,
     .service-photo-card:hover,
-    .form-box:hover{
+    .form-box:hover,
+    .request-box:hover{
       transform:translateY(-6px);
       box-shadow:0 18px 34px rgba(0,0,0,.08);
     }
@@ -440,7 +439,9 @@
     .showcase-grid,
     .service-photo-grid,
     .careers-grid,
-    .form-grid{
+    .form-grid,
+    .request-grid,
+    .request-form-grid{
       display:grid;
       gap:20px;
     }
@@ -452,6 +453,8 @@
     .service-photo-grid{ grid-template-columns:repeat(4,1fr); }
     .careers-grid{ grid-template-columns:1fr 1fr; }
     .form-grid{ grid-template-columns:1fr 1fr; gap:14px; }
+    .request-grid{ grid-template-columns:1fr 1fr; }
+    .request-form-grid{ grid-template-columns:1fr 1fr; gap:14px; }
 
     .logo-card{
       padding:20px;
@@ -477,7 +480,8 @@
     }
 
     .featured,
-    .note-box{
+    .note-box,
+    .request-note{
       background:linear-gradient(180deg, #f7fcf8, #ffffff);
       border-left:5px solid var(--green-2);
     }
@@ -609,28 +613,33 @@
       word-break:break-word;
     }
 
-    .form-box{
+    .form-box,
+    .request-box{
       padding:24px;
     }
 
-    .form-box h3{
+    .form-box h3,
+    .request-box h3{
       margin:0 0 12px;
       font-size:24px;
       color:#103628;
     }
 
-    .form-box p{
+    .form-box p,
+    .request-box p{
       margin:0 0 18px;
       color:var(--muted);
       line-height:1.9;
       font-size:15px;
     }
 
-    .form-grid .full{
+    .form-grid .full,
+    .request-form-grid .full{
       grid-column:1 / -1;
     }
 
     .input,
+    .select,
     .textarea{
       width:100%;
       border:1px solid #dbe4df;
@@ -643,6 +652,7 @@
     }
 
     .input:focus,
+    .select:focus,
     .textarea:focus{
       border-color:var(--green);
       box-shadow:0 0 0 4px rgba(22,130,79,.08);
@@ -653,7 +663,8 @@
       resize:vertical;
     }
 
-    .form-actions{
+    .form-actions,
+    .request-actions{
       margin-top:16px;
       display:flex;
       flex-wrap:wrap;
@@ -725,7 +736,8 @@
       .hero-grid,
       .about-grid,
       .showcase-grid,
-      .careers-grid{
+      .careers-grid,
+      .request-grid{
         grid-template-columns:1fr;
       }
 
@@ -736,7 +748,8 @@
       .service-photo-grid,
       .trust-strip,
       .metrics,
-      .form-grid{
+      .form-grid,
+      .request-form-grid{
         grid-template-columns:repeat(2,1fr);
       }
     }
@@ -778,12 +791,14 @@
       .service-photo-grid,
       .trust-strip,
       .metrics,
-      .form-grid{
+      .form-grid,
+      .request-form-grid{
         grid-template-columns:1fr;
       }
 
       .panel,
-      .form-box{ padding:24px 18px; }
+      .form-box,
+      .request-box{ padding:24px 18px; }
       .brand-text h1{ font-size:18px; }
       .gallery-card img{ height:230px; }
       .showcase-card img{ min-height:260px; }
@@ -815,6 +830,7 @@
         <a href="#equipment">Equipment</a>
         <a href="#gallery">Gallery</a>
         <a href="#careers">Apply for Job</a>
+        <a href="#service-request">Request Service</a>
         <a href="#contact">Contact</a>
         <a class="cta" href="https://wa.me/966599027308" target="_blank">WhatsApp Us</a>
       </nav>
@@ -1366,6 +1382,93 @@
     </div>
   </section>
 
+  <section id="service-request" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <h2>Request a Service</h2>
+        <p>
+          Green Asia LLC supports manpower supply, equipment support, transportation, camp services, catering, real estate support, industrial assistance, and project coordination across Saudi Arabia.
+        </p>
+      </div>
+
+      <div class="request-grid">
+        <div class="request-box request-note">
+          <h3>Business Service Request</h3>
+          <p>
+            Clients may contact Green Asia LLC for manpower requirements, equipment-related support, transportation services, camp setup and accommodation support, catering, real estate-related assistance, and other project or business support needs.
+          </p>
+          <p>
+            Service request email:
+            <br><strong><a class="jobs-link" href="mailto:services@greenasia.llc">services@greenasia.llc</a></strong>
+          </p>
+          <p>
+            Quick WhatsApp support:
+            <br><strong><a class="jobs-link" href="https://wa.me/966599027308" target="_blank">+966 59 902 7308</a></strong>
+          </p>
+          <p>
+            Common request types include workforce supply, project support, transport, camp operations, food services, equipment coordination, and facility-related support.
+          </p>
+        </div>
+
+        <div class="request-box">
+          <h3>Quick Service Request</h3>
+          <p>
+            Fill in your requirement details and send your request directly to <strong>services@greenasia.llc</strong>.
+          </p>
+
+          <form action="mailto:services@greenasia.llc" method="post" enctype="text/plain">
+            <div class="request-form-grid">
+              <div>
+                <input class="input" type="text" name="Company Name" placeholder="Company Name" required>
+              </div>
+              <div>
+                <input class="input" type="text" name="Contact Person" placeholder="Contact Person" required>
+              </div>
+              <div>
+                <input class="input" type="tel" name="Phone Number" placeholder="Phone Number" required>
+              </div>
+              <div>
+                <input class="input" type="email" name="Email" placeholder="Email Address" required>
+              </div>
+              <div>
+                <select class="select" name="Service Required">
+                  <option value="">Select Service Required</option>
+                  <option>Manpower Supply</option>
+                  <option>Equipment Support</option>
+                  <option>Transportation Service</option>
+                  <option>Camp Services</option>
+                  <option>Catering Services</option>
+                  <option>Real Estate Support</option>
+                  <option>Industrial Support</option>
+                  <option>Project Coordination</option>
+                  <option>Documentation Support</option>
+                </select>
+              </div>
+              <div>
+                <input class="input" type="text" name="Project Location" placeholder="Project Location">
+              </div>
+              <div>
+                <input class="input" type="text" name="Required Duration" placeholder="Required Duration">
+              </div>
+              <div>
+                <input class="input" type="text" name="Manpower or Equipment Needed" placeholder="Manpower / Equipment Needed">
+              </div>
+              <div class="full">
+                <textarea class="textarea" name="Requirement Details" placeholder="Write your requirement details here"></textarea>
+              </div>
+            </div>
+
+            <div class="request-actions">
+              <button type="submit" class="btn-main">Send Service Request</button>
+              <a class="btn-alt" href="mailto:services@greenasia.llc">Email services@greenasia.llc</a>
+              <a class="btn-alt" href="https://wa.me/966599027308" target="_blank">Request on WhatsApp</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="reveal">
     <div class="container">
       <div class="section-head">
@@ -1377,7 +1480,7 @@
 
       <div class="grid-4">
         <div class="card contact-card">
-          <h3>Email Address</h3>
+          <h3>General Email</h3>
           <p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p>
         </div>
         <div class="card contact-card">
@@ -1385,12 +1488,12 @@
           <p><a href="mailto:jobs@greenasia.llc">jobs@greenasia.llc</a></p>
         </div>
         <div class="card contact-card">
-          <h3>Phone Number 1</h3>
-          <p><a href="tel:+966539379095">+966 53 937 9095</a></p>
+          <h3>Service Request Email</h3>
+          <p><a href="mailto:services@greenasia.llc">services@greenasia.llc</a></p>
         </div>
         <div class="card contact-card">
-          <h3>Phone Number 2</h3>
-          <p><a href="tel:+966599027308">+966 59 902 7308</a></p>
+          <h3>WhatsApp</h3>
+          <p><a href="https://wa.me/966599027308" target="_blank">+966 59 902 7308</a></p>
         </div>
       </div>
     </div>
@@ -1418,6 +1521,7 @@
     <p>Driven to Support Your Success</p>
     <p>Email: info@greenasia.llc</p>
     <p>Jobs: jobs@greenasia.llc</p>
+    <p>Services: services@greenasia.llc</p>
     <p>Phone: +966 53 937 9095 / +966 59 902 7308</p>
     <p>Office: 8289 Hofof St., Al Safah Dist., Jubail, Kingdom of Saudi Arabia</p>
   </footer>
