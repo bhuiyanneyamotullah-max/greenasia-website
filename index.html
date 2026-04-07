@@ -6,26 +6,26 @@
   <title>Green Asia Limited Liability Company</title>
   <meta
     name="description"
-    content="Green Asia Limited Liability Company provides skilled manpower supply, industrial support, project coordination, equipment support, and documentation services across Saudi Arabia."
+    content="Green Asia Limited Liability Company provides manpower supply, engineering support, procurement assistance, industrial services, construction support, real estate services, and project coordination across Saudi Arabia."
   />
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
     :root{
-      --bg:#0a1411;
-      --bg-2:#0f1f19;
-      --card:#ffffff;
-      --card-soft:#f7f8f7;
-      --line:#e4e9e6;
-      --text:#18212b;
-      --muted:#61707b;
-      --green:#16824f;
-      --green-2:#21a364;
-      --green-dark:#0d3426;
-      --gold:#c9a96a;
+      --bg:#f6f8f7;
       --white:#ffffff;
-      --shadow:0 18px 40px rgba(0,0,0,.10);
+      --dark:#081b14;
+      --dark-2:#0c2b20;
+      --green:#137a4b;
+      --green-2:#1fa05f;
+      --green-3:#0f5b38;
+      --gold:#c7a562;
+      --text:#18212b;
+      --muted:#61707c;
+      --line:#e3e9e5;
+      --soft:#eef5f1;
+      --shadow:0 18px 40px rgba(0,0,0,.08);
       --shadow-soft:0 10px 24px rgba(0,0,0,.05);
       --radius:26px;
       --max:1280px;
@@ -36,8 +36,9 @@
       font-family:Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(33,163,100,.10), transparent 22%),
-        linear-gradient(180deg, #f5f7f6 0%, #edf2ef 100%);
+        radial-gradient(circle at top left, rgba(31,160,95,.09), transparent 22%),
+        radial-gradient(circle at top right, rgba(19,122,75,.08), transparent 18%),
+        linear-gradient(180deg, #f7f9f8 0%, #eef3f0 100%);
     }
 
     a{ text-decoration:none; color:inherit; }
@@ -54,11 +55,11 @@
       z-index:999;
       background:rgba(255,255,255,.88);
       backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(228,233,230,.9);
+      border-bottom:1px solid rgba(227,233,229,.95);
     }
 
     .topbar-inner{
-      min-height:82px;
+      min-height:84px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -88,7 +89,7 @@
       margin:0;
       font-size:20px;
       line-height:1.2;
-      color:var(--green-dark);
+      color:var(--green-3);
     }
 
     .brand-text p{
@@ -116,7 +117,7 @@
       border-radius:999px;
       color:#fff;
       background:linear-gradient(135deg, var(--green), var(--green-2));
-      box-shadow:0 12px 24px rgba(22,130,79,.22);
+      box-shadow:0 12px 24px rgba(19,122,75,.22);
     }
 
     section{ padding:56px 0; }
@@ -125,33 +126,33 @@
       padding-top:28px;
     }
 
-    .hero-shell{
+    .hero-wrap{
       position:relative;
       overflow:hidden;
-      border-radius:36px;
+      border-radius:38px;
       background:
-        linear-gradient(135deg, rgba(8,20,17,.98), rgba(15,31,25,.96) 48%, rgba(13,52,38,.95)),
-        var(--bg);
+        linear-gradient(135deg, rgba(8,27,20,.99), rgba(12,43,32,.97) 48%, rgba(15,91,56,.95)),
+        var(--dark);
       color:#fff;
       box-shadow:0 30px 65px rgba(0,0,0,.18);
     }
 
-    .hero-shell::before,
-    .hero-shell::after{
+    .hero-wrap::before,
+    .hero-wrap::after{
       content:"";
       position:absolute;
       border-radius:50%;
       background:rgba(255,255,255,.05);
     }
 
-    .hero-shell::before{
+    .hero-wrap::before{
       width:340px;
       height:340px;
       right:-120px;
       top:-120px;
     }
 
-    .hero-shell::after{
+    .hero-wrap::after{
       width:260px;
       height:260px;
       left:-80px;
@@ -162,10 +163,10 @@
       position:relative;
       z-index:1;
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.08fr .92fr;
       gap:34px;
       align-items:center;
-      padding:64px 50px;
+      padding:66px 50px;
     }
 
     .eyebrow{
@@ -233,7 +234,7 @@
 
     .btn-main{
       background:#fff;
-      color:var(--green-dark);
+      color:var(--green-3);
       box-shadow:0 12px 24px rgba(255,255,255,.12);
     }
 
@@ -626,9 +627,12 @@
 
       <nav class="nav">
         <a href="#about">About</a>
+        <a href="#why-choose-us">Why Us</a>
+        <a href="#mission-vision-values">Mission</a>
         <a href="#services">Services</a>
-        <a href="#clients">Clients</a>
+        <a href="#industries">Industries</a>
         <a href="#projects">Projects</a>
+        <a href="#clients">Clients</a>
         <a href="#manpower">Manpower</a>
         <a href="#equipment">Equipment</a>
         <a href="#gallery">Gallery</a>
@@ -643,15 +647,16 @@
       <div class="hero-wrap">
         <div class="hero-grid">
           <div>
-            <span class="eyebrow">Saudi Arabia Based Industrial Support Company</span>
+            <span class="eyebrow">Saudi Arabia Based Industrial, Construction & Property Support Company</span>
             <img class="hero-logo" src="logo.png" alt="Green Asia LLC Logo">
-            <h2>Luxury-Grade Industrial Support for Modern Projects</h2>
+            <h2>Professional Manpower, Engineering & Project Support Solutions</h2>
             <div class="tagline">Driven to Support Your Success</div>
             <p class="desc">
               Green Asia Limited Liability Company provides dependable manpower supply, industrial support services,
-              project coordination, equipment support, and documentation assistance for contractors, industrial clients,
-              subcontractors, and project-based organizations across Saudi Arabia. We focus on reliability, fast response,
-              and professional business support that helps projects move forward with confidence.
+              engineering assistance, procurement support, project coordination, construction-related solutions,
+              real estate services, and business support for contractors, industrial clients, commercial operations,
+              and project-based organizations across Saudi Arabia. Our goal is to deliver practical, organized,
+              and responsive support that helps clients execute projects and operations with confidence.
             </p>
             <div class="hero-actions">
               <a class="btn-main" href="mailto:info@greenasia.llc">Email Us Now</a>
@@ -662,16 +667,23 @@
           <div class="hero-side">
             <div class="glass-card">
               <h3>What We Deliver</h3>
-              <p>Skilled manpower supply, field workforce deployment, project support, industrial assistance, equipment support, and organized coordination for operational continuity.</p>
+              <p>
+                Skilled manpower supply, industrial assistance, engineering support, procurement coordination,
+                project management support, documentation handling, equipment support, construction services,
+                and real estate-related solutions.
+              </p>
             </div>
             <div class="glass-card">
               <h3>Where We Add Value</h3>
-              <p>Oil & gas, industrial plants, construction sites, maintenance shutdowns, utilities, infrastructure projects, piping works, and project execution environments.</p>
+              <p>
+                Oil & gas, industrial plants, commercial and residential construction, utilities, maintenance shutdowns,
+                project execution environments, pipeline activities, infrastructure works, and real estate development support.
+              </p>
             </div>
             <div class="metrics">
-              <div class="metric"><strong>100+</strong><span>workforce categories</span></div>
-              <div class="metric"><strong>12+</strong><span>client references</span></div>
-              <div class="metric"><strong>24/7</strong><span>support mindset</span></div>
+              <div class="metric"><strong>300+</strong><span>manpower categories available</span></div>
+              <div class="metric"><strong>12+</strong><span>major client and network references</span></div>
+              <div class="metric"><strong>24/7</strong><span>responsive support mindset</span></div>
             </div>
           </div>
         </div>
@@ -679,8 +691,8 @@
 
       <div class="trust-strip">
         <div class="trust"><strong>Professional</strong><span>business-focused coordination and communication</span></div>
-        <div class="trust"><strong>Reliable</strong><span>dependable manpower and support response</span></div>
-        <div class="trust"><strong>Flexible</strong><span>support across varied industrial disciplines</span></div>
+        <div class="trust"><strong>Reliable</strong><span>dependable workforce and support delivery</span></div>
+        <div class="trust"><strong>Flexible</strong><span>wide service capability across sectors</span></div>
         <div class="trust"><strong>Responsive</strong><span>fast follow-up for active requirements</span></div>
       </div>
     </div>
@@ -689,34 +701,111 @@
   <section id="about">
     <div class="container">
       <div class="section-head">
-        <h2>About Green Asia</h2>
-        <p>A dependable support partner for industrial businesses, contractors, subcontractors, and project teams operating across Saudi Arabia.</p>
+        <h2>Company Overview</h2>
+        <p>
+          A dependable support partner for industrial businesses, contractors, subcontractors, commercial operations, and project teams operating across Saudi Arabia.
+        </p>
       </div>
 
       <div class="panel">
         <div class="about-grid">
           <div class="about-copy">
-            Green Asia Limited Liability Company is committed to providing professional manpower and industrial support solutions
-            tailored to the needs of project-based and operational clients. We help businesses with manpower deployment, project
-            coordination, documentation services, equipment support, and industrial assistance to keep operations efficient and
-            project workflows organized. Our business approach is based on service quality, professionalism, structured communication,
-            dependable follow-up, and long-term relationship building.
+            Green Asia Limited Liability Company is a Saudi Arabia-based business dedicated to supporting industrial,
+            commercial, construction, and real estate-related operations through reliable manpower solutions, engineering support,
+            procurement assistance, project coordination services, and professional business support. Our company is built on
+            professionalism, service quality, timely response, organized communication, and long-term client relationships.
+            We aim to support clients by providing practical, dependable, and flexible solutions that help improve operational
+            continuity, project execution, workforce readiness, and business efficiency. With a commitment to service excellence
+            and a strong understanding of project environments, Green Asia LLC works to become a trusted support partner for
+            contractors, industrial clients, developers, and business organizations across the Kingdom.
           </div>
 
           <div class="mini-stack">
             <div class="mini-card">
               <h3>Industry Coverage</h3>
-              <p>Oil & gas, industrial plants, construction sites, utilities, infrastructure works, shutdown support, and maintenance operations.</p>
+              <p>Oil & gas, industrial plants, construction projects, commercial operations, residential developments, utilities, infrastructure, shutdown works, and maintenance environments.</p>
             </div>
             <div class="mini-card">
               <h3>Operational Focus</h3>
-              <p>Manpower supply, project support, equipment solutions, documentation handling, and site-related coordination services.</p>
+              <p>Manpower supply, engineering assistance, procurement support, project coordination, equipment support, documentation handling, and real estate-related services.</p>
             </div>
             <div class="mini-card">
               <h3>Business Value</h3>
-              <p>Timely response, organized coordination, workforce flexibility, service professionalism, and dependable client support.</p>
+              <p>We support clients through responsiveness, workforce flexibility, practical solutions, organized follow-up, and a strong commitment to service professionalism.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-choose-us">
+    <div class="container">
+      <div class="section-head">
+        <h2>Why Choose Us</h2>
+        <p>
+          We focus on trust, capability, professional coordination, and service quality to support clients with confidence.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card featured">
+          <h3>Skilled & Reliable Workforce</h3>
+          <p>We provide manpower solutions that support productivity, operational continuity, and project efficiency across multiple disciplines and work environments.</p>
+        </div>
+        <div class="card">
+          <h3>Professional Project Support</h3>
+          <p>Our team is committed to supporting clients with responsive coordination, organized follow-up, and dependable assistance for project-related requirements.</p>
+        </div>
+        <div class="card">
+          <h3>Quality-Focused Service</h3>
+          <p>We emphasize professionalism, reliability, and service consistency in order to support clients with confidence and long-term value.</p>
+        </div>
+        <div class="card">
+          <h3>Strong Documentation & Coordination</h3>
+          <p>We understand the importance of communication, documentation, and structured support in maintaining smooth business and project execution.</p>
+        </div>
+        <div class="card">
+          <h3>Flexible Support Solutions</h3>
+          <p>From manpower and engineering support to procurement and project coordination, we provide flexible services tailored to operational needs.</p>
+        </div>
+        <div class="card">
+          <h3>Client-Centered Approach</h3>
+          <p>We value professional relationships and work to support each client with timely response, practical solutions, and dependable service.</p>
+        </div>
+        <div class="card">
+          <h3>Wide Service Capability</h3>
+          <p>Our service scope covers industrial support, construction assistance, equipment support, property services, and project-based business solutions.</p>
+        </div>
+        <div class="card">
+          <h3>300+ Categories Available</h3>
+          <p>We can support a wide range of technical, supervisory, QA/QC, safety, administrative, and operational categories based on project requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mission-vision-values">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Mission, Vision & Values</h2>
+        <p>
+          The principles that guide our service approach, business direction, and commitment to client support.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card featured">
+          <h3>Our Mission</h3>
+          <p>To deliver dependable manpower, engineering support, procurement assistance, construction solutions, real estate services, and project coordination support that help clients achieve operational and project success efficiently and professionally.</p>
+        </div>
+        <div class="card">
+          <h3>Our Vision</h3>
+          <p>To become a trusted and recognized support partner in Saudi Arabia for manpower supply, industrial services, construction support, engineering assistance, project coordination, and business solutions.</p>
+        </div>
+        <div class="card">
+          <h3>Our Values</h3>
+          <p>Integrity, professionalism, quality, commitment, reliability, safety awareness, teamwork, accountability, and client satisfaction are central to how we operate and serve.</p>
         </div>
       </div>
     </div>
@@ -726,18 +815,72 @@
     <div class="container">
       <div class="section-head">
         <h2>Our Services</h2>
-        <p>Practical and professional service support designed for industrial, construction, maintenance, and project-based operations.</p>
+        <p>
+          A broad range of support solutions designed for industrial, commercial, construction, project-based, and real estate-related requirements.
+        </p>
       </div>
 
       <div class="grid-4">
         <div class="card"><h3>Skilled Manpower Supply</h3><p>Providing dependable workforce solutions based on project requirements, operational demands, and client expectations.</p></div>
         <div class="card"><h3>Industrial Support Services</h3><p>Supporting industrial works and field activities with organized assistance, practical response, and reliable coordination.</p></div>
-        <div class="card"><h3>Project Coordination</h3><p>Helping maintain follow-up, communication flow, and support coordination for smoother project execution and continuity.</p></div>
-        <div class="card"><h3>Documentation Support</h3><p>Assisting with documentation requirements and related processes for better organization, readiness, and workflow support.</p></div>
-        <div class="card"><h3>Equipment Support Solutions</h3><p>Supporting site and project equipment-related requirements as part of wider industrial and operational support services.</p></div>
-        <div class="card"><h3>Business Assistance</h3><p>Providing support for inquiries, coordination, client communications, and day-to-day business requirements.</p></div>
-        <div class="card"><h3>Shutdown & Maintenance Support</h3><p>Helping clients meet maintenance and shutdown needs through responsive workforce supply and organized execution support.</p></div>
-        <div class="card"><h3>Field Workforce Support</h3><p>Supplying site-level support across civil, mechanical, piping, electrical, structural, safety, QA/QC, and related disciplines.</p></div>
+        <div class="card"><h3>Engineering Services</h3><p>Professional support for engineering-related requirements, technical coordination, and project execution assistance.</p></div>
+        <div class="card"><h3>Project Management Support</h3><p>Helping clients maintain workflow continuity, communication, coordination, and organized support throughout project activities.</p></div>
+        <div class="card"><h3>Engineering Modifications</h3><p>Assistance for engineering modifications and adjustment requirements within industrial, construction, and project-based environments.</p></div>
+        <div class="card"><h3>Documentation Support</h3><p>Professional support in handling documentation requirements to improve organization, readiness, and workflow efficiency.</p></div>
+        <div class="card"><h3>Procurement Support</h3><p>Assistance in supporting procurement-related requirements and material or equipment coordination needs.</p></div>
+        <div class="card"><h3>Equipment Support Solutions</h3><p>Support for site and project-related equipment requirements as part of broader operational and industrial assistance.</p></div>
+        <div class="card"><h3>Residential Construction</h3><p>Support solutions for residential building projects with a commitment to organized execution, workforce support, and quality-focused service.</p></div>
+        <div class="card"><h3>Commercial Construction</h3><p>Professional support for commercial construction requirements, including workforce solutions, coordination, and operational assistance.</p></div>
+        <div class="card"><h3>Renovation & Remodeling</h3><p>Support for renovation and remodeling projects through manpower solutions, coordination assistance, and practical project support.</p></div>
+        <div class="card"><h3>Design & Build Solutions</h3><p>Integrated support solutions that help clients manage design coordination, construction assistance, and project execution needs.</p></div>
+        <div class="card"><h3>Maintenance & Shutdown Support</h3><p>Workforce and support solutions for shutdown activities, maintenance requirements, and operational continuity.</p></div>
+        <div class="card"><h3>Project Coordination Support</h3><p>Practical assistance for communication, follow-up, reporting, and coordination to help keep project activities aligned.</p></div>
+        <div class="card"><h3>Real Estate Services</h3><p>Support for property-related opportunities including residential, commercial, and investment-oriented real estate coordination and assistance.</p></div>
+        <div class="card"><h3>Property Support Services</h3><p>Property management support, property sourcing assistance, real estate coordination, and property renovation-related support solutions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="industries">
+    <div class="container">
+      <div class="section-head">
+        <h2>Industries We Serve</h2>
+        <p>
+          Green Asia LLC supports a wide range of industries and project environments by providing manpower, engineering, procurement, and coordination solutions tailored to client requirements.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card"><h3>Oil & Gas</h3><p>Support for energy-related and industrial operations requiring dependable manpower and project assistance.</p></div>
+        <div class="card"><h3>Industrial Plants</h3><p>Support services for plant operations, maintenance environments, and process-oriented industrial facilities.</p></div>
+        <div class="card"><h3>Construction Projects</h3><p>Support for civil, structural, commercial, and contractor-based construction requirements.</p></div>
+        <div class="card"><h3>Commercial Buildings</h3><p>Operational and project support for commercial developments and property-related activities.</p></div>
+        <div class="card"><h3>Residential Projects</h3><p>Support for housing developments, renovations, and residential property-related requirements.</p></div>
+        <div class="card"><h3>Utilities & Infrastructure</h3><p>Support services for utility systems, infrastructure works, and public or private project environments.</p></div>
+        <div class="card"><h3>Maintenance & Shutdown Operations</h3><p>Responsive workforce and support solutions for shutdown, turnaround, and maintenance activities.</p></div>
+        <div class="card"><h3>Real Estate Development</h3><p>Support for property development, renovation, commercial property, and residential property coordination.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Projects We Support</h2>
+        <p>
+          Green Asia LLC supports a wide variety of project environments across Saudi Arabia through manpower, engineering, procurement, coordination, and operational support services.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card featured"><h3>Industrial Projects</h3><p>Support for plant-based and industrial operations that require workforce, coordination, and practical service assistance.</p></div>
+        <div class="card"><h3>Construction Projects</h3><p>Support for civil, structural, commercial, and project-based construction environments.</p></div>
+        <div class="card"><h3>Pipeline & Mechanical Projects</h3><p>Support for projects involving piping, welding, fabrication, and mechanical execution activities.</p></div>
+        <div class="card"><h3>Commercial Developments</h3><p>Assistance for commercial construction and development-related support needs.</p></div>
+        <div class="card"><h3>Residential Developments</h3><p>Support for residential property construction, renovation, and development requirements.</p></div>
+        <div class="card"><h3>Renovation Projects</h3><p>Support for improvement, remodeling, and facility enhancement projects.</p></div>
+        <div class="card"><h3>Shutdown & Maintenance Projects</h3><p>Workforce and support services for shutdown, turnaround, and maintenance-related operations.</p></div>
+        <div class="card"><h3>Real Estate Development Projects</h3><p>Support for property development, renovation, coordination, and related real estate activity requirements.</p></div>
       </div>
     </div>
   </section>
@@ -746,7 +889,9 @@
     <div class="container">
       <div class="section-head">
         <h2>Clients & Business Network</h2>
-        <p>Green Asia LLC works to support recognized contractors, industrial companies, project teams, and major business networks across Saudi Arabia.</p>
+        <p>
+          Green Asia LLC works to support recognized contractors, industrial companies, project teams, and business networks across Saudi Arabia.
+        </p>
       </div>
 
       <div class="client-grid">
@@ -766,49 +911,190 @@
     </div>
   </section>
 
-  <section id="projects">
-    <div class="container">
-      <div class="section-head">
-        <h2>Projects We Support</h2>
-        <p>Supporting industrial, oil & gas, construction, pipeline, utility, maintenance, and infrastructure-related operations across Saudi Arabia.</p>
-      </div>
-
-      <div class="grid-4">
-        <div class="card featured"><h3>Oil & Gas Support Projects</h3><p>Support solutions for industrial plants, process facilities, production environments, and energy-related operations requiring dependable manpower and organized coordination.</p></div>
-        <div class="card"><h3>Construction & Industrial Projects</h3><p>Providing manpower and site support for industrial construction, structural works, contractor activities, and field execution requirements.</p></div>
-        <div class="card"><h3>Pipeline & Mechanical Works</h3><p>Assisting with pipeline installation, welding activities, fit-up work, fabrication, and mechanical site support for project environments.</p></div>
-        <div class="card"><h3>Maintenance & Shutdown Works</h3><p>Helping clients meet shutdown and maintenance needs through responsive workforce support and reliable project coordination.</p></div>
-      </div>
-    </div>
-  </section>
-
   <section id="manpower">
     <div class="container">
       <div class="section-head">
-        <h2>Available Manpower Categories</h2>
-        <p>Green Asia LLC can support a broad range of manpower categories across civil, scaffolding, mechanical, electrical, piping, safety, welding, painting, instrumentation, HVAC, tank, structural, administration, and operational support.</p>
+        <h2>300+ Manpower Categories Available</h2>
+        <p>
+          Green Asia LLC can support a broad range of manpower categories across civil, scaffolding, mechanical, electrical, piping, welding, painting, instrumentation, HVAC, tank, structural, QA/QC, safety, administration, logistics, and site support disciplines.
+        </p>
       </div>
 
       <div class="grid-3">
         <div class="card">
           <h3>Civil & General Construction</h3>
           <ul class="manpower-list">
-            <li>Helper</li><li>Carpenter</li><li>Steel Fixer</li><li>Tiles Mason</li><li>Concrete Mason</li><li>Block Mason</li><li>Plaster Mason</li><li>Carpenter Foreman</li><li>Steel Fixer Foreman</li><li>Plumber</li><li>Plumber Foreman</li><li>Civil QCI</li><li>Civil QCI (Aramco)</li><li>Civil Engineer</li><li>Civil Engineer (Aramco)</li><li>Civil Foreman</li><li>Civil Supervisor</li><li>Land Surveyor</li>
+            <li>Helper</li>
+            <li>Carpenter</li>
+            <li>Steel Fixer</li>
+            <li>Tiles Mason</li>
+            <li>Concrete Mason</li>
+            <li>Block Mason</li>
+            <li>Plaster Mason</li>
+            <li>Carpenter Foreman</li>
+            <li>Steel Fixer Foreman</li>
+            <li>Plumber</li>
+            <li>Plumber Foreman</li>
+            <li>Civil QCI</li>
+            <li>Civil QCI (Aramco)</li>
+            <li>Civil Engineer</li>
+            <li>Civil Engineer (Aramco)</li>
+            <li>Civil Foreman</li>
+            <li>Civil Supervisor</li>
+            <li>Land Surveyor</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Scaffolding & Access</h3>
           <ul class="manpower-list">
-            <li>Scaffolder</li><li>Scaffolding Foreman</li><li>Scaffolding Inspector</li><li>Scaffolding Inspector (Aramco)</li><li>Scaffolding Supervisor</li><li>Scaffolding Supervisor (Aramco)</li>
+            <li>Scaffolder</li>
+            <li>Scaffolding Foreman</li>
+            <li>Scaffolding Inspector</li>
+            <li>Scaffolding Inspector (Aramco)</li>
+            <li>Scaffolding Supervisor</li>
+            <li>Scaffolding Supervisor (Aramco)</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Mechanical & HVAC</h3>
           <ul class="manpower-list">
-            <li>Mechanical Fitter</li><li>Mechanical Technician</li><li>Mechanical Foreman</li><li>Mechanical Supervisor</li><li>Mechanical Engineer</li><li>Mechanical Engineer (Aramco)</li><li>Mechanical QCI</li><li>Mechanical QCI (Aramco)</li><li>HVAC Technician</li><li>HVAC Foreman</li><li>HVAC Supervisor</li><li>Millwright</li><li>Hydro Supervisor</li>
+            <li>Mechanical Fitter</li>
+            <li>Mechanical Technician</li>
+            <li>Mechanical Foreman</li>
+            <li>Mechanical Supervisor</li>
+            <li>Mechanical Engineer</li>
+            <li>Mechanical Engineer (Aramco)</li>
+            <li>Mechanical QCI</li>
+            <li>Mechanical QCI (Aramco)</li>
+            <li>HVAC Technician</li>
+            <li>HVAC Foreman</li>
+            <li>HVAC Supervisor</li>
+            <li>Millwright</li>
+            <li>Hydro Supervisor</li>
           </ul>
+        </div>
+
+        <div class="card">
+          <h3>Electrical & Instrumentation</h3>
+          <ul class="manpower-list">
+            <li>Electrician</li>
+            <li>Electrical Technician</li>
+            <li>Electrical Foreman</li>
+            <li>Electrical Supervisor</li>
+            <li>Electrical QCI</li>
+            <li>Electrical QCI (Aramco)</li>
+            <li>Instrument Technician</li>
+            <li>Instrument Foreman</li>
+            <li>Instrument Supervisor</li>
+            <li>Tube Fitter</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Piping & Welding</h3>
+          <ul class="manpower-list">
+            <li>Pipe Fitter</li>
+            <li>Pipe Fabricator</li>
+            <li>Piping Foreman</li>
+            <li>Piping Supervisor</li>
+            <li>Piping Engineer</li>
+            <li>Piping QCI</li>
+            <li>Piping QCI (Aramco)</li>
+            <li>Welder 3G/4G</li>
+            <li>6G Welder</li>
+            <li>Multi Welder</li>
+            <li>Alloy Welder</li>
+            <li>Welding Foreman</li>
+            <li>Welding Supervisor</li>
+            <li>Welding QCI</li>
+            <li>Welding QCI (Aramco)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Painting, Coating & Insulation</h3>
+          <ul class="manpower-list">
+            <li>Roller Painter</li>
+            <li>Touch Up Painter</li>
+            <li>Spray Painter</li>
+            <li>Painting Foreman</li>
+            <li>Painting Supervisor</li>
+            <li>Painting Supervisor (Aramco)</li>
+            <li>Painting/Coating QCI</li>
+            <li>Painting/Coating QCI (Aramco)</li>
+            <li>Insulator</li>
+            <li>Cladder</li>
+            <li>Insulator Foreman</li>
+            <li>Cladding Foreman</li>
+            <li>Insulator Supervisor</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Structural, Tank & Ducting</h3>
+          <ul class="manpower-list">
+            <li>Steel Erector</li>
+            <li>Structural Fitter</li>
+            <li>Structural Fabricator</li>
+            <li>Structural Foreman</li>
+            <li>Structural Supervisor</li>
+            <li>Tank Fitter</li>
+            <li>Tank Fabricator</li>
+            <li>Tank Foreman</li>
+            <li>Tank Supervisor</li>
+            <li>Duct Fitter</li>
+            <li>Duct Fabricator</li>
+            <li>Duct Foreman</li>
+            <li>Duct Supervisor</li>
+            <li>Grinder Man</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Safety, QA/QC & Specialized Control</h3>
+          <ul class="manpower-list">
+            <li>Safety Officer</li>
+            <li>Safety Officer (Aramco)</li>
+            <li>Safety Supervisor</li>
+            <li>Safety Supervisor (Aramco)</li>
+            <li>NDT Coordinator</li>
+            <li>WPR</li>
+            <li>WPR (Aramco)</li>
+            <li>Rigger I (Aramco)</li>
+            <li>Rigger II (Aramco)</li>
+            <li>Rigger III (Aramco)</li>
+            <li>Fire Watcher</li>
+            <li>Flag Man</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Administration, Logistics & Site Support</h3>
+          <ul class="manpower-list">
+            <li>Material Controller</li>
+            <li>Document Controller</li>
+            <li>Time Keeper</li>
+            <li>Store Keeper</li>
+            <li>Male Nurse</li>
+            <li>Office Cleaner</li>
+            <li>Office Boy</li>
+            <li>Light Driver</li>
+            <li>Heavy Driver</li>
+            <li>Forklift Operator</li>
+            <li>Manlift Operator</li>
+            <li>Boom Truck Operator</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;" class="panel">
+        <div class="about-copy">
+          And many more specialized manpower categories are available upon request, including Aramco-certified,
+          supervisory, engineering, inspection, technical, safety, operational, and project-support roles.
+          Green Asia LLC is committed to supporting workforce requirements with flexibility, professionalism,
+          and responsiveness based on client needs.
         </div>
       </div>
     </div>
@@ -818,7 +1104,9 @@
     <div class="container">
       <div class="section-head">
         <h2>Related Equipment Support</h2>
-        <p>In addition to manpower supply, Green Asia LLC can assist with site-related equipment support solutions depending on project scope and operational requirements.</p>
+        <p>
+          In addition to manpower supply, Green Asia LLC can support project and operational requirements through equipment-related support solutions depending on project scope and client needs.
+        </p>
       </div>
 
       <div class="grid-3">
@@ -832,16 +1120,18 @@
             <li>Access Platform Support</li>
           </ul>
         </div>
+
         <div class="card">
-          <h3>Construction & Field Support Equipment</h3>
+          <h3>Site & Operational Support Equipment</h3>
           <ul class="manpower-list">
             <li>Material Handling Support</li>
             <li>Site Transportation Support</li>
-            <li>Pipeline Work Support Equipment</li>
             <li>Fabrication Area Support</li>
             <li>Mechanical Worksite Support</li>
+            <li>Pipeline Work Support</li>
           </ul>
         </div>
+
         <div class="card">
           <h3>Project Support Solutions</h3>
           <ul class="manpower-list">
@@ -860,7 +1150,9 @@
     <div class="container">
       <div class="section-head">
         <h2>Project Gallery</h2>
-        <p>A glimpse of industrial environments, construction support activities, field manpower presence, and project operations.</p>
+        <p>
+          A visual glimpse of industrial environments, construction support activities, field workforce presence, and project operations.
+        </p>
       </div>
 
       <div class="gallery-grid">
@@ -896,14 +1188,28 @@
     <div class="container">
       <div class="section-head">
         <h2>Contact Us</h2>
-        <p>Reach out to Green Asia LLC for manpower support, business inquiries, project coordination, industrial assistance, and equipment-related requirements.</p>
+        <p>
+          Reach out to Green Asia LLC for manpower support, business inquiries, engineering assistance, procurement support, project coordination, industrial services, real estate services, and equipment-related requirements.
+        </p>
       </div>
 
       <div class="grid-4">
-        <div class="card contact-card"><h3>Email Address</h3><p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p></div>
-        <div class="card contact-card"><h3>Phone Number 1</h3><p><a href="tel:+966539379095">+966 53 937 9095</a></p></div>
-        <div class="card contact-card"><h3>Phone Number 2</h3><p><a href="tel:+966599027308">+966 59 902 7308</a></p></div>
-        <div class="card contact-card"><h3>WhatsApp</h3><p><a href="https://wa.me/966599027308" target="_blank">Chat with us directly on WhatsApp</a></p></div>
+        <div class="card contact-card">
+          <h3>Email Address</h3>
+          <p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p>
+        </div>
+        <div class="card contact-card">
+          <h3>Phone Number 1</h3>
+          <p><a href="tel:+966539379095">+966 53 937 9095</a></p>
+        </div>
+        <div class="card contact-card">
+          <h3>Phone Number 2</h3>
+          <p><a href="tel:+966599027308">+966 59 902 7308</a></p>
+        </div>
+        <div class="card contact-card">
+          <h3>WhatsApp</h3>
+          <p><a href="https://wa.me/966599027308" target="_blank">Chat with us directly on WhatsApp</a></p>
+        </div>
       </div>
     </div>
   </section>
@@ -912,7 +1218,11 @@
     <div class="container">
       <div class="cta-panel">
         <h2>Ready to Support Your Business</h2>
-        <p>Green Asia LLC is ready to support your operational and project requirements with responsive service, dependable coordination, skilled workforce solutions, and a strong commitment to professional business support across Saudi Arabia.</p>
+        <p>
+          Green Asia LLC is ready to support your operational and project requirements with responsive service,
+          dependable coordination, skilled workforce solutions, construction support, real estate services,
+          and a strong commitment to professional business support across Saudi Arabia.
+        </p>
         <div class="hero-actions" style="justify-content:center;">
           <a class="btn-main" href="mailto:info@greenasia.llc">Email Us Now</a>
           <a class="btn-alt" href="https://wa.me/966599027308" target="_blank">Start WhatsApp Chat</a>
@@ -924,6 +1234,7 @@
   <footer class="footer">
     <p><strong>Green Asia Limited Liability Company</strong></p>
     <p>Driven to Support Your Success</p>
+    <p>Professional manpower, engineering, procurement, industrial support, construction, real estate, and project coordination solutions across Saudi Arabia.</p>
     <p>Email: info@greenasia.llc</p>
     <p>Phone: +966 53 937 9095 / +966 59 902 7308</p>
     <p>Office: 8289 Hofof St., Al Safah Dist., Jubail, Kingdom of Saudi Arabia</p>
