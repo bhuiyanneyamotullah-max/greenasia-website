@@ -519,39 +519,59 @@
       color:var(--muted);
     }
 
-    .service-photo-card{
+    .service-photo-card,
+    .gallery-card{
       overflow:hidden;
       position:relative;
       min-height:280px;
     }
 
-    .service-photo-card img{
+    .service-photo-card img,
+    .gallery-card img{
       width:100%;
       height:100%;
       min-height:280px;
       object-fit:cover;
-      transition:transform .45s ease;
+      transition:transform .7s ease, filter .5s ease;
     }
 
-    .service-photo-card:hover img{
-      transform:scale(1.08);
+    .service-photo-card::before,
+    .gallery-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, rgba(255,255,255,0) 25%, rgba(255,255,255,.18) 50%, rgba(255,255,255,0) 75%);
+      transform:translateX(-130%);
+      transition:transform .9s ease;
+      z-index:2;
+      pointer-events:none;
     }
 
-    .gallery-card{
-      overflow:hidden;
-      position:relative;
-      padding:0;
+    .service-photo-card:hover::before,
+    .gallery-card:hover::before{
+      transform:translateX(130%);
+    }
+
+    .service-photo-card:hover img,
+    .gallery-card:hover img{
+      transform:scale(1.09);
+      filter:brightness(1.04);
     }
 
     .gallery-card img{
-      width:100%;
       height:300px;
-      object-fit:cover;
-      transition:transform .5s ease;
+      min-height:auto;
     }
 
-    .gallery-card:hover img{
-      transform:scale(1.08);
+    .animated-card{
+      opacity:0;
+      transform:translateY(40px) scale(.96);
+      transition:opacity .9s ease, transform .9s ease;
+    }
+
+    .animated-card.visible{
+      opacity:1;
+      transform:translateY(0) scale(1);
     }
 
     .contact-card a{
@@ -848,19 +868,19 @@
       </div>
 
       <div class="service-photo-grid">
-        <div class="service-photo-card">
+        <div class="service-photo-card animated-card">
           <img src="service-camp-accommodation.jpg.jpg" alt="Camp accommodation">
         </div>
 
-        <div class="service-photo-card">
+        <div class="service-photo-card animated-card">
           <img src="service-catering.jpg.webp" alt="Catering services">
         </div>
 
-        <div class="service-photo-card">
+        <div class="service-photo-card animated-card">
           <img src="service-transport-bus.jpg.png" alt="Transportation services">
         </div>
 
-        <div class="service-photo-card">
+        <div class="service-photo-card animated-card">
           <img src="service-real-estate-villa.jpg.jpg" alt="Real estate support">
         </div>
       </div>
@@ -1096,27 +1116,27 @@
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="service-camp-accommodation.jpg.jpg" alt="Camp accommodation">
         </div>
 
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="service-catering.jpg.webp" alt="Catering service">
         </div>
 
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="service-transport-bus.jpg.png" alt="Transportation service">
         </div>
 
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="service-real-estate-villa.jpg.jpg" alt="Real estate villa">
         </div>
 
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="service-real-estate-community.jpg.png" alt="Real estate community">
         </div>
 
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="service-camp-dining.jpg.png" alt="Camp dining">
         </div>
       </div>
@@ -1133,22 +1153,22 @@
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="gallery-1.jpg.jpeg" alt="Project image 1">
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="gallery-2.jpg.jpeg" alt="Project image 2">
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="gallery-3.jpg.jpeg" alt="Project image 3">
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="gallery-4.jpg.jpeg" alt="Project image 4">
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="gallery-5.jpg.jpeg" alt="Project image 5">
         </div>
-        <div class="gallery-card">
+        <div class="gallery-card animated-card">
           <img src="gallery-6.jpg.jpeg" alt="Project image 6">
         </div>
       </div>
@@ -1212,13 +1232,24 @@
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
+    const animatedCards = document.querySelectorAll('.animated-card');
 
     function revealOnScroll() {
       const trigger = window.innerHeight * 0.88;
+
       reveals.forEach((el) => {
         const top = el.getBoundingClientRect().top;
         if (top < trigger) {
           el.classList.add('visible');
+        }
+      });
+
+      animatedCards.forEach((card, index) => {
+        const top = card.getBoundingClientRect().top;
+        if (top < trigger) {
+          setTimeout(() => {
+            card.classList.add('visible');
+          }, index * 90);
         }
       });
     }
