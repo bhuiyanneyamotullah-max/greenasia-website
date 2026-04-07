@@ -6,28 +6,28 @@
   <title>Green Asia Limited Liability Company</title>
   <meta
     name="description"
-    content="Green Asia Limited Liability Company provides manpower supply, engineering support, procurement assistance, industrial services, construction support, real estate services, and project coordination across Saudi Arabia."
+    content="Green Asia Limited Liability Company provides professional manpower supply, engineering support, procurement assistance, industrial services, construction support, real estate services, and project coordination across Saudi Arabia."
   />
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
     :root{
-      --bg:#f6f8f7;
+      --bg:#f4f7f5;
       --white:#ffffff;
-      --dark:#071b14;
+      --dark:#081a14;
       --dark-2:#0d2b21;
-      --green:#137a4b;
-      --green-2:#20a363;
+      --green:#14794a;
+      --green-2:#1fa562;
       --green-3:#0f5b38;
-      --gold:#caa96a;
+      --gold:#c9a66a;
       --text:#18212b;
       --muted:#61707c;
-      --line:#e4e9e6;
+      --line:#e3e9e5;
       --soft:#eef5f1;
       --shadow:0 18px 40px rgba(0,0,0,.08);
       --shadow-soft:0 10px 24px rgba(0,0,0,.05);
-      --radius:26px;
+      --radius:24px;
       --max:1280px;
     }
 
@@ -36,14 +36,13 @@
       font-family:Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(32,163,99,.10), transparent 22%),
-        radial-gradient(circle at top right, rgba(19,122,75,.08), transparent 18%),
+        radial-gradient(circle at top left, rgba(31,165,98,.08), transparent 22%),
         linear-gradient(180deg, #f7f9f8 0%, #eef3f0 100%);
       overflow-x:hidden;
     }
 
     a{ text-decoration:none; color:inherit; }
-    img{ max-width:100%; display:block; }
+    img{ display:block; max-width:100%; }
 
     .container{
       width:min(var(--max), calc(100% - 32px));
@@ -54,13 +53,13 @@
       position:sticky;
       top:0;
       z-index:999;
-      background:rgba(255,255,255,.85);
+      background:rgba(255,255,255,.88);
       backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(228,233,230,.95);
+      border-bottom:1px solid rgba(227,233,229,.95);
     }
 
     .topbar-inner{
-      min-height:84px;
+      min-height:82px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -84,7 +83,6 @@
       border-radius:16px;
       padding:6px;
       box-shadow:var(--shadow-soft);
-      animation:floatSoft 5s ease-in-out infinite;
     }
 
     .brand-text h1{
@@ -117,7 +115,6 @@
 
     .nav a:hover{
       color:var(--green);
-      transform:translateY(-1px);
     }
 
     .nav .cta{
@@ -125,58 +122,50 @@
       border-radius:999px;
       color:#fff;
       background:linear-gradient(135deg, var(--green), var(--green-2));
-      box-shadow:0 12px 24px rgba(19,122,75,.22);
+      box-shadow:0 12px 24px rgba(20,121,74,.22);
     }
 
-    section{ padding:56px 0; }
+    section{ padding:60px 0; }
 
     .hero{
-      padding-top:28px;
+      padding-top:24px;
     }
 
-    .hero-wrap{
+    .hero-shell{
       position:relative;
+      border-radius:34px;
       overflow:hidden;
-      border-radius:38px;
+      min-height:640px;
       background:
-        linear-gradient(135deg, rgba(7,27,20,.99), rgba(13,43,33,.96) 45%, rgba(15,91,56,.95)),
-        var(--dark);
-      color:#fff;
+        linear-gradient(90deg, rgba(8,26,20,.92) 0%, rgba(8,26,20,.82) 42%, rgba(8,26,20,.48) 68%, rgba(8,26,20,.28) 100%),
+        url("gallery-1.jpg.jpeg") center/cover no-repeat;
       box-shadow:0 30px 65px rgba(0,0,0,.18);
     }
 
-    .hero-wrap::before,
-    .hero-wrap::after{
+    .hero-shell::before{
       content:"";
       position:absolute;
-      border-radius:50%;
-      background:rgba(255,255,255,.05);
-      animation:drift 12s ease-in-out infinite;
-    }
-
-    .hero-wrap::before{
-      width:340px;
-      height:340px;
-      right:-120px;
-      top:-120px;
-    }
-
-    .hero-wrap::after{
-      width:260px;
-      height:260px;
-      left:-80px;
-      bottom:-90px;
-      animation-delay:-4s;
+      inset:0;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(201,166,106,.18), transparent 18%),
+        radial-gradient(circle at 90% 80%, rgba(31,165,98,.14), transparent 18%);
+      pointer-events:none;
     }
 
     .hero-grid{
       position:relative;
       z-index:1;
+      min-height:640px;
       display:grid;
       grid-template-columns:1.08fr .92fr;
-      gap:34px;
+      gap:30px;
       align-items:center;
-      padding:66px 50px;
+      padding:58px 54px;
+    }
+
+    .hero-copy{
+      max-width:720px;
+      color:#fff;
     }
 
     .eyebrow{
@@ -185,8 +174,8 @@
       gap:8px;
       padding:9px 15px;
       border-radius:999px;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
       color:#dff7e8;
       font-size:13px;
       font-weight:700;
@@ -196,32 +185,31 @@
     .hero-logo{
       width:126px;
       background:rgba(255,255,255,.96);
-      border-radius:22px;
+      border-radius:20px;
       padding:10px;
       margin-bottom:22px;
       box-shadow:0 14px 30px rgba(0,0,0,.16);
-      animation:floatSoft 4.5s ease-in-out infinite;
     }
 
     .hero h2{
       margin:0;
-      font-size:60px;
+      font-size:62px;
       line-height:1.02;
-      letter-spacing:-1.2px;
+      letter-spacing:-1.3px;
     }
 
     .hero .tagline{
       margin-top:16px;
-      font-size:23px;
-      color:#def7e7;
+      font-size:22px;
+      color:#dff8e8;
     }
 
     .hero .desc{
       margin-top:20px;
-      max-width:760px;
       font-size:17px;
       line-height:1.95;
       color:#effff4;
+      max-width:680px;
     }
 
     .hero-actions{
@@ -241,46 +229,47 @@
       justify-content:center;
       font-weight:700;
       font-size:15px;
-      transition:.28s ease;
+      transition:.25s ease;
     }
 
     .btn-main{
       background:#fff;
       color:var(--green-3);
-      box-shadow:0 12px 24px rgba(255,255,255,.12);
+      box-shadow:0 12px 24px rgba(255,255,255,.14);
     }
 
     .btn-alt{
-      background:rgba(255,255,255,.05);
       color:#fff;
       border:1.5px solid rgba(255,255,255,.38);
+      background:rgba(255,255,255,.06);
     }
 
     .btn-main:hover,
     .btn-alt:hover{
-      transform:translateY(-2px) scale(1.01);
+      transform:translateY(-2px);
     }
 
     .hero-side{
       display:grid;
-      gap:18px;
+      gap:16px;
+      align-self:end;
+      justify-self:end;
+      width:min(100%, 420px);
     }
 
     .glass-card{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.14);
       border-radius:24px;
-      padding:24px;
+      padding:22px;
       backdrop-filter:blur(12px);
-      animation:floatSoft 6s ease-in-out infinite;
+      color:#fff;
     }
-
-    .glass-card:nth-child(2){ animation-delay:-2s; }
 
     .glass-card h3{
       margin:0 0 10px;
+      font-size:22px;
       color:#fff;
-      font-size:21px;
     }
 
     .glass-card p{
@@ -290,61 +279,30 @@
       line-height:1.85;
     }
 
-    .metrics{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-    }
-
-    .metric{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.11);
-      border-radius:20px;
-      padding:18px 14px;
-      text-align:center;
-      animation:floatSoft 6.5s ease-in-out infinite;
-    }
-
-    .metric:nth-child(2){ animation-delay:-1.4s; }
-    .metric:nth-child(3){ animation-delay:-2.8s; }
-
-    .metric strong{
-      display:block;
-      font-size:24px;
-      margin-bottom:6px;
-      color:#fff;
-    }
-
-    .metric span{
-      font-size:13px;
-      line-height:1.6;
-      color:#ddf8e7;
-    }
-
-    .trust-strip{
+    .stats-strip{
       margin-top:18px;
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(4, 1fr);
       gap:14px;
     }
 
-    .trust{
+    .stat-card{
       background:#fff;
       border:1px solid var(--line);
-      border-radius:20px;
-      padding:18px 16px;
+      border-radius:22px;
       box-shadow:var(--shadow-soft);
+      padding:20px 18px;
       text-align:center;
     }
 
-    .trust strong{
+    .stat-card strong{
       display:block;
+      font-size:28px;
       color:#103628;
-      font-size:20px;
       margin-bottom:6px;
     }
 
-    .trust span{
+    .stat-card span{
       color:var(--muted);
       font-size:13px;
       line-height:1.6;
@@ -374,14 +332,14 @@
     .panel{
       background:#fff;
       border:1px solid var(--line);
-      border-radius:32px;
-      padding:38px;
+      border-radius:30px;
+      padding:36px;
       box-shadow:var(--shadow);
     }
 
     .about-grid{
       display:grid;
-      grid-template-columns:1.15fr .85fr;
+      grid-template-columns:1.1fr .9fr;
       gap:24px;
       align-items:start;
     }
@@ -392,7 +350,7 @@
       line-height:2;
     }
 
-    .mini-stack{
+    .mini-grid{
       display:grid;
       gap:16px;
     }
@@ -403,7 +361,7 @@
     .gallery-card{
       background:#fff;
       border:1px solid var(--line);
-      border-radius:26px;
+      border-radius:24px;
       box-shadow:var(--shadow-soft);
       transition:transform .25s ease, box-shadow .25s ease;
     }
@@ -445,9 +403,14 @@
       gap:20px;
     }
 
-    .grid-4{ grid-template-columns:repeat(4,1fr); }
-    .grid-3{ grid-template-columns:repeat(3,1fr); }
-    .client-grid{ grid-template-columns:repeat(6,1fr); }
+    .grid-4{ grid-template-columns:repeat(4, 1fr); }
+    .grid-3{ grid-template-columns:repeat(3, 1fr); }
+    .client-grid{ grid-template-columns:repeat(6, 1fr); }
+
+    .featured{
+      background:linear-gradient(180deg, #f7fcf8, #ffffff);
+      border-left:5px solid var(--green-2);
+    }
 
     .logo-card{
       padding:20px;
@@ -471,11 +434,6 @@
       color:#334150;
     }
 
-    .featured{
-      background:linear-gradient(180deg, #f7fcf8, #ffffff);
-      border-left:5px solid var(--green-2);
-    }
-
     .manpower-list{
       list-style:none;
       padding:0;
@@ -495,7 +453,7 @@
     }
 
     .gallery-grid{
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(3, 1fr);
     }
 
     .gallery-card{
@@ -640,8 +598,7 @@
       .grid-4,
       .grid-3,
       .gallery-grid,
-      .trust-strip,
-      .metrics{
+      .stats-strip{
         grid-template-columns:repeat(2,1fr);
       }
 
@@ -659,7 +616,12 @@
       .nav{ gap:12px; }
 
       .hero-grid{
+        min-height:auto;
         padding:40px 20px;
+      }
+
+      .hero-shell{
+        min-height:auto;
       }
 
       .hero h2{
@@ -686,8 +648,7 @@
       .grid-3,
       .gallery-grid,
       .client-grid,
-      .trust-strip,
-      .metrics{
+      .stats-strip{
         grid-template-columns:1fr;
       }
 
@@ -738,13 +699,10 @@
       <nav class="nav">
         <a href="#about">About</a>
         <a href="#why-choose-us">Why Us</a>
-        <a href="#mission-vision-values">Mission</a>
         <a href="#services">Services</a>
-        <a href="#industries">Industries</a>
         <a href="#projects">Projects</a>
         <a href="#clients">Clients</a>
         <a href="#manpower">Manpower</a>
-        <a href="#equipment">Equipment</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
         <a class="cta" href="https://wa.me/966599027308" target="_blank">WhatsApp Us</a>
@@ -754,9 +712,9 @@
 
   <section class="hero reveal visible">
     <div class="container">
-      <div class="hero-wrap">
+      <div class="hero-shell">
         <div class="hero-grid">
-          <div class="reveal visible delay-1">
+          <div class="reveal visible delay-1 hero-copy">
             <span class="eyebrow">Saudi Arabia Based Industrial, Construction & Property Support Company</span>
             <img class="hero-logo" src="logo.png" alt="Green Asia LLC Logo">
             <h2>Professional Manpower, Engineering & Project Support Solutions</h2>
@@ -764,8 +722,7 @@
             <p class="desc">
               Green Asia Limited Liability Company provides dependable manpower supply, industrial support services,
               engineering assistance, procurement support, project coordination, construction-related solutions,
-              real estate services, and business support for contractors, industrial clients, commercial operations,
-              and project-based organizations across Saudi Arabia.
+              and real estate services for contractors, industrial clients, commercial operations, and project-based organizations across Saudi Arabia.
             </p>
             <div class="hero-actions">
               <a class="btn-main" href="mailto:info@greenasia.llc">Email Us Now</a>
@@ -782,20 +739,15 @@
               <h3>Where We Add Value</h3>
               <p>Oil & gas, industrial plants, construction projects, utilities, maintenance shutdowns, infrastructure works, and real estate development support.</p>
             </div>
-            <div class="metrics">
-              <div class="metric reveal visible delay-1"><strong>300+</strong><span>manpower categories</span></div>
-              <div class="metric reveal visible delay-2"><strong>12+</strong><span>client references</span></div>
-              <div class="metric reveal visible delay-3"><strong>24/7</strong><span>support mindset</span></div>
-            </div>
           </div>
         </div>
       </div>
 
-      <div class="trust-strip">
-        <div class="trust reveal delay-1"><strong>Professional</strong><span>business-focused coordination and communication</span></div>
-        <div class="trust reveal delay-2"><strong>Reliable</strong><span>dependable workforce and support delivery</span></div>
-        <div class="trust reveal delay-3"><strong>Flexible</strong><span>wide service capability across sectors</span></div>
-        <div class="trust reveal delay-4"><strong>Responsive</strong><span>fast follow-up for active requirements</span></div>
+      <div class="stats-strip">
+        <div class="stat-card reveal delay-1"><strong>157+</strong><span>projects completed</span></div>
+        <div class="stat-card reveal delay-2"><strong>300+</strong><span>manpower categories available</span></div>
+        <div class="stat-card reveal delay-3"><strong>12+</strong><span>client and network references</span></div>
+        <div class="stat-card reveal delay-4"><strong>24/7</strong><span>responsive support mindset</span></div>
       </div>
     </div>
   </section>
@@ -817,7 +769,7 @@
             workforce readiness, and business efficiency.
           </div>
 
-          <div class="mini-stack">
+          <div class="mini-grid">
             <div class="mini-card reveal delay-1">
               <h3>Industry Coverage</h3>
               <p>Oil & gas, industrial plants, construction projects, commercial operations, residential developments, utilities, infrastructure, shutdown works, and maintenance environments.</p>
@@ -852,21 +804,6 @@
     </div>
   </section>
 
-  <section id="mission-vision-values">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Our Mission, Vision & Values</h2>
-        <p>The principles that guide our service approach, business direction, and commitment to client support.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card featured reveal delay-1"><h3>Our Mission</h3><p>To deliver dependable manpower, engineering support, procurement assistance, construction solutions, real estate services, and project coordination support that help clients achieve success efficiently and professionally.</p></div>
-        <div class="card reveal delay-2"><h3>Our Vision</h3><p>To become a trusted and recognized support partner in Saudi Arabia for manpower supply, industrial services, construction support, engineering assistance, project coordination, and business solutions.</p></div>
-        <div class="card reveal delay-3"><h3>Our Values</h3><p>Integrity, professionalism, quality, commitment, reliability, safety awareness, teamwork, accountability, and client satisfaction are central to how we operate and serve.</p></div>
-      </div>
-    </div>
-  </section>
-
   <section id="services">
     <div class="container">
       <div class="section-head reveal">
@@ -879,22 +816,10 @@
         <div class="card reveal delay-2"><h3>Industrial Support Services</h3><p>Supporting industrial works and field activities with organized assistance, practical response, and reliable coordination.</p></div>
         <div class="card reveal delay-3"><h3>Engineering Services</h3><p>Professional support for engineering-related requirements, technical coordination, and project execution assistance.</p></div>
         <div class="card reveal delay-4"><h3>Project Management Support</h3><p>Helping clients maintain workflow continuity, communication, coordination, and organized support throughout project activities.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="industries">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Industries We Serve</h2>
-        <p>Green Asia LLC supports a wide range of industries and project environments by providing manpower, engineering, procurement, and coordination solutions tailored to client requirements.</p>
-      </div>
-
-      <div class="grid-4">
-        <div class="card reveal delay-1"><h3>Oil & Gas</h3><p>Support for energy-related and industrial operations requiring dependable manpower and project assistance.</p></div>
-        <div class="card reveal delay-2"><h3>Industrial Plants</h3><p>Support services for plant operations, maintenance environments, and process-oriented industrial facilities.</p></div>
-        <div class="card reveal delay-3"><h3>Construction Projects</h3><p>Support for civil, structural, commercial, and contractor-based construction requirements.</p></div>
-        <div class="card reveal delay-4"><h3>Real Estate Development</h3><p>Support for property development, renovation, commercial property, and residential property coordination.</p></div>
+        <div class="card reveal delay-1"><h3>Procurement Support</h3><p>Assistance in supporting procurement-related requirements and material or equipment coordination needs.</p></div>
+        <div class="card reveal delay-2"><h3>Equipment Support Solutions</h3><p>Support for site and project-related equipment requirements as part of broader operational and industrial assistance.</p></div>
+        <div class="card reveal delay-3"><h3>Construction Support</h3><p>Support for residential, commercial, renovation, remodeling, and design-and-build related activities.</p></div>
+        <div class="card reveal delay-4"><h3>Real Estate Services</h3><p>Support for property-related opportunities including residential, commercial, and investment-oriented real estate coordination and assistance.</p></div>
       </div>
     </div>
   </section>
@@ -926,65 +851,18 @@
       </div>
 
       <div class="client-grid">
-        <div class="logo-card reveal delay-1">
-          <img src="client-petrofac.jpg.jpeg" alt="Petrofac">
-          <p>Petrofac</p>
-        </div>
-
-        <div class="logo-card reveal delay-2">
-          <img src="client-alfanar.jpg.jpeg" alt="Alfanar Projects">
-          <p>Alfanar Projects</p>
-        </div>
-
-        <div class="logo-card reveal delay-3">
-          <img src="client-binladin.jpg.jpeg" alt="Saudi Binladin Group">
-          <p>Saudi Binladin Group</p>
-        </div>
-
-        <div class="logo-card reveal delay-4">
-          <img src="client-nesma.jpg.jpeg" alt="Nesma &amp; Partners">
-          <p>Nesma &amp; Partners</p>
-        </div>
-
-        <div class="logo-card reveal delay-1">
-          <img src="client-expertise.jpg.jpeg" alt="Expertise">
-          <p>Expertise</p>
-        </div>
-
-        <div class="logo-card reveal delay-2">
-          <img src="client-sinopec.jpg.jpeg" alt="Sinopec">
-          <p>Sinopec</p>
-        </div>
-
-        <div class="logo-card reveal delay-3">
-          <img src="client-hyundai.jpg.jpeg" alt="Hyundai Engineering &amp; Construction">
-          <p>Hyundai E&amp;C</p>
-        </div>
-
-        <div class="logo-card reveal delay-4">
-          <img src="client-samsung.jpg.jpeg" alt="Samsung Engineering">
-          <p>Samsung Engineering</p>
-        </div>
-
-        <div class="logo-card reveal delay-1">
-          <img src="client-saipem.jpg.jpeg" alt="Saipem">
-          <p>Saipem</p>
-        </div>
-
-        <div class="logo-card reveal delay-2">
-          <img src="client-airproducts.jpg.jpeg" alt="Air Products">
-          <p>Air Products</p>
-        </div>
-
-        <div class="logo-card reveal delay-3">
-          <img src="client-sec.jpg.jpeg" alt="Saudi Electricity Company">
-          <p>Saudi Electricity Company</p>
-        </div>
-
-        <div class="logo-card reveal delay-4">
-          <img src="client-aramco.jpg.jpeg" alt="Saudi Aramco">
-          <p>Saudi Aramco</p>
-        </div>
+        <div class="logo-card reveal delay-1"><img src="client-petrofac.jpg.jpeg" alt="Petrofac"><p>Petrofac</p></div>
+        <div class="logo-card reveal delay-2"><img src="client-alfanar.jpg.jpeg" alt="Alfanar Projects"><p>Alfanar Projects</p></div>
+        <div class="logo-card reveal delay-3"><img src="client-binladin.jpg.jpeg" alt="Saudi Binladin Group"><p>Saudi Binladin Group</p></div>
+        <div class="logo-card reveal delay-4"><img src="client-nesma.jpg.jpeg" alt="Nesma &amp; Partners"><p>Nesma &amp; Partners</p></div>
+        <div class="logo-card reveal delay-1"><img src="client-expertise.jpg.jpeg" alt="Expertise"><p>Expertise</p></div>
+        <div class="logo-card reveal delay-2"><img src="client-sinopec.jpg.jpeg" alt="Sinopec"><p>Sinopec</p></div>
+        <div class="logo-card reveal delay-3"><img src="client-hyundai.jpg.jpeg" alt="Hyundai Engineering &amp; Construction"><p>Hyundai E&amp;C</p></div>
+        <div class="logo-card reveal delay-4"><img src="client-samsung.jpg.jpeg" alt="Samsung Engineering"><p>Samsung Engineering</p></div>
+        <div class="logo-card reveal delay-1"><img src="client-saipem.jpg.jpeg" alt="Saipem"><p>Saipem</p></div>
+        <div class="logo-card reveal delay-2"><img src="client-airproducts.jpg.jpeg" alt="Air Products"><p>Air Products</p></div>
+        <div class="logo-card reveal delay-3"><img src="client-sec.jpg.jpeg" alt="Saudi Electricity Company"><p>Saudi Electricity Company</p></div>
+        <div class="logo-card reveal delay-4"><img src="client-aramco.jpg.jpeg" alt="Saudi Aramco"><p>Saudi Aramco</p></div>
       </div>
     </div>
   </section>
@@ -1031,45 +909,6 @@
             <li>Welder 3G/4G</li>
             <li>6G Welder</li>
             <li>Welding QCI</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="equipment">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Related Equipment Support</h2>
-        <p>In addition to manpower supply, Green Asia LLC can support project and operational requirements through equipment-related support solutions depending on project scope and client needs.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card reveal delay-1">
-          <h3>Lifting &amp; Access Equipment</h3>
-          <ul class="manpower-list">
-            <li>Forklift Support</li>
-            <li>Manlift Support</li>
-            <li>Boom Truck Support</li>
-            <li>Crane-Related Coordination</li>
-          </ul>
-        </div>
-        <div class="card reveal delay-2">
-          <h3>Site &amp; Operational Support</h3>
-          <ul class="manpower-list">
-            <li>Material Handling Support</li>
-            <li>Site Transportation Support</li>
-            <li>Fabrication Area Support</li>
-            <li>Mechanical Worksite Support</li>
-          </ul>
-        </div>
-        <div class="card reveal delay-3">
-          <h3>Project Support Solutions</h3>
-          <ul class="manpower-list">
-            <li>Equipment Mobilization Assistance</li>
-            <li>Site Operation Support</li>
-            <li>Industrial Service Coordination</li>
-            <li>Responsive Requirement Support</li>
           </ul>
         </div>
       </div>
@@ -1140,22 +979,10 @@
       </div>
 
       <div class="grid-4">
-        <div class="card contact-card reveal delay-1">
-          <h3>Email Address</h3>
-          <p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p>
-        </div>
-        <div class="card contact-card reveal delay-2">
-          <h3>Phone Number 1</h3>
-          <p><a href="tel:+966539379095">+966 53 937 9095</a></p>
-        </div>
-        <div class="card contact-card reveal delay-3">
-          <h3>Phone Number 2</h3>
-          <p><a href="tel:+966599027308">+966 59 902 7308</a></p>
-        </div>
-        <div class="card contact-card reveal delay-4">
-          <h3>WhatsApp</h3>
-          <p><a href="https://wa.me/966599027308" target="_blank">Chat with us directly on WhatsApp</a></p>
-        </div>
+        <div class="card contact-card reveal delay-1"><h3>Email Address</h3><p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p></div>
+        <div class="card contact-card reveal delay-2"><h3>Phone Number 1</h3><p><a href="tel:+966539379095">+966 53 937 9095</a></p></div>
+        <div class="card contact-card reveal delay-3"><h3>Phone Number 2</h3><p><a href="tel:+966599027308">+966 59 902 7308</a></p></div>
+        <div class="card contact-card reveal delay-4"><h3>WhatsApp</h3><p><a href="https://wa.me/966599027308" target="_blank">Chat with us directly on WhatsApp</a></p></div>
       </div>
     </div>
   </section>
@@ -1189,9 +1016,7 @@
           entry.target.classList.add('visible');
         }
       });
-    }, {
-      threshold: 0.12
-    });
+    }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
       observer.observe(el);
