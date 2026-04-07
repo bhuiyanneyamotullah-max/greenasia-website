@@ -519,59 +519,78 @@
       color:var(--muted);
     }
 
-    .service-photo-card,
-    .gallery-card{
+    .service-photo-card{
       overflow:hidden;
       position:relative;
       min-height:280px;
     }
 
-    .service-photo-card img,
-    .gallery-card img{
+    .service-photo-card img{
       width:100%;
       height:100%;
       min-height:280px;
       object-fit:cover;
-      transition:transform .7s ease, filter .5s ease;
+      transition:transform .45s ease;
     }
 
-    .service-photo-card::before,
-    .gallery-card::before{
-      content:"";
+    .service-photo-card:hover img{
+      transform:scale(1.08);
+    }
+
+    .service-photo-overlay{
       position:absolute;
-      inset:0;
-      background:linear-gradient(120deg, rgba(255,255,255,0) 25%, rgba(255,255,255,.18) 50%, rgba(255,255,255,0) 75%);
-      transform:translateX(-130%);
-      transition:transform .9s ease;
-      z-index:2;
-      pointer-events:none;
+      inset:auto 0 0 0;
+      padding:18px;
+      background:linear-gradient(to top, rgba(8,26,20,.92), rgba(8,26,20,.10));
     }
 
-    .service-photo-card:hover::before,
-    .gallery-card:hover::before{
-      transform:translateX(130%);
+    .service-photo-overlay h3{
+      margin:0 0 8px;
+      color:#fff;
+      font-size:22px;
+      line-height:1.2;
     }
 
-    .service-photo-card:hover img,
-    .gallery-card:hover img{
-      transform:scale(1.09);
-      filter:brightness(1.04);
+    .service-photo-overlay p{
+      margin:0;
+      color:#e7fff0;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .gallery-grid{
+      grid-template-columns:repeat(3,1fr);
+    }
+
+    .gallery-card{
+      overflow:hidden;
+      position:relative;
+      padding:0;
     }
 
     .gallery-card img{
+      width:100%;
       height:300px;
-      min-height:auto;
+      object-fit:cover;
+      transition:transform .5s ease;
     }
 
-    .animated-card{
-      opacity:0;
-      transform:translateY(40px) scale(.96);
-      transition:opacity .9s ease, transform .9s ease;
+    .gallery-card:hover img{
+      transform:scale(1.08);
     }
 
-    .animated-card.visible{
-      opacity:1;
-      transform:translateY(0) scale(1);
+    .gallery-overlay{
+      position:absolute;
+      inset:auto 0 0 0;
+      background:linear-gradient(to top, rgba(8,26,20,.92), rgba(8,26,20,.08));
+      padding:18px;
+    }
+
+    .gallery-overlay p{
+      margin:0;
+      color:#eefef4;
+      font-size:14px;
+      line-height:1.7;
     }
 
     .contact-card a{
@@ -868,20 +887,36 @@
       </div>
 
       <div class="service-photo-grid">
-        <div class="service-photo-card animated-card">
+        <div class="service-photo-card">
           <img src="service-camp-accommodation.jpg.jpg" alt="Camp accommodation">
+          <div class="service-photo-overlay">
+            <h3>Camp Services</h3>
+            <p>Accommodation and camp-related support for workforce deployment and operational continuity.</p>
+          </div>
         </div>
 
-        <div class="service-photo-card animated-card">
+        <div class="service-photo-card">
           <img src="service-catering.jpg.webp" alt="Catering services">
+          <div class="service-photo-overlay">
+            <h3>Catering</h3>
+            <p>Food service support for camps, workforce requirements, and operational environments.</p>
+          </div>
         </div>
 
-        <div class="service-photo-card animated-card">
+        <div class="service-photo-card">
           <img src="service-transport-bus.jpg.png" alt="Transportation services">
+          <div class="service-photo-overlay">
+            <h3>Transportation</h3>
+            <p>Organized workforce and staff movement support for projects and operations.</p>
+          </div>
         </div>
 
-        <div class="service-photo-card animated-card">
+        <div class="service-photo-card">
           <img src="service-real-estate-villa.jpg.jpg" alt="Real estate support">
+          <div class="service-photo-overlay">
+            <h3>Real Estate</h3>
+            <p>Property and accommodation-related support connected to business and workforce needs.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1116,28 +1151,34 @@
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="service-camp-accommodation.jpg.jpg" alt="Camp accommodation">
+          <div class="gallery-overlay"><p>Camp accommodation support for workforce and operations.</p></div>
         </div>
 
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="service-catering.jpg.webp" alt="Catering service">
+          <div class="gallery-overlay"><p>Catering support for camps, staff, and workforce needs.</p></div>
         </div>
 
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="service-transport-bus.jpg.png" alt="Transportation service">
+          <div class="gallery-overlay"><p>Transportation support for workforce and staff movement.</p></div>
         </div>
 
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="service-real-estate-villa.jpg.jpg" alt="Real estate villa">
+          <div class="gallery-overlay"><p>Real estate and accommodation-related support services.</p></div>
         </div>
 
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="service-real-estate-community.jpg.png" alt="Real estate community">
+          <div class="gallery-overlay"><p>Property and community-scale support needs.</p></div>
         </div>
 
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="service-camp-dining.jpg.png" alt="Camp dining">
+          <div class="gallery-overlay"><p>Camp dining and workforce facility support.</p></div>
         </div>
       </div>
     </div>
@@ -1153,23 +1194,29 @@
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="gallery-1.jpg.jpeg" alt="Project image 1">
+          <div class="gallery-overlay"><p>Construction and field support environment.</p></div>
         </div>
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="gallery-2.jpg.jpeg" alt="Project image 2">
+          <div class="gallery-overlay"><p>Industrial and operational support environment.</p></div>
         </div>
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="gallery-3.jpg.jpeg" alt="Project image 3">
+          <div class="gallery-overlay"><p>Project execution and structural support activities.</p></div>
         </div>
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="gallery-4.jpg.jpeg" alt="Project image 4">
+          <div class="gallery-overlay"><p>Workforce and field-level support presence.</p></div>
         </div>
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="gallery-5.jpg.jpeg" alt="Project image 5">
+          <div class="gallery-overlay"><p>Pipeline and site support activities.</p></div>
         </div>
-        <div class="gallery-card animated-card">
+        <div class="gallery-card">
           <img src="gallery-6.jpg.jpeg" alt="Project image 6">
+          <div class="gallery-overlay"><p>Operational and project continuity support.</p></div>
         </div>
       </div>
     </div>
@@ -1232,24 +1279,13 @@
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
-    const animatedCards = document.querySelectorAll('.animated-card');
 
     function revealOnScroll() {
       const trigger = window.innerHeight * 0.88;
-
       reveals.forEach((el) => {
         const top = el.getBoundingClientRect().top;
         if (top < trigger) {
           el.classList.add('visible');
-        }
-      });
-
-      animatedCards.forEach((card, index) => {
-        const top = card.getBoundingClientRect().top;
-        if (top < trigger) {
-          setTimeout(() => {
-            card.classList.add('visible');
-          }, index * 90);
         }
       });
     }
