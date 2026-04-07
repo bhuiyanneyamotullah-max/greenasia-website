@@ -84,7 +84,7 @@
       border-radius:16px;
       padding:6px;
       box-shadow:var(--shadow-soft);
-      animation: floatSoft 5s ease-in-out infinite;
+      animation:floatSoft 5s ease-in-out infinite;
     }
 
     .brand-text h1{
@@ -151,7 +151,7 @@
       position:absolute;
       border-radius:50%;
       background:rgba(255,255,255,.05);
-      animation: drift 12s ease-in-out infinite;
+      animation:drift 12s ease-in-out infinite;
     }
 
     .hero-wrap::before{
@@ -166,7 +166,7 @@
       height:260px;
       left:-80px;
       bottom:-90px;
-      animation-delay: -4s;
+      animation-delay:-4s;
     }
 
     .hero-grid{
@@ -200,7 +200,7 @@
       padding:10px;
       margin-bottom:22px;
       box-shadow:0 14px 30px rgba(0,0,0,.16);
-      animation: floatSoft 4.5s ease-in-out infinite;
+      animation:floatSoft 4.5s ease-in-out infinite;
     }
 
     .hero h2{
@@ -272,7 +272,7 @@
       border-radius:24px;
       padding:24px;
       backdrop-filter:blur(12px);
-      animation: floatSoft 6s ease-in-out infinite;
+      animation:floatSoft 6s ease-in-out infinite;
     }
 
     .glass-card:nth-child(2){ animation-delay:-2s; }
@@ -302,7 +302,7 @@
       border-radius:20px;
       padding:18px 14px;
       text-align:center;
-      animation: floatSoft 6.5s ease-in-out infinite;
+      animation:floatSoft 6.5s ease-in-out infinite;
     }
 
     .metric:nth-child(2){ animation-delay:-1.4s; }
@@ -502,17 +502,28 @@
       overflow:hidden;
       position:relative;
       padding:0;
+      min-height:260px;
     }
 
     .gallery-card img{
       width:100%;
-      height:270px;
+      height:100%;
+      min-height:260px;
       object-fit:cover;
       transition:transform .45s ease;
     }
 
     .gallery-card:hover img{
       transform:scale(1.05);
+    }
+
+    .gallery-card.large{
+      grid-column:span 2;
+      min-height:340px;
+    }
+
+    .gallery-card.large img{
+      min-height:340px;
     }
 
     .gallery-overlay{
@@ -590,13 +601,12 @@
       line-height:1.8;
     }
 
-    /* Blur to clear / wave reveal */
     .reveal{
       opacity:0;
       filter:blur(14px);
       transform:translateY(30px) scale(.985);
       transition:opacity 1s ease, filter 1s ease, transform 1s ease;
-      will-change: opacity, filter, transform;
+      will-change:opacity, filter, transform;
     }
 
     .reveal.visible{
@@ -631,7 +641,13 @@
       .grid-3,
       .gallery-grid,
       .trust-strip,
-      .metrics{ grid-template-columns:repeat(2,1fr); }
+      .metrics{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .gallery-card.large{
+        grid-column:span 2;
+      }
     }
 
     @media (max-width:768px){
@@ -675,16 +691,21 @@
         grid-template-columns:1fr;
       }
 
+      .gallery-card.large{
+        grid-column:span 1;
+        min-height:260px;
+      }
+
+      .gallery-card.large img{
+        min-height:260px;
+      }
+
       .panel{
         padding:24px 18px;
       }
 
       .brand-text h1{
         font-size:18px;
-      }
-
-      .gallery-card img{
-        height:220px;
       }
     }
 
@@ -897,17 +918,73 @@
   <section id="clients">
     <div class="container">
       <div class="section-head reveal">
-        <h2>Clients & Business Network</h2>
-        <p>Green Asia LLC works to support recognized contractors, industrial companies, project teams, and business networks across Saudi Arabia.</p>
+        <h2>Clients &amp; Business Network</h2>
+        <p>
+          Green Asia LLC works to support recognized contractors, industrial companies, project teams,
+          and business networks across Saudi Arabia.
+        </p>
       </div>
 
       <div class="client-grid">
-        <div class="logo-card reveal delay-1"><img src="client-petrofac.jpg.jpeg" alt="Petrofac"><p>Petrofac</p></div>
-        <div class="logo-card reveal delay-2"><img src="client-alfanar.jpg.jpeg" alt="Alfanar Projects"><p>Alfanar Projects</p></div>
-        <div class="logo-card reveal delay-3"><img src="client-binladin.jpg.jpeg" alt="Saudi Binladin Group"><p>Saudi Binladin Group</p></div>
-        <div class="logo-card reveal delay-4"><img src="client-nesma.jpg.jpeg" alt="Nesma & Partners"><p>Nesma & Partners</p></div>
-        <div class="logo-card reveal delay-1"><img src="client-expertise.jpg.jpeg" alt="Expertise"><p>Expertise</p></div>
-        <div class="logo-card reveal delay-2"><img src="client-sinopec.jpg.jpeg" alt="Sinopec"><p>Sinopec</p></div>
+        <div class="logo-card reveal delay-1">
+          <img src="client-petrofac.jpg.jpeg" alt="Petrofac">
+          <p>Petrofac</p>
+        </div>
+
+        <div class="logo-card reveal delay-2">
+          <img src="client-alfanar.jpg.jpeg" alt="Alfanar Projects">
+          <p>Alfanar Projects</p>
+        </div>
+
+        <div class="logo-card reveal delay-3">
+          <img src="client-binladin.jpg.jpeg" alt="Saudi Binladin Group">
+          <p>Saudi Binladin Group</p>
+        </div>
+
+        <div class="logo-card reveal delay-4">
+          <img src="client-nesma.jpg.jpeg" alt="Nesma &amp; Partners">
+          <p>Nesma &amp; Partners</p>
+        </div>
+
+        <div class="logo-card reveal delay-1">
+          <img src="client-expertise.jpg.jpeg" alt="Expertise">
+          <p>Expertise</p>
+        </div>
+
+        <div class="logo-card reveal delay-2">
+          <img src="client-sinopec.jpg.jpeg" alt="Sinopec">
+          <p>Sinopec</p>
+        </div>
+
+        <div class="logo-card reveal delay-3">
+          <img src="client-hyundai.jpg.jpeg" alt="Hyundai Engineering &amp; Construction">
+          <p>Hyundai E&amp;C</p>
+        </div>
+
+        <div class="logo-card reveal delay-4">
+          <img src="client-samsung.jpg.jpeg" alt="Samsung Engineering">
+          <p>Samsung Engineering</p>
+        </div>
+
+        <div class="logo-card reveal delay-1">
+          <img src="client-saipem.jpg.jpeg" alt="Saipem">
+          <p>Saipem</p>
+        </div>
+
+        <div class="logo-card reveal delay-2">
+          <img src="client-airproducts.jpg.jpeg" alt="Air Products">
+          <p>Air Products</p>
+        </div>
+
+        <div class="logo-card reveal delay-3">
+          <img src="client-sec.jpg.jpeg" alt="Saudi Electricity Company">
+          <p>Saudi Electricity Company</p>
+        </div>
+
+        <div class="logo-card reveal delay-4">
+          <img src="client-aramco.jpg.jpeg" alt="Saudi Aramco">
+          <p>Saudi Aramco</p>
+        </div>
       </div>
     </div>
   </section>
@@ -921,21 +998,39 @@
 
       <div class="grid-3">
         <div class="card reveal delay-1">
-          <h3>Civil & General Construction</h3>
+          <h3>Civil &amp; General Construction</h3>
           <ul class="manpower-list">
-            <li>Helper</li><li>Carpenter</li><li>Steel Fixer</li><li>Tiles Mason</li><li>Concrete Mason</li><li>Block Mason</li><li>Plaster Mason</li><li>Plumber</li><li>Civil Engineer</li>
+            <li>Helper</li>
+            <li>Carpenter</li>
+            <li>Steel Fixer</li>
+            <li>Tiles Mason</li>
+            <li>Concrete Mason</li>
+            <li>Block Mason</li>
+            <li>Plaster Mason</li>
+            <li>Plumber</li>
+            <li>Civil Engineer</li>
           </ul>
         </div>
         <div class="card reveal delay-2">
-          <h3>Mechanical & HVAC</h3>
+          <h3>Mechanical &amp; HVAC</h3>
           <ul class="manpower-list">
-            <li>Mechanical Fitter</li><li>Mechanical Technician</li><li>Mechanical Foreman</li><li>Mechanical Supervisor</li><li>HVAC Technician</li><li>Millwright</li>
+            <li>Mechanical Fitter</li>
+            <li>Mechanical Technician</li>
+            <li>Mechanical Foreman</li>
+            <li>Mechanical Supervisor</li>
+            <li>HVAC Technician</li>
+            <li>Millwright</li>
           </ul>
         </div>
         <div class="card reveal delay-3">
-          <h3>Piping & Welding</h3>
+          <h3>Piping &amp; Welding</h3>
           <ul class="manpower-list">
-            <li>Pipe Fitter</li><li>Pipe Fabricator</li><li>Piping Engineer</li><li>Welder 3G/4G</li><li>6G Welder</li><li>Welding QCI</li>
+            <li>Pipe Fitter</li>
+            <li>Pipe Fabricator</li>
+            <li>Piping Engineer</li>
+            <li>Welder 3G/4G</li>
+            <li>6G Welder</li>
+            <li>Welding QCI</li>
           </ul>
         </div>
       </div>
@@ -951,7 +1046,7 @@
 
       <div class="grid-3">
         <div class="card reveal delay-1">
-          <h3>Lifting & Access Equipment</h3>
+          <h3>Lifting &amp; Access Equipment</h3>
           <ul class="manpower-list">
             <li>Forklift Support</li>
             <li>Manlift Support</li>
@@ -960,7 +1055,7 @@
           </ul>
         </div>
         <div class="card reveal delay-2">
-          <h3>Site & Operational Support</h3>
+          <h3>Site &amp; Operational Support</h3>
           <ul class="manpower-list">
             <li>Material Handling Support</li>
             <li>Site Transportation Support</li>
@@ -985,21 +1080,53 @@
     <div class="container">
       <div class="section-head reveal">
         <h2>Project Gallery</h2>
-        <p>A visual glimpse of industrial environments, construction support activities, field workforce presence, and project operations.</p>
+        <p>
+          A visual glimpse of industrial environments, construction support activities,
+          field workforce presence, and project operations.
+        </p>
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-card reveal delay-1">
+        <div class="gallery-card large reveal delay-1">
           <img src="gallery-1.jpg.jpeg" alt="Industrial facility at night">
-          <div class="gallery-overlay"><p>Industrial support environment for plant and process facility operations.</p></div>
+          <div class="gallery-overlay">
+            <p>Industrial support environment for plant and process facility operations.</p>
+          </div>
         </div>
+
         <div class="gallery-card reveal delay-2">
           <img src="gallery-2.jpg.jpeg" alt="Industrial piping facility">
-          <div class="gallery-overlay"><p>Support for industrial facilities, piping systems, and operational infrastructure.</p></div>
+          <div class="gallery-overlay">
+            <p>Support for industrial facilities, piping systems, and operational infrastructure.</p>
+          </div>
         </div>
+
         <div class="gallery-card reveal delay-3">
           <img src="gallery-3.jpg.jpeg" alt="Construction project site">
-          <div class="gallery-overlay"><p>Construction and structural project support in large-scale field environments.</p></div>
+          <div class="gallery-overlay">
+            <p>Construction and structural project support in large-scale field environments.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal delay-4">
+          <img src="gallery-4.jpg.jpeg" alt="Site manpower group">
+          <div class="gallery-overlay">
+            <p>Workforce presence and field-level support for project operations and site activities.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal delay-1">
+          <img src="gallery-5.jpg.jpeg" alt="Pipeline installation work">
+          <div class="gallery-overlay">
+            <p>Pipeline-related field support and installation activity in project environments.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card large reveal delay-2">
+          <img src="gallery-6.jpg.jpeg" alt="Welding work on pipeline">
+          <div class="gallery-overlay">
+            <p>Skilled manpower support for welding and mechanical site works.</p>
+          </div>
         </div>
       </div>
     </div>
