@@ -6,29 +6,29 @@
   <title>Green Asia Limited Liability Company</title>
   <meta
     name="description"
-    content="Green Asia Limited Liability Company provides manpower supply, engineering support, procurement assistance, industrial services, construction support, real estate services, and project coordination across Saudi Arabia."
+    content="Green Asia Limited Liability Company provides skilled manpower supply, industrial support, project coordination, equipment support, and documentation services across Saudi Arabia."
   />
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
     :root{
-      --bg:#f4f7f5;
-      --white:#ffffff;
-      --dark:#081a14;
-      --dark-2:#0d2b21;
-      --green:#14794a;
-      --green-2:#1fa562;
-      --green-3:#0f5b38;
-      --gold:#c9a66a;
+      --bg:#0a1411;
+      --bg-2:#0f1f19;
+      --card:#ffffff;
+      --card-soft:#f7f8f7;
+      --line:#e4e9e6;
       --text:#18212b;
-      --muted:#61707c;
-      --line:#e3e9e5;
-      --soft:#eef5f1;
-      --shadow:0 18px 40px rgba(0,0,0,.08);
+      --muted:#61707b;
+      --green:#16824f;
+      --green-2:#21a364;
+      --green-dark:#0d3426;
+      --gold:#c9a96a;
+      --white:#ffffff;
+      --shadow:0 18px 40px rgba(0,0,0,.10);
       --shadow-soft:0 10px 24px rgba(0,0,0,.05);
-      --radius:24px;
-      --max:1320px;
+      --radius:26px;
+      --max:1280px;
     }
 
     body{
@@ -36,13 +36,12 @@
       font-family:Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(31,165,98,.08), transparent 22%),
-        linear-gradient(180deg, #f7f9f8 0%, #eef3f0 100%);
-      overflow-x:hidden;
+        radial-gradient(circle at top left, rgba(33,163,100,.10), transparent 22%),
+        linear-gradient(180deg, #f5f7f6 0%, #edf2ef 100%);
     }
 
     a{ text-decoration:none; color:inherit; }
-    img{ display:block; max-width:100%; }
+    img{ max-width:100%; display:block; }
 
     .container{
       width:min(var(--max), calc(100% - 32px));
@@ -55,7 +54,7 @@
       z-index:999;
       background:rgba(255,255,255,.88);
       backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(227,233,229,.95);
+      border-bottom:1px solid rgba(228,233,230,.9);
     }
 
     .topbar-inner{
@@ -89,7 +88,7 @@
       margin:0;
       font-size:20px;
       line-height:1.2;
-      color:var(--green-3);
+      color:var(--green-dark);
     }
 
     .brand-text p{
@@ -110,58 +109,63 @@
       font-size:14px;
       font-weight:700;
       color:#334150;
-      transition:.25s ease;
     }
-
-    .nav a:hover{ color:var(--green); }
 
     .nav .cta{
       padding:12px 18px;
       border-radius:999px;
       color:#fff;
       background:linear-gradient(135deg, var(--green), var(--green-2));
-      box-shadow:0 12px 24px rgba(20,121,74,.22);
+      box-shadow:0 12px 24px rgba(22,130,79,.22);
     }
 
-    section{ padding:60px 0; }
+    section{ padding:56px 0; }
 
-    .hero{ padding-top:24px; }
+    .hero{
+      padding-top:28px;
+    }
 
     .hero-shell{
       position:relative;
-      border-radius:34px;
       overflow:hidden;
-      min-height:650px;
+      border-radius:36px;
       background:
-        linear-gradient(90deg, rgba(8,26,20,.92) 0%, rgba(8,26,20,.82) 42%, rgba(8,26,20,.48) 68%, rgba(8,26,20,.28) 100%),
-        url("gallery-1.jpg.jpeg") center/cover no-repeat;
+        linear-gradient(135deg, rgba(8,20,17,.98), rgba(15,31,25,.96) 48%, rgba(13,52,38,.95)),
+        var(--bg);
+      color:#fff;
       box-shadow:0 30px 65px rgba(0,0,0,.18);
     }
 
-    .hero-shell::before{
+    .hero-shell::before,
+    .hero-shell::after{
       content:"";
       position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(201,166,106,.18), transparent 18%),
-        radial-gradient(circle at 90% 80%, rgba(31,165,98,.14), transparent 18%);
-      pointer-events:none;
+      border-radius:50%;
+      background:rgba(255,255,255,.05);
+    }
+
+    .hero-shell::before{
+      width:340px;
+      height:340px;
+      right:-120px;
+      top:-120px;
+    }
+
+    .hero-shell::after{
+      width:260px;
+      height:260px;
+      left:-80px;
+      bottom:-90px;
     }
 
     .hero-grid{
       position:relative;
       z-index:1;
-      min-height:650px;
       display:grid;
       grid-template-columns:1.1fr .9fr;
-      gap:30px;
+      gap:34px;
       align-items:center;
-      padding:58px 54px;
-    }
-
-    .hero-copy{
-      max-width:760px;
-      color:#fff;
+      padding:64px 50px;
     }
 
     .eyebrow{
@@ -170,8 +174,8 @@
       gap:8px;
       padding:9px 15px;
       border-radius:999px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
       color:#dff7e8;
       font-size:13px;
       font-weight:700;
@@ -181,7 +185,7 @@
     .hero-logo{
       width:126px;
       background:rgba(255,255,255,.96);
-      border-radius:20px;
+      border-radius:22px;
       padding:10px;
       margin-bottom:22px;
       box-shadow:0 14px 30px rgba(0,0,0,.16);
@@ -191,21 +195,21 @@
       margin:0;
       font-size:60px;
       line-height:1.02;
-      letter-spacing:-1.3px;
+      letter-spacing:-1.2px;
     }
 
     .hero .tagline{
       margin-top:16px;
-      font-size:22px;
-      color:#dff8e8;
+      font-size:23px;
+      color:#def7e7;
     }
 
     .hero .desc{
       margin-top:20px;
+      max-width:760px;
       font-size:17px;
       line-height:1.95;
       color:#effff4;
-      max-width:700px;
     }
 
     .hero-actions{
@@ -225,47 +229,37 @@
       justify-content:center;
       font-weight:700;
       font-size:15px;
-      transition:.25s ease;
     }
 
     .btn-main{
       background:#fff;
-      color:var(--green-3);
-      box-shadow:0 12px 24px rgba(255,255,255,.14);
+      color:var(--green-dark);
+      box-shadow:0 12px 24px rgba(255,255,255,.12);
     }
 
     .btn-alt{
+      background:rgba(255,255,255,.05);
       color:#fff;
       border:1.5px solid rgba(255,255,255,.38);
-      background:rgba(255,255,255,.06);
-    }
-
-    .btn-main:hover,
-    .btn-alt:hover{
-      transform:translateY(-2px);
     }
 
     .hero-side{
       display:grid;
-      gap:16px;
-      align-self:end;
-      justify-self:end;
-      width:min(100%, 430px);
+      gap:18px;
     }
 
     .glass-card{
-      background:rgba(255,255,255,.09);
-      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
       border-radius:24px;
-      padding:22px;
+      padding:24px;
       backdrop-filter:blur(12px);
-      color:#fff;
     }
 
     .glass-card h3{
       margin:0 0 10px;
-      font-size:22px;
       color:#fff;
+      font-size:21px;
     }
 
     .glass-card p{
@@ -275,30 +269,57 @@
       line-height:1.85;
     }
 
-    .stats-strip{
-      margin-top:18px;
+    .metrics{
       display:grid;
-      grid-template-columns:repeat(4, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:14px;
     }
 
-    .stat-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      box-shadow:var(--shadow-soft);
-      padding:20px 18px;
+    .metric{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.11);
+      border-radius:20px;
+      padding:18px 14px;
       text-align:center;
     }
 
-    .stat-card strong{
+    .metric strong{
       display:block;
-      font-size:28px;
+      font-size:24px;
+      margin-bottom:6px;
+      color:#fff;
+    }
+
+    .metric span{
+      font-size:13px;
+      line-height:1.6;
+      color:#ddf8e7;
+    }
+
+    .trust-strip{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .trust{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px 16px;
+      box-shadow:var(--shadow-soft);
+      text-align:center;
+    }
+
+    .trust strong{
+      display:block;
       color:#103628;
+      font-size:20px;
       margin-bottom:6px;
     }
 
-    .stat-card span{
+    .trust span{
       color:var(--muted);
       font-size:13px;
       line-height:1.6;
@@ -318,7 +339,7 @@
     }
 
     .section-head p{
-      max-width:980px;
+      max-width:920px;
       margin:14px auto 0;
       color:var(--muted);
       line-height:1.9;
@@ -328,14 +349,14 @@
     .panel{
       background:#fff;
       border:1px solid var(--line);
-      border-radius:30px;
-      padding:36px;
+      border-radius:32px;
+      padding:38px;
       box-shadow:var(--shadow);
     }
 
     .about-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.15fr .85fr;
       gap:24px;
       align-items:start;
     }
@@ -346,7 +367,7 @@
       line-height:2;
     }
 
-    .mini-grid{
+    .mini-stack{
       display:grid;
       gap:16px;
     }
@@ -357,17 +378,17 @@
     .gallery-card{
       background:#fff;
       border:1px solid var(--line);
-      border-radius:24px;
+      border-radius:26px;
       box-shadow:var(--shadow-soft);
-      transition:transform .25s ease, box-shadow .25s ease;
+      transition:transform .2s ease, box-shadow .2s ease;
     }
 
     .mini-card:hover,
     .card:hover,
     .logo-card:hover,
     .gallery-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 20px 38px rgba(0,0,0,.09);
+      transform:translateY(-4px);
+      box-shadow:0 18px 34px rgba(0,0,0,.08);
     }
 
     .mini-card,
@@ -393,22 +414,15 @@
 
     .grid-4,
     .grid-3,
-    .grid-5,
     .client-grid,
     .gallery-grid{
       display:grid;
       gap:20px;
     }
 
-    .grid-4{ grid-template-columns:repeat(4, 1fr); }
-    .grid-3{ grid-template-columns:repeat(3, 1fr); }
-    .grid-5{ grid-template-columns:repeat(5, 1fr); }
-    .client-grid{ grid-template-columns:repeat(6, 1fr); }
-
-    .featured{
-      background:linear-gradient(180deg, #f7fcf8, #ffffff);
-      border-left:5px solid var(--green-2);
-    }
+    .grid-4{ grid-template-columns:repeat(4,1fr); }
+    .grid-3{ grid-template-columns:repeat(3,1fr); }
+    .client-grid{ grid-template-columns:repeat(6,1fr); }
 
     .logo-card{
       padding:20px;
@@ -432,19 +446,23 @@
       color:#334150;
     }
 
+    .featured{
+      background:linear-gradient(180deg, #f7fcf8, #ffffff);
+      border-left:5px solid var(--green-2);
+    }
+
     .manpower-list{
       list-style:none;
       padding:0;
       margin:0;
-      columns:1;
     }
 
     .manpower-list li{
-      padding:9px 0;
+      padding:10px 0;
       border-bottom:1px solid #edf2ee;
       color:#3a4651;
-      font-size:14px;
-      line-height:1.65;
+      font-size:15px;
+      line-height:1.7;
     }
 
     .manpower-list li:last-child{
@@ -452,41 +470,25 @@
     }
 
     .gallery-grid{
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
     }
 
     .gallery-card{
       overflow:hidden;
       position:relative;
       padding:0;
-      min-height:260px;
     }
 
     .gallery-card img{
       width:100%;
-      height:100%;
-      min-height:260px;
+      height:270px;
       object-fit:cover;
-      transition:transform .45s ease;
-    }
-
-    .gallery-card:hover img{
-      transform:scale(1.05);
-    }
-
-    .gallery-card.large{
-      grid-column:span 2;
-      min-height:340px;
-    }
-
-    .gallery-card.large img{
-      min-height:340px;
     }
 
     .gallery-overlay{
       position:absolute;
       inset:auto 0 0 0;
-      background:linear-gradient(to top, rgba(7,29,21,.92), rgba(7,29,21,.10));
+      background:linear-gradient(to top, rgba(7,29,21,.9), rgba(7,29,21,.08));
       padding:18px;
     }
 
@@ -510,19 +512,6 @@
       border-radius:34px;
       padding:48px 28px;
       box-shadow:0 24px 50px rgba(0,0,0,.14);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .cta-panel::before{
-      content:"";
-      position:absolute;
-      width:260px;
-      height:260px;
-      border-radius:50%;
-      background:rgba(255,255,255,.05);
-      right:-100px;
-      top:-100px;
     }
 
     .cta-panel h2{
@@ -530,8 +519,6 @@
       font-size:44px;
       line-height:1.08;
       letter-spacing:-.7px;
-      position:relative;
-      z-index:1;
     }
 
     .cta-panel p{
@@ -540,8 +527,6 @@
       color:#e4fff0;
       font-size:16px;
       line-height:1.95;
-      position:relative;
-      z-index:1;
     }
 
     .footer{
@@ -558,25 +543,6 @@
       line-height:1.8;
     }
 
-    .reveal{
-      opacity:0;
-      filter:blur(14px);
-      transform:translateY(30px) scale(.985);
-      transition:opacity 1s ease, filter 1s ease, transform 1s ease;
-      will-change:opacity, filter, transform;
-    }
-
-    .reveal.visible{
-      opacity:1;
-      filter:blur(0);
-      transform:translateY(0) scale(1);
-    }
-
-    .delay-1{ transition-delay:.08s; }
-    .delay-2{ transition-delay:.16s; }
-    .delay-3{ transition-delay:.24s; }
-    .delay-4{ transition-delay:.32s; }
-
     @media (max-width:1180px){
       .hero-grid,
       .about-grid{
@@ -586,15 +552,9 @@
       .client-grid{ grid-template-columns:repeat(4,1fr); }
       .grid-4,
       .grid-3,
-      .grid-5,
       .gallery-grid,
-      .stats-strip{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .gallery-card.large{
-        grid-column:span 2;
-      }
+      .trust-strip,
+      .metrics{ grid-template-columns:repeat(2,1fr); }
     }
 
     @media (max-width:768px){
@@ -606,12 +566,7 @@
       .nav{ gap:12px; }
 
       .hero-grid{
-        min-height:auto;
         padding:40px 20px;
-      }
-
-      .hero-shell{
-        min-height:auto;
       }
 
       .hero h2{
@@ -636,20 +591,11 @@
 
       .grid-4,
       .grid-3,
-      .grid-5,
       .gallery-grid,
       .client-grid,
-      .stats-strip{
+      .trust-strip,
+      .metrics{
         grid-template-columns:1fr;
-      }
-
-      .gallery-card.large{
-        grid-column:span 1;
-        min-height:260px;
-      }
-
-      .gallery-card.large img{
-        min-height:260px;
       }
 
       .panel{
@@ -659,21 +605,16 @@
       .brand-text h1{
         font-size:18px;
       }
-    }
 
-    @media (prefers-reduced-motion: reduce){
-      .reveal{
-        opacity:1 !important;
-        filter:none !important;
-        transform:none !important;
-        transition:none !important;
+      .gallery-card img{
+        height:220px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header class="topbar reveal visible">
+  <header class="topbar">
     <div class="container topbar-inner">
       <div class="brand">
         <img src="logo.png" alt="Green Asia LLC Logo">
@@ -685,11 +626,11 @@
 
       <nav class="nav">
         <a href="#about">About</a>
-        <a href="#why-choose-us">Why Us</a>
         <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
         <a href="#clients">Clients</a>
+        <a href="#projects">Projects</a>
         <a href="#manpower">Manpower</a>
+        <a href="#equipment">Equipment</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
         <a class="cta" href="https://wa.me/966599027308" target="_blank">WhatsApp Us</a>
@@ -697,19 +638,20 @@
     </div>
   </header>
 
-  <section class="hero reveal visible">
+  <section class="hero">
     <div class="container">
-      <div class="hero-shell">
+      <div class="hero-wrap">
         <div class="hero-grid">
-          <div class="reveal visible delay-1 hero-copy">
-            <span class="eyebrow">Saudi Arabia Based Industrial, Construction & Property Support Company</span>
+          <div>
+            <span class="eyebrow">Saudi Arabia Based Industrial Support Company</span>
             <img class="hero-logo" src="logo.png" alt="Green Asia LLC Logo">
-            <h2>Professional Manpower, Engineering & Project Support Solutions</h2>
+            <h2>Luxury-Grade Industrial Support for Modern Projects</h2>
             <div class="tagline">Driven to Support Your Success</div>
             <p class="desc">
               Green Asia Limited Liability Company provides dependable manpower supply, industrial support services,
-              engineering assistance, procurement support, project coordination, construction-related solutions,
-              and real estate services for contractors, industrial clients, commercial operations, and project-based organizations across Saudi Arabia.
+              project coordination, equipment support, and documentation assistance for contractors, industrial clients,
+              subcontractors, and project-based organizations across Saudi Arabia. We focus on reliability, fast response,
+              and professional business support that helps projects move forward with confidence.
             </p>
             <div class="hero-actions">
               <a class="btn-main" href="mailto:info@greenasia.llc">Email Us Now</a>
@@ -718,467 +660,197 @@
           </div>
 
           <div class="hero-side">
-            <div class="glass-card reveal visible delay-2">
+            <div class="glass-card">
               <h3>What We Deliver</h3>
-              <p>Skilled manpower supply, industrial assistance, engineering support, procurement coordination, project management support, equipment support, and documentation handling.</p>
+              <p>Skilled manpower supply, field workforce deployment, project support, industrial assistance, equipment support, and organized coordination for operational continuity.</p>
             </div>
-            <div class="glass-card reveal visible delay-3">
+            <div class="glass-card">
               <h3>Where We Add Value</h3>
-              <p>Oil & gas, industrial plants, construction projects, utilities, maintenance shutdowns, infrastructure works, real estate development, and commercial property support.</p>
+              <p>Oil & gas, industrial plants, construction sites, maintenance shutdowns, utilities, infrastructure projects, piping works, and project execution environments.</p>
+            </div>
+            <div class="metrics">
+              <div class="metric"><strong>100+</strong><span>workforce categories</span></div>
+              <div class="metric"><strong>12+</strong><span>client references</span></div>
+              <div class="metric"><strong>24/7</strong><span>support mindset</span></div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="stats-strip">
-        <div class="stat-card reveal delay-1"><strong>96+</strong><span>clients served</span></div>
-        <div class="stat-card reveal delay-2"><strong>1267+</strong><span>projects done</span></div>
-        <div class="stat-card reveal delay-3"><strong>300+</strong><span>manpower categories</span></div>
-        <div class="stat-card reveal delay-4"><strong>24/7</strong><span>responsive support mindset</span></div>
+      <div class="trust-strip">
+        <div class="trust"><strong>Professional</strong><span>business-focused coordination and communication</span></div>
+        <div class="trust"><strong>Reliable</strong><span>dependable manpower and support response</span></div>
+        <div class="trust"><strong>Flexible</strong><span>support across varied industrial disciplines</span></div>
+        <div class="trust"><strong>Responsive</strong><span>fast follow-up for active requirements</span></div>
       </div>
     </div>
   </section>
 
   <section id="about">
     <div class="container">
-      <div class="section-head reveal">
-        <h2>Company Overview</h2>
-        <p>A dependable support partner for industrial businesses, contractors, subcontractors, commercial operations, and project teams operating across Saudi Arabia.</p>
+      <div class="section-head">
+        <h2>About Green Asia</h2>
+        <p>A dependable support partner for industrial businesses, contractors, subcontractors, and project teams operating across Saudi Arabia.</p>
       </div>
 
-      <div class="panel reveal">
+      <div class="panel">
         <div class="about-grid">
           <div class="about-copy">
-            Green Asia Limited Liability Company is a Saudi Arabia-based business dedicated to supporting industrial,
-            commercial, construction, and real estate-related operations through reliable manpower solutions, engineering support,
-            procurement assistance, project coordination services, and professional business support. We aim to support clients
-            with practical, dependable, and flexible solutions that help improve operational continuity, project execution,
-            workforce readiness, and business efficiency.
+            Green Asia Limited Liability Company is committed to providing professional manpower and industrial support solutions
+            tailored to the needs of project-based and operational clients. We help businesses with manpower deployment, project
+            coordination, documentation services, equipment support, and industrial assistance to keep operations efficient and
+            project workflows organized. Our business approach is based on service quality, professionalism, structured communication,
+            dependable follow-up, and long-term relationship building.
           </div>
 
-          <div class="mini-grid">
-            <div class="mini-card reveal delay-1">
+          <div class="mini-stack">
+            <div class="mini-card">
               <h3>Industry Coverage</h3>
-              <p>Oil & gas, industrial plants, construction projects, commercial operations, residential developments, utilities, infrastructure, shutdown works, and maintenance environments.</p>
+              <p>Oil & gas, industrial plants, construction sites, utilities, infrastructure works, shutdown support, and maintenance operations.</p>
             </div>
-            <div class="mini-card reveal delay-2">
+            <div class="mini-card">
               <h3>Operational Focus</h3>
-              <p>Manpower supply, engineering assistance, procurement support, project coordination, equipment support, documentation handling, and real estate-related services.</p>
+              <p>Manpower supply, project support, equipment solutions, documentation handling, and site-related coordination services.</p>
             </div>
-            <div class="mini-card reveal delay-3">
+            <div class="mini-card">
               <h3>Business Value</h3>
-              <p>We support clients through responsiveness, workforce flexibility, practical solutions, organized follow-up, and service professionalism.</p>
+              <p>Timely response, organized coordination, workforce flexibility, service professionalism, and dependable client support.</p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="why-choose-us">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Why Choose Us</h2>
-        <p>We focus on trust, capability, professional coordination, and service quality to support clients with confidence.</p>
-      </div>
-
-      <div class="grid-4">
-        <div class="card featured reveal delay-1"><h3>96+ Clients Served</h3><p>We continue to support a wide range of clients across industrial, construction, commercial, and project-based sectors in Saudi Arabia.</p></div>
-        <div class="card reveal delay-2"><h3>1267+ Projects Done</h3><p>Our growing project experience reflects a strong record of support across multiple sectors, requirements, and operational environments.</p></div>
-        <div class="card reveal delay-3"><h3>Skilled & Reliable Workforce</h3><p>We provide manpower solutions that support productivity, operational continuity, and project efficiency across many disciplines.</p></div>
-        <div class="card reveal delay-4"><h3>Professional Coordination</h3><p>We support clients with responsive communication, structured follow-up, documentation support, and organized project assistance.</p></div>
       </div>
     </div>
   </section>
 
   <section id="services">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>Our Services</h2>
-        <p>A broad range of support solutions designed for industrial, commercial, construction, project-based, and real estate-related requirements.</p>
+        <p>Practical and professional service support designed for industrial, construction, maintenance, and project-based operations.</p>
       </div>
 
       <div class="grid-4">
-        <div class="card reveal delay-1"><h3>Skilled Manpower Supply</h3><p>Providing dependable workforce solutions based on project requirements, operational demands, and client expectations.</p></div>
-        <div class="card reveal delay-2"><h3>Industrial Support Services</h3><p>Supporting industrial works and field activities with organized assistance, practical response, and reliable coordination.</p></div>
-        <div class="card reveal delay-3"><h3>Engineering Services</h3><p>Professional support for engineering-related requirements, technical coordination, and project execution assistance.</p></div>
-        <div class="card reveal delay-4"><h3>Project Management Support</h3><p>Helping clients maintain workflow continuity, communication, coordination, and organized support throughout project activities.</p></div>
-        <div class="card reveal delay-1"><h3>Procurement Support</h3><p>Assistance in supporting procurement-related requirements and material or equipment coordination needs.</p></div>
-        <div class="card reveal delay-2"><h3>Equipment Support Solutions</h3><p>Support for site and project-related equipment requirements as part of broader operational and industrial assistance.</p></div>
-        <div class="card reveal delay-3"><h3>Construction Support</h3><p>Support for residential, commercial, renovation, remodeling, and design-and-build related activities.</p></div>
-        <div class="card reveal delay-4"><h3>Real Estate Services</h3><p>Support for property-related opportunities including residential, commercial, and investment-oriented real estate coordination and assistance.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Projects We Support</h2>
-        <p>Green Asia LLC supports a wide variety of project environments across Saudi Arabia through manpower, engineering, procurement, coordination, and operational support services.</p>
-      </div>
-
-      <div class="grid-4">
-        <div class="card featured reveal delay-1"><h3>Industrial Projects</h3><p>Support for plant-based and industrial operations that require workforce, coordination, and practical service assistance.</p></div>
-        <div class="card reveal delay-2"><h3>Construction Projects</h3><p>Support for civil, structural, commercial, and project-based construction environments.</p></div>
-        <div class="card reveal delay-3"><h3>Pipeline & Mechanical Projects</h3><p>Support for projects involving piping, welding, fabrication, and mechanical execution activities.</p></div>
-        <div class="card reveal delay-4"><h3>Real Estate Development Projects</h3><p>Support for property development, renovation, coordination, and related real estate activity requirements.</p></div>
+        <div class="card"><h3>Skilled Manpower Supply</h3><p>Providing dependable workforce solutions based on project requirements, operational demands, and client expectations.</p></div>
+        <div class="card"><h3>Industrial Support Services</h3><p>Supporting industrial works and field activities with organized assistance, practical response, and reliable coordination.</p></div>
+        <div class="card"><h3>Project Coordination</h3><p>Helping maintain follow-up, communication flow, and support coordination for smoother project execution and continuity.</p></div>
+        <div class="card"><h3>Documentation Support</h3><p>Assisting with documentation requirements and related processes for better organization, readiness, and workflow support.</p></div>
+        <div class="card"><h3>Equipment Support Solutions</h3><p>Supporting site and project equipment-related requirements as part of wider industrial and operational support services.</p></div>
+        <div class="card"><h3>Business Assistance</h3><p>Providing support for inquiries, coordination, client communications, and day-to-day business requirements.</p></div>
+        <div class="card"><h3>Shutdown & Maintenance Support</h3><p>Helping clients meet maintenance and shutdown needs through responsive workforce supply and organized execution support.</p></div>
+        <div class="card"><h3>Field Workforce Support</h3><p>Supplying site-level support across civil, mechanical, piping, electrical, structural, safety, QA/QC, and related disciplines.</p></div>
       </div>
     </div>
   </section>
 
   <section id="clients">
     <div class="container">
-      <div class="section-head reveal">
-        <h2>Clients &amp; Business Network</h2>
-        <p>Green Asia LLC works to support recognized contractors, industrial companies, project teams, and business networks across Saudi Arabia.</p>
+      <div class="section-head">
+        <h2>Clients & Business Network</h2>
+        <p>Green Asia LLC works to support recognized contractors, industrial companies, project teams, and major business networks across Saudi Arabia.</p>
       </div>
 
       <div class="client-grid">
-        <div class="logo-card reveal delay-1"><img src="client-petrofac.jpg.jpeg" alt="Petrofac"><p>Petrofac</p></div>
-        <div class="logo-card reveal delay-2"><img src="client-alfanar.jpg.jpeg" alt="Alfanar Projects"><p>Alfanar Projects</p></div>
-        <div class="logo-card reveal delay-3"><img src="client-binladin.jpg.jpeg" alt="Saudi Binladin Group"><p>Saudi Binladin Group</p></div>
-        <div class="logo-card reveal delay-4"><img src="client-nesma.jpg.jpeg" alt="Nesma &amp; Partners"><p>Nesma &amp; Partners</p></div>
-        <div class="logo-card reveal delay-1"><img src="client-expertise.jpg.jpeg" alt="Expertise"><p>Expertise</p></div>
-        <div class="logo-card reveal delay-2"><img src="client-sinopec.jpg.jpeg" alt="Sinopec"><p>Sinopec</p></div>
-        <div class="logo-card reveal delay-3"><img src="client-hyundai.jpg.jpeg" alt="Hyundai Engineering &amp; Construction"><p>Hyundai E&amp;C</p></div>
-        <div class="logo-card reveal delay-4"><img src="client-samsung.jpg.jpeg" alt="Samsung Engineering"><p>Samsung Engineering</p></div>
-        <div class="logo-card reveal delay-1"><img src="client-saipem.jpg.jpeg" alt="Saipem"><p>Saipem</p></div>
-        <div class="logo-card reveal delay-2"><img src="client-airproducts.jpg.jpeg" alt="Air Products"><p>Air Products</p></div>
-        <div class="logo-card reveal delay-3"><img src="client-sec.jpg.jpeg" alt="Saudi Electricity Company"><p>Saudi Electricity Company</p></div>
-        <div class="logo-card reveal delay-4"><img src="client-aramco.jpg.jpeg" alt="Saudi Aramco"><p>Saudi Aramco</p></div>
+        <div class="logo-card"><img src="client-petrofac.jpg.jpeg" alt="Petrofac"><p>Petrofac</p></div>
+        <div class="logo-card"><img src="client-alfanar.jpg.jpeg" alt="Alfanar Projects"><p>Alfanar Projects</p></div>
+        <div class="logo-card"><img src="client-binladin.jpg.jpeg" alt="Saudi Binladin Group"><p>Saudi Binladin Group</p></div>
+        <div class="logo-card"><img src="client-nesma.jpg.jpeg" alt="Nesma & Partners"><p>Nesma & Partners</p></div>
+        <div class="logo-card"><img src="client-expertise.jpg.jpeg" alt="Expertise"><p>Expertise</p></div>
+        <div class="logo-card"><img src="client-sinopec.jpg.jpeg" alt="Sinopec"><p>Sinopec</p></div>
+        <div class="logo-card"><img src="client-hyundai.jpg.jpeg" alt="Hyundai Engineering & Construction"><p>Hyundai E&amp;C</p></div>
+        <div class="logo-card"><img src="client-samsung.jpg.jpeg" alt="Samsung Engineering"><p>Samsung Engineering</p></div>
+        <div class="logo-card"><img src="client-saipem.jpg.jpeg" alt="Saipem"><p>Saipem</p></div>
+        <div class="logo-card"><img src="client-airproducts.jpg.jpeg" alt="Air Products"><p>Air Products</p></div>
+        <div class="logo-card"><img src="client-sec.jpg.jpeg" alt="Saudi Electricity Company"><p>Saudi Electricity Company</p></div>
+        <div class="logo-card"><img src="client-aramco.jpg.jpeg" alt="Saudi Aramco"><p>Saudi Aramco</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Projects We Support</h2>
+        <p>Supporting industrial, oil & gas, construction, pipeline, utility, maintenance, and infrastructure-related operations across Saudi Arabia.</p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card featured"><h3>Oil & Gas Support Projects</h3><p>Support solutions for industrial plants, process facilities, production environments, and energy-related operations requiring dependable manpower and organized coordination.</p></div>
+        <div class="card"><h3>Construction & Industrial Projects</h3><p>Providing manpower and site support for industrial construction, structural works, contractor activities, and field execution requirements.</p></div>
+        <div class="card"><h3>Pipeline & Mechanical Works</h3><p>Assisting with pipeline installation, welding activities, fit-up work, fabrication, and mechanical site support for project environments.</p></div>
+        <div class="card"><h3>Maintenance & Shutdown Works</h3><p>Helping clients meet shutdown and maintenance needs through responsive workforce support and reliable project coordination.</p></div>
       </div>
     </div>
   </section>
 
   <section id="manpower">
     <div class="container">
-      <div class="section-head reveal">
-        <h2>200+ Manpower Categories Displayed</h2>
-        <p>Below is a broad representation of manpower categories available through Green Asia LLC, including engineers, inspectors, supervisors, technicians, operators, safety, QA/QC, civil, piping, welding, coating, administration, and support staff.</p>
+      <div class="section-head">
+        <h2>Available Manpower Categories</h2>
+        <p>Green Asia LLC can support a broad range of manpower categories across civil, scaffolding, mechanical, electrical, piping, safety, welding, painting, instrumentation, HVAC, tank, structural, administration, and operational support.</p>
       </div>
 
-      <div class="grid-5">
-        <div class="card reveal delay-1">
-          <h3>Civil & Construction</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Civil & General Construction</h3>
           <ul class="manpower-list">
-            <li>Helper</li>
-            <li>Carpenter</li>
-            <li>Steel Fixer</li>
-            <li>Tiles Mason</li>
-            <li>Concrete Mason</li>
-            <li>Block Mason</li>
-            <li>Plaster Mason</li>
-            <li>Carpenter Foreman</li>
-            <li>Steel Fixer Foreman</li>
-            <li>Plumber</li>
-            <li>Plumber Foreman</li>
-            <li>Civil QCI</li>
-            <li>Civil QCI (Aramco)</li>
-            <li>Civil Engineer</li>
-            <li>Civil Engineer (Aramco)</li>
-            <li>Civil Foreman</li>
-            <li>Civil Supervisor</li>
-            <li>Land Surveyor</li>
-            <li>Mason Foreman</li>
-            <li>Finishing Foreman</li>
-            <li>Civil Superintendent</li>
-            <li>Site Civil Coordinator</li>
+            <li>Helper</li><li>Carpenter</li><li>Steel Fixer</li><li>Tiles Mason</li><li>Concrete Mason</li><li>Block Mason</li><li>Plaster Mason</li><li>Carpenter Foreman</li><li>Steel Fixer Foreman</li><li>Plumber</li><li>Plumber Foreman</li><li>Civil QCI</li><li>Civil QCI (Aramco)</li><li>Civil Engineer</li><li>Civil Engineer (Aramco)</li><li>Civil Foreman</li><li>Civil Supervisor</li><li>Land Surveyor</li>
           </ul>
         </div>
 
-        <div class="card reveal delay-2">
+        <div class="card">
           <h3>Scaffolding & Access</h3>
           <ul class="manpower-list">
-            <li>Scaffolder</li>
-            <li>Scaffolding Foreman</li>
-            <li>Scaffolding Inspector</li>
-            <li>Scaffolding Inspector (Aramco)</li>
-            <li>Scaffolding Supervisor</li>
-            <li>Scaffolding Supervisor (Aramco)</li>
-            <li>Scaffolding Coordinator</li>
-            <li>Scaffolding Erector</li>
-            <li>Scaffolding Planner</li>
-            <li>Scaffolding Helper</li>
-            <li>Access Platform Coordinator</li>
-            <li>Access Equipment Support Staff</li>
+            <li>Scaffolder</li><li>Scaffolding Foreman</li><li>Scaffolding Inspector</li><li>Scaffolding Inspector (Aramco)</li><li>Scaffolding Supervisor</li><li>Scaffolding Supervisor (Aramco)</li>
           </ul>
         </div>
 
-        <div class="card reveal delay-3">
-          <h3>Mechanical & Rotating</h3>
+        <div class="card">
+          <h3>Mechanical & HVAC</h3>
           <ul class="manpower-list">
-            <li>Mechanical Fitter</li>
-            <li>Mechanical Technician</li>
-            <li>Mechanical Foreman</li>
-            <li>Mechanical Supervisor</li>
-            <li>Mechanical Engineer</li>
-            <li>Mechanical Engineer (Aramco)</li>
-            <li>Mechanical QCI</li>
-            <li>Mechanical QCI (Aramco)</li>
-            <li>Millwright</li>
-            <li>Hydro Supervisor</li>
-            <li>Rotating Technician</li>
-            <li>Mechanical Planner</li>
-            <li>Mechanical Coordinator</li>
-            <li>Pump Technician</li>
-            <li>Valve Technician</li>
-            <li>Static Equipment Technician</li>
-            <li>Shutdown Mechanical Specialist</li>
+            <li>Mechanical Fitter</li><li>Mechanical Technician</li><li>Mechanical Foreman</li><li>Mechanical Supervisor</li><li>Mechanical Engineer</li><li>Mechanical Engineer (Aramco)</li><li>Mechanical QCI</li><li>Mechanical QCI (Aramco)</li><li>HVAC Technician</li><li>HVAC Foreman</li><li>HVAC Supervisor</li><li>Millwright</li><li>Hydro Supervisor</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="card reveal delay-4">
-          <h3>HVAC & Ducting</h3>
+  <section id="equipment">
+    <div class="container">
+      <div class="section-head">
+        <h2>Related Equipment Support</h2>
+        <p>In addition to manpower supply, Green Asia LLC can assist with site-related equipment support solutions depending on project scope and operational requirements.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Lifting & Access Equipment</h3>
           <ul class="manpower-list">
-            <li>HVAC Technician</li>
-            <li>HVAC Foreman</li>
-            <li>HVAC Supervisor</li>
-            <li>Duct Fitter</li>
-            <li>Duct Fabricator</li>
-            <li>Duct Foreman</li>
-            <li>Duct Supervisor</li>
-            <li>Chilled Water Technician</li>
-            <li>HVAC Installer</li>
-            <li>Ventilation Technician</li>
-            <li>Air Conditioning Technician</li>
-            <li>Insulation Technician (HVAC)</li>
+            <li>Forklift Support</li>
+            <li>Manlift Support</li>
+            <li>Boom Truck Support</li>
+            <li>Crane-Related Coordination</li>
+            <li>Access Platform Support</li>
           </ul>
         </div>
-
-        <div class="card reveal delay-1">
-          <h3>Electrical & Instrumentation</h3>
+        <div class="card">
+          <h3>Construction & Field Support Equipment</h3>
           <ul class="manpower-list">
-            <li>Electrician</li>
-            <li>Electrical Technician</li>
-            <li>Electrical Foreman</li>
-            <li>Electrical Supervisor</li>
-            <li>Electrical QCI</li>
-            <li>Electrical QCI (Aramco)</li>
-            <li>Instrument Technician</li>
-            <li>Instrument Foreman</li>
-            <li>Instrument Supervisor</li>
-            <li>Tube Fitter</li>
-            <li>Cable Puller</li>
-            <li>Instrument Fitter</li>
-            <li>Instrument Engineer</li>
-            <li>Loop Checking Technician</li>
-            <li>Commissioning Technician</li>
-            <li>Electrical Engineer</li>
-            <li>Electrical Engineer (Aramco)</li>
-            <li>Instrument Engineer (Aramco)</li>
+            <li>Material Handling Support</li>
+            <li>Site Transportation Support</li>
+            <li>Pipeline Work Support Equipment</li>
+            <li>Fabrication Area Support</li>
+            <li>Mechanical Worksite Support</li>
           </ul>
         </div>
-
-        <div class="card reveal delay-2">
-          <h3>Piping</h3>
+        <div class="card">
+          <h3>Project Support Solutions</h3>
           <ul class="manpower-list">
-            <li>Pipe Fitter</li>
-            <li>Pipe Fabricator</li>
-            <li>Piping Foreman</li>
-            <li>Piping Supervisor</li>
-            <li>Piping Engineer</li>
-            <li>Piping QCI</li>
-            <li>Piping QCI (Aramco)</li>
-            <li>Piping Planner</li>
-            <li>Piping Coordinator</li>
-            <li>Piping Superintendent</li>
-            <li>Support Fabricator</li>
-            <li>Piping Designer</li>
-            <li>Piping Draftsman</li>
-            <li>Piping Material Controller</li>
-            <li>Pipe Support Fabricator</li>
-            <li>Pipe Support Installer</li>
+            <li>Equipment Mobilization Assistance</li>
+            <li>Site Operation Support</li>
+            <li>Industrial Service Coordination</li>
+            <li>Maintenance Support Equipment Planning</li>
+            <li>Responsive Client Requirement Support</li>
           </ul>
-        </div>
-
-        <div class="card reveal delay-3">
-          <h3>Welding & Fabrication</h3>
-          <ul class="manpower-list">
-            <li>Welder 3G/4G</li>
-            <li>6G Welder</li>
-            <li>Multi Welder</li>
-            <li>Alloy Welder</li>
-            <li>Welding Foreman</li>
-            <li>Welding Supervisor</li>
-            <li>Welding QCI</li>
-            <li>Welding QCI (Aramco)</li>
-            <li>TIG Welder</li>
-            <li>MIG Welder</li>
-            <li>Arc Welder</li>
-            <li>Structural Welder</li>
-            <li>Pipe Welder</li>
-            <li>Fabrication Foreman</li>
-            <li>Fabrication Supervisor</li>
-            <li>Fabrication Engineer</li>
-            <li>Grinding Technician</li>
-            <li>Fit-Up Specialist</li>
-          </ul>
-        </div>
-
-        <div class="card reveal delay-4">
-          <h3>Painting, Coating & Surface</h3>
-          <ul class="manpower-list">
-            <li>Roller Painter</li>
-            <li>Touch Up Painter</li>
-            <li>Spray Painter</li>
-            <li>Painting Foreman</li>
-            <li>Painting Supervisor</li>
-            <li>Painting Supervisor (Aramco)</li>
-            <li>Painting/Coating QCI</li>
-            <li>Painting/Coating QCI (Aramco)</li>
-            <li>Abrasive Blaster</li>
-            <li>Sand Blaster</li>
-            <li>Coating Inspector</li>
-            <li>Surface Preparation Technician</li>
-            <li>Blasting Foreman</li>
-            <li>Coating Engineer</li>
-          </ul>
-        </div>
-
-        <div class="card reveal delay-1">
-          <h3>Insulation & Cladding</h3>
-          <ul class="manpower-list">
-            <li>Insulator</li>
-            <li>Cladder</li>
-            <li>Insulator Foreman</li>
-            <li>Cladding Foreman</li>
-            <li>Insulator Supervisor</li>
-            <li>Insulation Technician</li>
-            <li>Cladding Installer</li>
-            <li>Thermal Insulation Technician</li>
-            <li>Aluminum Cladder</li>
-            <li>Sheeting Installer</li>
-            <li>Insulation Engineer</li>
-          </ul>
-        </div>
-
-        <div class="card reveal delay-2">
-          <h3>Structural, Tank & Steel</h3>
-          <ul class="manpower-list">
-            <li>Steel Erector</li>
-            <li>Structural Fitter</li>
-            <li>Structural Fabricator</li>
-            <li>Structural Foreman</li>
-            <li>Structural Supervisor</li>
-            <li>Tank Fitter</li>
-            <li>Tank Fabricator</li>
-            <li>Tank Foreman</li>
-            <li>Tank Supervisor</li>
-            <li>Structural Welder</li>
-            <li>Steel Structure Installer</li>
-            <li>Tank Erector</li>
-            <li>Tank Coordinator</li>
-            <li>Structural Engineer</li>
-            <li>Structural QCI</li>
-          </ul>
-        </div>
-
-        <div class="card reveal delay-3">
-          <h3>Safety, QA/QC & Inspection</h3>
-          <ul class="manpower-list">
-            <li>Safety Officer</li>
-            <li>Safety Officer (Aramco)</li>
-            <li>Safety Supervisor</li>
-            <li>Safety Supervisor (Aramco)</li>
-            <li>NDT Coordinator</li>
-            <li>WPR</li>
-            <li>WPR (Aramco)</li>
-            <li>Rigger I (Aramco)</li>
-            <li>Rigger II (Aramco)</li>
-            <li>Rigger III (Aramco)</li>
-            <li>Fire Watcher</li>
-            <li>Flag Man</li>
-            <li>Safety Engineer</li>
-            <li>HSE Coordinator</li>
-            <li>QA/QC Engineer</li>
-            <li>QA/QC Coordinator</li>
-            <li>NDT Technician</li>
-            <li>Permit Receiver</li>
-            <li>PTW Coordinator</li>
-            <li>Welding Inspector</li>
-            <li>Piping Inspector</li>
-            <li>Mechanical Inspector</li>
-            <li>Coating Inspector</li>
-          </ul>
-        </div>
-
-        <div class="card reveal delay-4">
-          <h3>Administration, Logistics & Site Support</h3>
-          <ul class="manpower-list">
-            <li>Material Controller</li>
-            <li>Document Controller</li>
-            <li>Time Keeper</li>
-            <li>Store Keeper</li>
-            <li>Male Nurse</li>
-            <li>Office Cleaner</li>
-            <li>Office Boy</li>
-            <li>Light Driver</li>
-            <li>Heavy Driver</li>
-            <li>Forklift Operator</li>
-            <li>Manlift Operator</li>
-            <li>Boom Truck Operator</li>
-            <li>Camp Boss</li>
-            <li>Site Admin</li>
-            <li>Logistics Coordinator</li>
-            <li>Transport Coordinator</li>
-            <li>Office Assistant</li>
-            <li>Warehouse Assistant</li>
-            <li>Store Assistant</li>
-            <li>Messenger</li>
-          </ul>
-        </div>
-
-        <div class="card reveal delay-1">
-          <h3>Additional Engineering Roles</h3>
-          <ul class="manpower-list">
-            <li>Project Engineer</li>
-            <li>Planning Engineer</li>
-            <li>Construction Engineer</li>
-            <li>Site Engineer</li>
-            <li>Project Coordinator</li>
-            <li>Project Planner</li>
-            <li>Quantity Surveyor</li>
-            <li>Cost Engineer</li>
-            <li>Proposal Engineer</li>
-            <li>Estimation Engineer</li>
-            <li>Procurement Engineer</li>
-            <li>Maintenance Engineer</li>
-            <li>Commissioning Engineer</li>
-            <li>Pre-Commissioning Engineer</li>
-            <li>Completion Engineer</li>
-            <li>Turnover Engineer</li>
-          </ul>
-        </div>
-
-        <div class="card reveal delay-2">
-          <h3>Additional Support Categories</h3>
-          <ul class="manpower-list">
-            <li>General Helper</li>
-            <li>Skilled Helper</li>
-            <li>Mechanical Helper</li>
-            <li>Electrical Helper</li>
-            <li>Piping Helper</li>
-            <li>Welding Helper</li>
-            <li>Painting Helper</li>
-            <li>Scaffolding Helper</li>
-            <li>Civil Helper</li>
-            <li>Housekeeping Staff</li>
-            <li>Cleaning Supervisor</li>
-            <li>Messenger Driver</li>
-            <li>Security Assistant</li>
-            <li>Reception Support Staff</li>
-            <li>Data Entry Staff</li>
-            <li>Clerk</li>
-          </ul>
-        </div>
-
-        <div class="card featured reveal delay-3">
-          <h3>More Categories Available</h3>
-          <p>
-            Green Asia LLC can support many more specialized manpower categories upon request, including Aramco-certified,
-            supervisory, technical, engineering, inspection, safety, logistics, operations, maintenance, and project-support roles.
-          </p>
         </div>
       </div>
     </div>
@@ -1186,38 +858,33 @@
 
   <section id="gallery">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>Project Gallery</h2>
-        <p>A visual glimpse of industrial environments, construction support activities, field workforce presence, and project operations.</p>
+        <p>A glimpse of industrial environments, construction support activities, field manpower presence, and project operations.</p>
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-card large reveal delay-1">
+        <div class="gallery-card">
           <img src="gallery-1.jpg.jpeg" alt="Industrial facility at night">
           <div class="gallery-overlay"><p>Industrial support environment for plant and process facility operations.</p></div>
         </div>
-
-        <div class="gallery-card reveal delay-2">
+        <div class="gallery-card">
           <img src="gallery-2.jpg.jpeg" alt="Industrial piping facility">
           <div class="gallery-overlay"><p>Support for industrial facilities, piping systems, and operational infrastructure.</p></div>
         </div>
-
-        <div class="gallery-card reveal delay-3">
+        <div class="gallery-card">
           <img src="gallery-3.jpg.jpeg" alt="Construction project site">
           <div class="gallery-overlay"><p>Construction and structural project support in large-scale field environments.</p></div>
         </div>
-
-        <div class="gallery-card reveal delay-4">
+        <div class="gallery-card">
           <img src="gallery-4.jpg.jpeg" alt="Site manpower group">
           <div class="gallery-overlay"><p>Workforce presence and field-level support for project operations and site activities.</p></div>
         </div>
-
-        <div class="gallery-card reveal delay-1">
+        <div class="gallery-card">
           <img src="gallery-5.jpg.jpeg" alt="Pipeline installation work">
           <div class="gallery-overlay"><p>Pipeline-related field support and installation activity in project environments.</p></div>
         </div>
-
-        <div class="gallery-card large reveal delay-2">
+        <div class="gallery-card">
           <img src="gallery-6.jpg.jpeg" alt="Welding work on pipeline">
           <div class="gallery-overlay"><p>Skilled manpower support for welding and mechanical site works.</p></div>
         </div>
@@ -1227,26 +894,26 @@
 
   <section id="contact">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>Contact Us</h2>
-        <p>Reach out to Green Asia LLC for manpower support, business inquiries, engineering assistance, procurement support, project coordination, industrial services, real estate services, and equipment-related requirements.</p>
+        <p>Reach out to Green Asia LLC for manpower support, business inquiries, project coordination, industrial assistance, and equipment-related requirements.</p>
       </div>
 
       <div class="grid-4">
-        <div class="card contact-card reveal delay-1"><h3>Email Address</h3><p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p></div>
-        <div class="card contact-card reveal delay-2"><h3>Phone Number 1</h3><p><a href="tel:+966539379095">+966 53 937 9095</a></p></div>
-        <div class="card contact-card reveal delay-3"><h3>Phone Number 2</h3><p><a href="tel:+966599027308">+966 59 902 7308</a></p></div>
-        <div class="card contact-card reveal delay-4"><h3>WhatsApp</h3><p><a href="https://wa.me/966599027308" target="_blank">Chat with us directly on WhatsApp</a></p></div>
+        <div class="card contact-card"><h3>Email Address</h3><p><a href="mailto:info@greenasia.llc">info@greenasia.llc</a></p></div>
+        <div class="card contact-card"><h3>Phone Number 1</h3><p><a href="tel:+966539379095">+966 53 937 9095</a></p></div>
+        <div class="card contact-card"><h3>Phone Number 2</h3><p><a href="tel:+966599027308">+966 59 902 7308</a></p></div>
+        <div class="card contact-card"><h3>WhatsApp</h3><p><a href="https://wa.me/966599027308" target="_blank">Chat with us directly on WhatsApp</a></p></div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="cta-panel reveal">
+      <div class="cta-panel">
         <h2>Ready to Support Your Business</h2>
         <p>Green Asia LLC is ready to support your operational and project requirements with responsive service, dependable coordination, skilled workforce solutions, and a strong commitment to professional business support across Saudi Arabia.</p>
-        <div class="hero-actions" style="justify-content:center; position:relative; z-index:1;">
+        <div class="hero-actions" style="justify-content:center;">
           <a class="btn-main" href="mailto:info@greenasia.llc">Email Us Now</a>
           <a class="btn-alt" href="https://wa.me/966599027308" target="_blank">Start WhatsApp Chat</a>
         </div>
@@ -1254,23 +921,13 @@
     </div>
   </section>
 
-  <footer class="footer reveal visible">
+  <footer class="footer">
     <p><strong>Green Asia Limited Liability Company</strong></p>
     <p>Driven to Support Your Success</p>
-    <p>Professional manpower, engineering, procurement, industrial support, construction, real estate, and project coordination solutions across Saudi Arabia.</p>
     <p>Email: info@greenasia.llc</p>
     <p>Phone: +966 53 937 9095 / +966 59 902 7308</p>
     <p>Office: 8289 Hofof St., Al Safah Dist., Jubail, Kingdom of Saudi Arabia</p>
   </footer>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
