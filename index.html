@@ -271,7 +271,11 @@
     .manpower-summary span{display:block}
     .manpower-summary small{display:block;margin-top:5px;color:var(--muted);font-size:13px;font-weight:700}
     .manpower-icon{width:38px;height:38px;border-radius:999px;display:grid;place-items:center;background:linear-gradient(180deg,#eff9f2,#ffffff);border:1px solid var(--line);color:var(--green);font-size:20px;flex:0 0 auto}
-    .manpower-body{padding:0 22px 22px}
+    .manpower-body{padding:0 22px 22px;max-height:420px;overflow:auto}
+    .manpower-body::-webkit-scrollbar{width:10px}
+    .manpower-body::-webkit-scrollbar-thumb{background:#d8e6dc;border-radius:999px}
+    .manpower-body::-webkit-scrollbar-track{background:transparent}
+    .manpower-icon{font-size:16px;font-weight:800;line-height:1}
     .role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
     .role-item{padding:12px 14px;border-radius:16px;background:linear-gradient(180deg,#fbfdfb,#f6faf7);border:1px solid #e8efea;color:#334150;font-size:14px;line-height:1.55}
     .role-item mark{background:#dff5e7;color:#0d3426;padding:0 2px;border-radius:4px}
@@ -632,7 +636,7 @@
         </div>
 
         <div class="manpower-accordion">
-          <details class="manpower-group" open data-group="A. Project Management & Leadership">
+          <details class="manpower-group" data-group="A. Project Management & Leadership">
             <summary class="manpower-summary"><span>A. Project Management &amp; Leadership<small>Leadership, management, planning, controls, integrity, execution and site management roles</small></span><span class="manpower-icon">+</span></summary>
             <div class="manpower-body"><div class="role-grid">
               <div class="role-item">Project Director</div><div class="role-item">Project Manager</div><div class="role-item">Deputy Project Manager</div><div class="role-item">Senior Project Manager</div><div class="role-item">Site Manager</div><div class="role-item">Construction Manager</div><div class="role-item">Deputy Construction Manager</div><div class="role-item">Engineering Manager</div><div class="role-item">Procurement Manager</div><div class="role-item">Contracts Manager</div><div class="role-item">Commercial Manager</div><div class="role-item">Planning Manager</div><div class="role-item">Cost Control Manager</div><div class="role-item">Project Controls Manager</div><div class="role-item">QA/QC Manager</div><div class="role-item">HSE Manager</div><div class="role-item">Commissioning Manager</div><div class="role-item">Start-up Manager</div><div class="role-item">Shutdown Manager</div><div class="role-item">Turnaround Manager</div><div class="role-item">Operations Manager</div><div class="role-item">Maintenance Manager</div><div class="role-item">Fabrication Manager</div><div class="role-item">Erection Manager</div><div class="role-item">Material Manager</div><div class="role-item">Logistics Manager</div><div class="role-item">Administration Manager</div><div class="role-item">HR Manager</div><div class="role-item">Camp Manager</div><div class="role-item">Transport Manager</div><div class="role-item">Area Manager</div><div class="role-item">Area Superintendent</div><div class="role-item">Construction Superintendent</div><div class="role-item">Discipline Manager</div><div class="role-item">Interface Manager</div><div class="role-item">Risk Manager</div><div class="role-item">Document Control Manager</div><div class="role-item">Asset Integrity Manager</div><div class="role-item">Inspection Manager</div><div class="role-item">Reliability Manager</div><div class="role-item">Vendor Manager</div><div class="role-item">Supply Chain Manager</div><div class="role-item">Workshop Manager</div><div class="role-item">Plant Manager</div><div class="role-item">Facility Manager</div><div class="role-item">Execution Manager</div><div class="role-item">Site Execution Manager</div><div class="role-item">Field Engineering Manager</div><div class="role-item">Brownfield Manager</div><div class="role-item">Greenfield Manager</div>
