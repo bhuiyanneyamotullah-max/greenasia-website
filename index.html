@@ -342,10 +342,12 @@
     .hero-logo-strip{
       margin-top:14px;
       overflow:hidden;
-      border-radius:18px;
+      border-radius:20px;
       border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.05);
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
       position:relative;
+      padding:8px 0;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
     }
 
     .hero-logo-strip::before,
@@ -354,80 +356,51 @@
       position:absolute;
       top:0;
       bottom:0;
-      width:42px;
+      width:54px;
       z-index:2;
       pointer-events:none;
     }
 
     .hero-logo-strip::before{
       left:0;
-      background:linear-gradient(to right, rgba(12,30,23,.95), rgba(12,30,23,0));
+      background:linear-gradient(to right, rgba(12,30,23,.98), rgba(12,30,23,0));
     }
 
     .hero-logo-strip::after{
       right:0;
-      background:linear-gradient(to left, rgba(12,30,23,.95), rgba(12,30,23,0));
+      background:linear-gradient(to left, rgba(12,30,23,.98), rgba(12,30,23,0));
     }
 
     .hero-logo-track{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:14px;
       width:max-content;
-      padding:12px;
-      animation:logoMarquee 24s linear infinite;
+      padding:6px 12px;
+      animation:logoMarquee 34s linear infinite;
     }
 
-    .hero-logo-pill{
-      display:inline-flex;
+    .hero-logo-item{
+      width:132px;
+      height:72px;
+      flex:0 0 auto;
+      display:flex;
       align-items:center;
       justify-content:center;
-      white-space:nowrap;
-      min-height:42px;
-      padding:10px 16px;
-      border-radius:999px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.14);
-      color:#fff;
-      font-size:13px;
-      font-weight:700;
-      letter-spacing:.2px;
-      backdrop-filter:blur(8px);
+      padding:10px 14px;
+      border-radius:20px;
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(246,249,247,.96));
+      border:1px solid rgba(255,255,255,.2);
+      box-shadow:0 12px 24px rgba(0,0,0,.14);
     }
 
-    .metrics{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-    }
-
-    .metric{
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:22px;
-      padding:18px 14px;
-      text-align:center;
-      backdrop-filter:blur(10px);
-      transition:transform .28s ease, box-shadow .28s ease;
-      animation:fadeScale 1.25s ease both;
-    }
-
-    .metric:hover{
-      transform:translateY(-6px);
-      box-shadow:0 14px 32px rgba(0,0,0,.10);
-    }
-
-    .metric strong{
-      display:block;
-      font-size:28px;
-      margin-bottom:6px;
-      color:#fff;
-    }
-
-    .metric span{
-      font-size:13px;
-      line-height:1.6;
-      color:#e4faeb;
+    .hero-logo-item img{
+      max-width:100%;
+      max-height:40px;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+      filter:saturate(1.02) contrast(1.02);
     }
 
     .trust-strip{
@@ -581,8 +554,7 @@
     .careers-grid,
     .form-grid,
     .request-grid,
-    .request-form-grid,
-    .stats-grid{
+    .request-form-grid{
       display:grid;
       gap:20px;
     }
@@ -596,21 +568,6 @@
     .form-grid{ grid-template-columns:1fr 1fr; gap:14px; }
     .request-grid{ grid-template-columns:1fr 1fr; }
     .request-form-grid{ grid-template-columns:1fr 1fr; gap:14px; }
-    .stats-grid{ grid-template-columns:repeat(4,1fr); }
-
-    .stat-card{
-      text-align:center;
-      background:linear-gradient(180deg,#ffffff,#fbfcfb);
-    }
-
-    .counter{
-      font-size:40px;
-      font-weight:800;
-      color:var(--green);
-      line-height:1;
-      margin-bottom:10px;
-      display:block;
-    }
 
     .logo-card{
       padding:20px;
@@ -968,10 +925,8 @@
       .gallery-grid,
       .service-photo-grid,
       .trust-strip,
-      .metrics,
       .form-grid,
-      .request-form-grid,
-      .stats-grid{
+      .request-form-grid{
         grid-template-columns:repeat(2,1fr);
       }
     }
@@ -1007,10 +962,8 @@
       .client-grid,
       .service-photo-grid,
       .trust-strip,
-      .metrics,
       .form-grid,
-      .request-form-grid,
-      .stats-grid{ grid-template-columns:1fr; }
+      .request-form-grid{ grid-template-columns:1fr; }
 
       .panel,
       .form-box,
@@ -1020,6 +973,14 @@
       .showcase-card img{ min-height:260px; }
       .service-photo-card,
       .service-photo-card img{ min-height:240px; }
+      .hero-logo-item{
+        width:108px;
+        height:60px;
+        padding:8px 12px;
+      }
+      .hero-logo-item img{
+        max-height:32px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -1088,6 +1049,7 @@
               <a class="btn-alt" href="https://wa.me/966599027308" target="_blank">Start WhatsApp Chat</a>
             </div>
           </div>
+
           <div class="hero-side">
             <div class="glass-card tilt">
               <h3>Professional Industrial Support</h3>
@@ -1103,20 +1065,53 @@
               <h3>Trusted by Leading Companies</h3>
               <div class="hero-logo-strip">
                 <div class="hero-logo-track">
-                  <span class="hero-logo-pill">Petrofac</span>
-                  <span class="hero-logo-pill">Sinopec</span>
-                  <span class="hero-logo-pill">Hyundai E&amp;C</span>
-                  <span class="hero-logo-pill">Samsung Engineering</span>
-                  <span class="hero-logo-pill">Saipem</span>
-                  <span class="hero-logo-pill">Air Products</span>
-                  <span class="hero-logo-pill">Saudi Aramco</span>
-                  <span class="hero-logo-pill">Petrofac</span>
-                  <span class="hero-logo-pill">Sinopec</span>
-                  <span class="hero-logo-pill">Hyundai E&amp;C</span>
-                  <span class="hero-logo-pill">Samsung Engineering</span>
-                  <span class="hero-logo-pill">Saipem</span>
-                  <span class="hero-logo-pill">Air Products</span>
-                  <span class="hero-logo-pill">Saudi Aramco</span>
+                  <div class="hero-logo-item"><img src="client-airproducts.jpg.jpeg" alt="Air Products"></div>
+                  <div class="hero-logo-item"><img src="client-alfanar.jpg.jpeg" alt="Alfanar Projects"></div>
+                  <div class="hero-logo-item"><img src="client-aramco.jpg.jpeg" alt="Saudi Aramco"></div>
+                  <div class="hero-logo-item"><img src="client-archirodon.png.png" alt="Archirodon"></div>
+                  <div class="hero-logo-item"><img src="client-bechtel.jpg.jpg" alt="Bechtel"></div>
+                  <div class="hero-logo-item"><img src="client-binladin.jpg.jpeg" alt="Saudi Binladin Group"></div>
+                  <div class="hero-logo-item"><img src="client-cityscape-global.png.png" alt="Cityscape Global"></div>
+                  <div class="hero-logo-item"><img src="client-energy-china.png.jpg" alt="Energy China"></div>
+                  <div class="hero-logo-item"><img src="client-expertise.jpg.jpeg" alt="Expertise"></div>
+                  <div class="hero-logo-item"><img src="client-hyundai.jpg.jpeg" alt="Hyundai E&amp;C"></div>
+                  <div class="hero-logo-item"><img src="client-ibsf.png.jpg" alt="IBSF"></div>
+                  <div class="hero-logo-item"><img src="client-larsen-toubro.png.png" alt="Larsen &amp; Toubro"></div>
+                  <div class="hero-logo-item"><img src="client-mcdermott.jpg.jpg" alt="McDermott"></div>
+                  <div class="hero-logo-item"><img src="client-nesma.jpg.jpeg" alt="Nesma &amp; Partners"></div>
+                  <div class="hero-logo-item"><img src="client-npcc.png.jpg" alt="NPCC"></div>
+                  <div class="hero-logo-item"><img src="client-petrofac.jpg.jpeg" alt="Petrofac"></div>
+                  <div class="hero-logo-item"><img src="client-saipem.jpg.jpeg" alt="Saipem"></div>
+                  <div class="hero-logo-item"><img src="client-samsung.jpg.jpeg" alt="Samsung Engineering"></div>
+                  <div class="hero-logo-item"><img src="client-sec.jpg.jpeg" alt="Saudi Electricity Company"></div>
+                  <div class="hero-logo-item"><img src="client-sinopec.jpg.jpeg" alt="Sinopec"></div>
+                  <div class="hero-logo-item"><img src="client-sns.png.png" alt="SNS"></div>
+                  <div class="hero-logo-item"><img src="client-tecnicas-reunidas.png.png" alt="Tecnicas Reunidas"></div>
+                  <div class="hero-logo-item"><img src="client-unicoil.png.png" alt="UNICOIL"></div>
+
+                  <div class="hero-logo-item"><img src="client-airproducts.jpg.jpeg" alt="Air Products"></div>
+                  <div class="hero-logo-item"><img src="client-alfanar.jpg.jpeg" alt="Alfanar Projects"></div>
+                  <div class="hero-logo-item"><img src="client-aramco.jpg.jpeg" alt="Saudi Aramco"></div>
+                  <div class="hero-logo-item"><img src="client-archirodon.png.png" alt="Archirodon"></div>
+                  <div class="hero-logo-item"><img src="client-bechtel.jpg.jpg" alt="Bechtel"></div>
+                  <div class="hero-logo-item"><img src="client-binladin.jpg.jpeg" alt="Saudi Binladin Group"></div>
+                  <div class="hero-logo-item"><img src="client-cityscape-global.png.png" alt="Cityscape Global"></div>
+                  <div class="hero-logo-item"><img src="client-energy-china.png.jpg" alt="Energy China"></div>
+                  <div class="hero-logo-item"><img src="client-expertise.jpg.jpeg" alt="Expertise"></div>
+                  <div class="hero-logo-item"><img src="client-hyundai.jpg.jpeg" alt="Hyundai E&amp;C"></div>
+                  <div class="hero-logo-item"><img src="client-ibsf.png.jpg" alt="IBSF"></div>
+                  <div class="hero-logo-item"><img src="client-larsen-toubro.png.png" alt="Larsen &amp; Toubro"></div>
+                  <div class="hero-logo-item"><img src="client-mcdermott.jpg.jpg" alt="McDermott"></div>
+                  <div class="hero-logo-item"><img src="client-nesma.jpg.jpeg" alt="Nesma &amp; Partners"></div>
+                  <div class="hero-logo-item"><img src="client-npcc.png.jpg" alt="NPCC"></div>
+                  <div class="hero-logo-item"><img src="client-petrofac.jpg.jpeg" alt="Petrofac"></div>
+                  <div class="hero-logo-item"><img src="client-saipem.jpg.jpeg" alt="Saipem"></div>
+                  <div class="hero-logo-item"><img src="client-samsung.jpg.jpeg" alt="Samsung Engineering"></div>
+                  <div class="hero-logo-item"><img src="client-sec.jpg.jpeg" alt="Saudi Electricity Company"></div>
+                  <div class="hero-logo-item"><img src="client-sinopec.jpg.jpeg" alt="Sinopec"></div>
+                  <div class="hero-logo-item"><img src="client-sns.png.png" alt="SNS"></div>
+                  <div class="hero-logo-item"><img src="client-tecnicas-reunidas.png.png" alt="Tecnicas Reunidas"></div>
+                  <div class="hero-logo-item"><img src="client-unicoil.png.png" alt="UNICOIL"></div>
                 </div>
               </div>
             </div>
@@ -1168,8 +1163,6 @@
     </div>
   </section>
 
-  
-
   <section id="services" class="reveal">
     <div class="container">
       <div class="section-head">
@@ -1191,7 +1184,7 @@
         <div class="card tilt"><h3>Catering Services</h3><p>Supporting food service requirements for workforce accommodation, camps, business operations, and project-related environments.</p></div>
         <div class="card tilt"><h3>Real Estate Support</h3><p>Assisting with real estate-related services linked to accommodation, business facility needs, and property-related support.</p></div>
         <div class="card tilt"><h3>Commercial Support</h3><p>Providing practical support across business operations, workforce logistics, facility needs, and requirement-based service response.</p></div>
-        <div class="card tilt"><h3>Shutdown & Maintenance</h3><p>Helping clients meet shutdown and maintenance requirements through organized workforce and operational support.</p></div>
+        <div class="card tilt"><h3>Shutdown &amp; Maintenance</h3><p>Helping clients meet shutdown and maintenance requirements through organized workforce and operational support.</p></div>
         <div class="card tilt"><h3>Integrated Assistance</h3><p>Combining manpower, facilities, transport, catering, camp, and project support through one responsive network.</p></div>
       </div>
     </div>
@@ -1247,25 +1240,36 @@
     <div class="container">
       <div class="section-head">
         <span class="overline">Business Network</span>
-        <h2>Clients & Business Network</h2>
+        <h2>Clients &amp; Business Network</h2>
         <p>
-          Green Asia LLC proudly supports 96+ clients across industrial, oil & gas, engineering, commercial, accommodation, and project-based sectors.
+          Green Asia LLC proudly supports 96+ clients across industrial, oil &amp; gas, engineering, commercial, accommodation, and project-based sectors.
         </p>
       </div>
 
       <div class="client-grid">
-        <div class="logo-card tilt"><img src="client-petrofac.jpg.jpeg" alt="Petrofac"><p>Petrofac</p></div>
-        <div class="logo-card tilt"><img src="client-alfanar.jpg.jpeg" alt="Alfanar Projects"><p>Alfanar Projects</p></div>
-        <div class="logo-card tilt"><img src="client-binladin.jpg.jpeg" alt="Saudi Binladin Group"><p>Saudi Binladin Group</p></div>
-        <div class="logo-card tilt"><img src="client-nesma.jpg.jpeg" alt="Nesma & Partners"><p>Nesma & Partners</p></div>
-        <div class="logo-card tilt"><img src="client-expertise.jpg.jpeg" alt="Expertise"><p>Expertise</p></div>
-        <div class="logo-card tilt"><img src="client-sinopec.jpg.jpeg" alt="Sinopec"><p>Sinopec</p></div>
-        <div class="logo-card tilt"><img src="client-hyundai.jpg.jpeg" alt="Hyundai E&C"><p>Hyundai E&amp;C</p></div>
-        <div class="logo-card tilt"><img src="client-samsung.jpg.jpeg" alt="Samsung Engineering"><p>Samsung Engineering</p></div>
-        <div class="logo-card tilt"><img src="client-saipem.jpg.jpeg" alt="Saipem"><p>Saipem</p></div>
         <div class="logo-card tilt"><img src="client-airproducts.jpg.jpeg" alt="Air Products"><p>Air Products</p></div>
-        <div class="logo-card tilt"><img src="client-sec.jpg.jpeg" alt="Saudi Electricity Company"><p>Saudi Electricity Company</p></div>
+        <div class="logo-card tilt"><img src="client-alfanar.jpg.jpeg" alt="Alfanar Projects"><p>Alfanar Projects</p></div>
         <div class="logo-card tilt"><img src="client-aramco.jpg.jpeg" alt="Saudi Aramco"><p>Saudi Aramco</p></div>
+        <div class="logo-card tilt"><img src="client-archirodon.png.png" alt="Archirodon"><p>Archirodon</p></div>
+        <div class="logo-card tilt"><img src="client-bechtel.jpg.jpg" alt="Bechtel"><p>Bechtel</p></div>
+        <div class="logo-card tilt"><img src="client-binladin.jpg.jpeg" alt="Saudi Binladin Group"><p>Saudi Binladin Group</p></div>
+        <div class="logo-card tilt"><img src="client-cityscape-global.png.png" alt="Cityscape Global"><p>Cityscape Global</p></div>
+        <div class="logo-card tilt"><img src="client-energy-china.png.jpg" alt="Energy China"><p>Energy China</p></div>
+        <div class="logo-card tilt"><img src="client-expertise.jpg.jpeg" alt="Expertise"><p>Expertise</p></div>
+        <div class="logo-card tilt"><img src="client-hyundai.jpg.jpeg" alt="Hyundai E&amp;C"><p>Hyundai E&amp;C</p></div>
+        <div class="logo-card tilt"><img src="client-ibsf.png.jpg" alt="IBSF"><p>IBSF</p></div>
+        <div class="logo-card tilt"><img src="client-larsen-toubro.png.png" alt="Larsen &amp; Toubro"><p>Larsen &amp; Toubro</p></div>
+        <div class="logo-card tilt"><img src="client-mcdermott.jpg.jpg" alt="McDermott"><p>McDermott</p></div>
+        <div class="logo-card tilt"><img src="client-nesma.jpg.jpeg" alt="Nesma &amp; Partners"><p>Nesma &amp; Partners</p></div>
+        <div class="logo-card tilt"><img src="client-npcc.png.jpg" alt="NPCC"><p>NPCC</p></div>
+        <div class="logo-card tilt"><img src="client-petrofac.jpg.jpeg" alt="Petrofac"><p>Petrofac</p></div>
+        <div class="logo-card tilt"><img src="client-saipem.jpg.jpeg" alt="Saipem"><p>Saipem</p></div>
+        <div class="logo-card tilt"><img src="client-samsung.jpg.jpeg" alt="Samsung Engineering"><p>Samsung Engineering</p></div>
+        <div class="logo-card tilt"><img src="client-sec.jpg.jpeg" alt="Saudi Electricity Company"><p>Saudi Electricity Company</p></div>
+        <div class="logo-card tilt"><img src="client-sinopec.jpg.jpeg" alt="Sinopec"><p>Sinopec</p></div>
+        <div class="logo-card tilt"><img src="client-sns.png.png" alt="SNS"><p>SNS</p></div>
+        <div class="logo-card tilt"><img src="client-tecnicas-reunidas.png.png" alt="Tecnicas Reunidas"><p>Tecnicas Reunidas</p></div>
+        <div class="logo-card tilt"><img src="client-unicoil.png.png" alt="UNICOIL"><p>UNICOIL</p></div>
       </div>
     </div>
   </section>
@@ -1276,7 +1280,7 @@
         <span class="overline">Project Support</span>
         <h2>Projects We Support</h2>
         <p>
-          With 987 completed and supported projects, Green Asia LLC contributes to industrial, oil & gas, construction, utility, infrastructure, maintenance, accommodation, and commercial support environments across Saudi Arabia.
+          With 987 completed and supported projects, Green Asia LLC contributes to industrial, oil &amp; gas, construction, utility, infrastructure, maintenance, accommodation, and commercial support environments across Saudi Arabia.
         </p>
       </div>
 
@@ -1297,10 +1301,10 @@
       </div>
 
       <div class="grid-4" style="margin-top:20px;">
-        <div class="card featured tilt"><h3>Industrial & Oil & Gas Projects</h3><p>Support for process facilities, offshore and onshore project environments, plant operations, and contractor-driven industrial activities.</p></div>
-        <div class="card tilt"><h3>Construction & Infrastructure</h3><p>Workforce and coordination support for civil works, structural activities, industrial construction, and site operations.</p></div>
-        <div class="card tilt"><h3>Commercial & Facility Support</h3><p>Business support services for accommodation, transportation, catering, camp services, and operational facility needs.</p></div>
-        <div class="card tilt"><h3>Maintenance & Shutdown Works</h3><p>Practical manpower and operational support for shutdowns, maintenance campaigns, and continuity-driven requirements.</p></div>
+        <div class="card featured tilt"><h3>Industrial &amp; Oil &amp; Gas Projects</h3><p>Support for process facilities, offshore and onshore project environments, plant operations, and contractor-driven industrial activities.</p></div>
+        <div class="card tilt"><h3>Construction &amp; Infrastructure</h3><p>Workforce and coordination support for civil works, structural activities, industrial construction, and site operations.</p></div>
+        <div class="card tilt"><h3>Commercial &amp; Facility Support</h3><p>Business support services for accommodation, transportation, catering, camp services, and operational facility needs.</p></div>
+        <div class="card tilt"><h3>Maintenance &amp; Shutdown Works</h3><p>Practical manpower and operational support for shutdowns, maintenance campaigns, and continuity-driven requirements.</p></div>
       </div>
     </div>
   </section>
@@ -1325,7 +1329,7 @@
         </div>
 
         <div class="card tilt">
-          <h3>Civil, Construction & General Support</h3>
+          <h3>Civil, Construction &amp; General Support</h3>
           <ul class="manpower-list">
             <li>Helper</li>
             <li>Carpenter</li>
@@ -1342,7 +1346,7 @@
         </div>
 
         <div class="card tilt">
-          <h3>Mechanical, Electrical, Piping & Welding</h3>
+          <h3>Mechanical, Electrical, Piping &amp; Welding</h3>
           <ul class="manpower-list">
             <li>Mechanical Fitter / Technician / Supervisor</li>
             <li>Mechanical Engineer / QCI</li>
@@ -1350,12 +1354,12 @@
             <li>Pipe Fitter / Pipe Fabricator / Piping Supervisor / Piping QCI</li>
             <li>Welder 3G/4G / 6G / Multi / Alloy</li>
             <li>Welding Foreman / Welding Supervisor / Welding QCI</li>
-            <li>Instrument Technicians & Related Roles</li>
+            <li>Instrument Technicians &amp; Related Roles</li>
           </ul>
         </div>
 
         <div class="card tilt">
-          <h3>Safety, Coating, Structural & Insulation</h3>
+          <h3>Safety, Coating, Structural &amp; Insulation</h3>
           <ul class="manpower-list">
             <li>Safety Officer / Safety Supervisor</li>
             <li>Painting / Coating QCI / Supervisors / Painters</li>
@@ -1367,7 +1371,7 @@
         </div>
 
         <div class="card tilt">
-          <h3>Administration, Camp & Operations</h3>
+          <h3>Administration, Camp &amp; Operations</h3>
           <ul class="manpower-list">
             <li>Document Controller</li>
             <li>Material Controller</li>
@@ -1421,7 +1425,7 @@
 
       <div class="grid-3" style="margin-top:20px;">
         <div class="card tilt">
-          <h3>Lifting & Access Equipment</h3>
+          <h3>Lifting &amp; Access Equipment</h3>
           <ul class="manpower-list">
             <li>Forklift Support</li>
             <li>Manlift Support</li>
@@ -1433,7 +1437,7 @@
         </div>
 
         <div class="card tilt">
-          <h3>Field & Construction Equipment</h3>
+          <h3>Field &amp; Construction Equipment</h3>
           <ul class="manpower-list">
             <li>Material Handling Support</li>
             <li>Site Transportation Support</li>
@@ -1497,10 +1501,6 @@
             <br><strong><a class="jobs-link" href="mailto:jobs@greenasia.llc">jobs@greenasia.llc</a></strong>
           </p>
           <p>
-            You may also contact us on WhatsApp for quick application support:
-            <br><strong><a class="jobs-link" href="https://wa.me/966599027308" target="_blank">+966 59 902 7308</a></strong>
-          </p>
-          <p>
             Common positions include civil, mechanical, piping, electrical, welding, scaffolding, coating, safety, documentation, logistics, transportation, camp services, catering, and general support roles.
           </p>
         </div>
@@ -1526,7 +1526,6 @@
             <div class="form-actions">
               <button type="submit" class="btn-main">Apply by Email</button>
               <a class="btn-ghost" href="mailto:jobs@greenasia.llc">Send CV to jobs@greenasia.llc</a>
-              <a class="btn-ghost" href="https://wa.me/966599027308" target="_blank">Apply on WhatsApp</a>
             </div>
           </form>
         </div>
@@ -1664,31 +1663,6 @@
     }, { threshold: 0.16 });
 
     revealElements.forEach(el => revealObserver.observe(el));
-
-    const counters = document.querySelectorAll('.counter');
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = Number(el.dataset.target || 0);
-        let start = 0;
-        const duration = 1400;
-        const startTime = performance.now();
-
-        function updateCounter(now) {
-          const progress = Math.min((now - startTime) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const value = Math.floor(start + (target - start) * eased);
-          el.textContent = value + '+';
-          if (progress < 1) requestAnimationFrame(updateCounter);
-        }
-
-        requestAnimationFrame(updateCounter);
-        observer.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-
-    counters.forEach(counter => counterObserver.observe(counter));
 
     const tiltCards = document.querySelectorAll('.tilt');
     tiltCards.forEach(card => {
