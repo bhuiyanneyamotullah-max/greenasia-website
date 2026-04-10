@@ -339,6 +339,62 @@
       line-height:1.8;
     }
 
+    .hero-logo-strip{
+      margin-top:14px;
+      overflow:hidden;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.05);
+      position:relative;
+    }
+
+    .hero-logo-strip::before,
+    .hero-logo-strip::after{
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      width:42px;
+      z-index:2;
+      pointer-events:none;
+    }
+
+    .hero-logo-strip::before{
+      left:0;
+      background:linear-gradient(to right, rgba(12,30,23,.95), rgba(12,30,23,0));
+    }
+
+    .hero-logo-strip::after{
+      right:0;
+      background:linear-gradient(to left, rgba(12,30,23,.95), rgba(12,30,23,0));
+    }
+
+    .hero-logo-track{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      width:max-content;
+      padding:12px;
+      animation:logoMarquee 24s linear infinite;
+    }
+
+    .hero-logo-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
+      min-height:42px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.2px;
+      backdrop-filter:blur(8px);
+    }
+
     .metrics{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -892,6 +948,11 @@
       50%{ transform:translate3d(18px,-18px,0) scale(1.06); }
     }
 
+    @keyframes logoMarquee{
+      from{ transform:translateX(0); }
+      to{ transform:translateX(-50%); }
+    }
+
     @media (max-width:1180px){
       .hero-grid,
       .about-grid,
@@ -1036,6 +1097,28 @@
             <div class="glass-card tilt">
               <h3>Fast Response • Organized Coordination</h3>
               <p>We focus on dependable communication, structured follow-up, and practical support execution to help clients maintain continuity and readiness.</p>
+            </div>
+
+            <div class="glass-card tilt">
+              <h3>Trusted by Leading Companies</h3>
+              <div class="hero-logo-strip">
+                <div class="hero-logo-track">
+                  <span class="hero-logo-pill">Petrofac</span>
+                  <span class="hero-logo-pill">Sinopec</span>
+                  <span class="hero-logo-pill">Hyundai E&amp;C</span>
+                  <span class="hero-logo-pill">Samsung Engineering</span>
+                  <span class="hero-logo-pill">Saipem</span>
+                  <span class="hero-logo-pill">Air Products</span>
+                  <span class="hero-logo-pill">Saudi Aramco</span>
+                  <span class="hero-logo-pill">Petrofac</span>
+                  <span class="hero-logo-pill">Sinopec</span>
+                  <span class="hero-logo-pill">Hyundai E&amp;C</span>
+                  <span class="hero-logo-pill">Samsung Engineering</span>
+                  <span class="hero-logo-pill">Saipem</span>
+                  <span class="hero-logo-pill">Air Products</span>
+                  <span class="hero-logo-pill">Saudi Aramco</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
