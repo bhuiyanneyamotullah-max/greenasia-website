@@ -4,367 +4,1191 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Green Asia Limited Liability Company</title>
-  <meta name="description" content="Green Asia Limited Liability Company provides manpower supply, industrial support, equipment support, transportation, camp services, catering, real estate support, and project coordination across Saudi Arabia." />
+  <meta
+    name="description"
+    content="Green Asia Limited Liability Company provides manpower supply, industrial support, equipment support, transportation, camp services, catering, real estate support, and project coordination across Saudi Arabia."
+  />
   <style>
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;width:100%;max-width:100%}
-
-    html,body,main,#app,.app,.site,.site-wrap,.page,.page-wrapper,.wrapper,.main-wrapper{
-      width:100% !important;
-      max-width:100% !important;
-      min-height:100%;
-      transform:none !important;
-      zoom:1 !important;
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      width: 100%;
+      max-width: 100%;
     }
 
+    body {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: #18212b;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(29,161,95,.10), transparent 24%),
+        radial-gradient(circle at 90% 0%, rgba(215,177,106,.10), transparent 20%),
+        linear-gradient(180deg, #f9fcfa 0%, #eef5f0 100%);
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
     :root{
-      --bg:#f3f7f4;
       --surface:#ffffff;
-      --surface-2:#f8fbf9;
-      --dark:#081812;
-      --dark-2:#10231c;
       --text:#18212b;
       --muted:#687783;
       --line:#e3ece6;
       --green:#147747;
       --green-2:#1da15f;
-      --green-3:#56c98e;
       --gold:#d7b16a;
       --shadow:0 24px 60px rgba(0,0,0,.08);
       --shadow-soft:0 14px 34px rgba(0,0,0,.06);
-      --radius:28px;
       --max:1280px;
     }
 
-    body{
-      width:100%;
-      max-width:100%;
-      margin:0;
-      font-family:Inter,Arial,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at 10% 0%, rgba(29,161,95,.10), transparent 24%),
-        radial-gradient(circle at 90% 0%, rgba(215,177,106,.10), transparent 20%),
-        linear-gradient(180deg,#f9fcfa 0%, #eef5f0 100%);
-      overflow-x:hidden;
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
     }
 
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-
-    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
-
-    .topbar{
-      position:sticky;top:0;z-index:999;
-      background:rgba(255,255,255,.72);
-      backdrop-filter:blur(18px) saturate(1.15);
-      border-bottom:1px solid rgba(227,236,230,.92);
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(18px) saturate(1.15);
+      border-bottom: 1px solid rgba(227,236,230,.92);
     }
 
-    .topbar-inner{
-      min-height:86px;display:flex;align-items:center;justify-content:space-between;
-      gap:18px;flex-wrap:wrap;padding:12px 0;
+    .topbar-inner {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 12px 0;
     }
 
-    .brand{display:flex;align-items:center;gap:14px;min-width:0}
-    .brand img{
-      width:64px;height:64px;object-fit:contain;background:#fff;border-radius:18px;padding:6px;
-      box-shadow:var(--shadow-soft);border:1px solid rgba(20,119,71,.08)
-    }
-    .brand-text h1{margin:0;font-size:20px;line-height:1.15;color:#0d3426;letter-spacing:-.3px}
-    .brand-text p{margin:4px 0 0;font-size:13px;color:var(--green);font-weight:800;letter-spacing:.18px}
-
-    .nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-    .nav a{font-size:14px;font-weight:700;color:#334150;position:relative;transition:.25s ease}
-    .nav a:not(.cta)::after{
-      content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;
-      background:linear-gradient(90deg,var(--green),var(--gold));transition:width .25s ease
-    }
-    .nav a:hover{color:var(--green)}
-    .nav a:not(.cta):hover::after{width:100%}
-    .nav .cta{
-      padding:12px 18px;border-radius:999px;color:#fff;
-      background:linear-gradient(135deg,var(--green),var(--green-2));
-      box-shadow:0 14px 28px rgba(20,119,71,.22)
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
     }
 
-    section{padding:68px 0;position:relative}
+    .brand img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 18px;
+      padding: 6px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(20,119,71,.08);
+    }
 
-    .hero{padding-top:28px}
-    .hero-wrap{
-      position:relative;overflow:hidden;min-height:780px;border-radius:40px;color:#fff;isolation:isolate;
+    .brand-text h1 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.15;
+      color: #0d3426;
+      letter-spacing: -.3px;
+    }
+
+    .brand-text p {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      font-size: 14px;
+      font-weight: 700;
+      color: #334150;
+      position: relative;
+      transition: .25s ease;
+    }
+
+    .nav a:not(.cta)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--green), var(--gold));
+      transition: width .25s ease;
+    }
+
+    .nav a:hover { color: var(--green); }
+    .nav a:not(.cta):hover::after { width: 100%; }
+
+    .nav .cta {
+      padding: 12px 18px;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--green), var(--green-2));
+      box-shadow: 0 14px 28px rgba(20,119,71,.22);
+    }
+
+    section {
+      padding: 68px 0;
+      position: relative;
+    }
+
+    .hero {
+      padding-top: 28px;
+    }
+
+    .hero-wrap {
+      position: relative;
+      overflow: hidden;
+      min-height: 780px;
+      border-radius: 40px;
+      color: #fff;
+      isolation: isolate;
       background:
         linear-gradient(112deg, rgba(8,24,18,.92), rgba(8,24,18,.60)),
         url('project-offshore-platform.jpg.jpg') center/cover no-repeat;
-      box-shadow:0 36px 80px rgba(0,0,0,.18)
+      box-shadow: 0 36px 80px rgba(0,0,0,.18);
     }
-    .hero-wrap::before,.hero-wrap::after,.mesh{
-      content:"";position:absolute;border-radius:999px;pointer-events:none;filter:blur(10px)
+
+    .hero-wrap::before,
+    .hero-wrap::after,
+    .mesh {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+      filter: blur(10px);
     }
-    .hero-wrap::before{
-      width:360px;height:360px;right:-80px;top:-70px;
-      background:radial-gradient(circle, rgba(86,201,142,.24), transparent 72%);
-      animation:orbFloat 11s ease-in-out infinite
+
+    .hero-wrap::before {
+      width: 360px;
+      height: 360px;
+      right: -80px;
+      top: -70px;
+      background: radial-gradient(circle, rgba(86,201,142,.24), transparent 72%);
+      animation: orbFloat 11s ease-in-out infinite;
     }
-    .hero-wrap::after{
-      width:300px;height:300px;left:-80px;bottom:-90px;
-      background:radial-gradient(circle, rgba(215,177,106,.14), transparent 72%);
-      animation:orbFloat 13s ease-in-out infinite reverse
+
+    .hero-wrap::after {
+      width: 300px;
+      height: 300px;
+      left: -80px;
+      bottom: -90px;
+      background: radial-gradient(circle, rgba(215,177,106,.14), transparent 72%);
+      animation: orbFloat 13s ease-in-out infinite reverse;
     }
-    .mesh{
-      inset:0;
+
+    .mesh {
+      inset: 0;
       background:
         radial-gradient(circle at 80% 20%, rgba(255,255,255,.07), transparent 20%),
         radial-gradient(circle at 25% 80%, rgba(86,201,142,.08), transparent 22%);
-      z-index:0
+      z-index: 0;
     }
 
-    .hero-grid > *{min-width:0}
-
-    .hero-grid{
-      position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:end;
-      min-height:780px;padding:72px 52px 56px
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 34px;
+      align-items: end;
+      min-height: 780px;
+      padding: 72px 52px 56px;
     }
 
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;
-      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
-      color:#effff5;font-size:13px;font-weight:800;margin-bottom:18px;backdrop-filter:blur(10px);
-      animation:fadeUp .8s ease both
-    }
-    .hero-logo{
-      width:132px;background:rgba(255,255,255,.98);border-radius:24px;padding:12px;margin-bottom:22px;
-      box-shadow:0 18px 34px rgba(0,0,0,.18);animation:floatLogo 4.5s ease-in-out infinite
-    }
-    .hero h2{margin:0;font-size:66px;line-height:.98;letter-spacing:-1.6px;max-width:860px;animation:fadeUp .95s ease both}
-    .hero h2 .accent{display:block;background:linear-gradient(90deg,#ffffff,#d9ffe8);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero .tagline{margin-top:18px;font-size:23px;color:#e3f8eb;animation:fadeUp 1.08s ease both}
-    .hero .desc{margin-top:22px;max-width:760px;font-size:17px;line-height:1.95;color:#f1fff5;animation:fadeUp 1.2s ease both}
+    .hero-grid > * { min-width: 0; }
 
-    .hero-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px;animation:fadeUp 1.3s ease both}
-    .btn-main,.btn-alt,.btn-ghost{
-      min-height:54px;padding:14px 24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
-      font-weight:800;font-size:15px;transition:transform .28s ease, box-shadow .28s ease, background .28s ease, border-color .28s ease;
-      cursor:pointer
-    }
-    .btn-main{background:#fff;color:#0d3426;box-shadow:0 14px 28px rgba(255,255,255,.14);border:none}
-    .btn-alt{background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.38);backdrop-filter:blur(10px)}
-    .btn-ghost{background:transparent;color:var(--green);border:1.5px solid rgba(20,119,71,.18)}
-    .btn-main:hover,.btn-alt:hover,.btn-ghost:hover{transform:translateY(-3px)}
-
-    .hero-side{display:grid;gap:16px;align-self:end;min-width:0}
-    .glass-card,.trust,.mini-card,.card,.logo-card,.gallery-card,.showcase-card,.service-photo-card,.form-box,.request-box{will-change:transform}
-    .glass-card{min-width:0;overflow:hidden;
-      background:linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.08));
-      border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:22px;backdrop-filter:blur(14px);
-      box-shadow:0 18px 38px rgba(0,0,0,.10);animation:fadeScale 1s ease both
-    }
-    .glass-card h3{margin:0 0 10px;color:#fff;font-size:21px}
-    .glass-card p{margin:0;color:#e9fff1;font-size:14px;line-height:1.8;white-space:normal;overflow-wrap:anywhere;word-break:normal;max-width:100%}
-
-    .hero-logo-strip{
-      margin-top:14px;overflow:hidden;border-radius:20px;border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));position:relative;padding:8px 0;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.06)
-    }
-    .hero-logo-strip::before,.hero-logo-strip::after{content:"";position:absolute;top:0;bottom:0;width:54px;z-index:2;pointer-events:none}
-    .hero-logo-strip::before{left:0;background:linear-gradient(to right, rgba(12,30,23,.98), rgba(12,30,23,0))}
-    .hero-logo-strip::after{right:0;background:linear-gradient(to left, rgba(12,30,23,.98), rgba(12,30,23,0))}
-    .hero-logo-track{display:flex;align-items:center;gap:14px;width:max-content;padding:6px 12px;animation:logoMarquee 34s linear infinite}
-    .hero-logo-item{
-      width:132px;height:72px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:10px 14px;
-      border-radius:20px;background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(246,249,247,.96));
-      border:1px solid rgba(255,255,255,.2);box-shadow:0 12px 24px rgba(0,0,0,.14)
-    }
-    .hero-logo-item img{max-width:100%;max-height:40px;width:auto;height:auto;object-fit:contain;filter:saturate(1.02) contrast(1.02)}
-
-    .trust-strip{margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .trust{
-      background:linear-gradient(180deg,#ffffff,#fbfcfb);border:1px solid var(--line);border-radius:24px;padding:20px 16px;
-      box-shadow:var(--shadow-soft);text-align:center;transition:transform .28s ease, box-shadow .28s ease
-    }
-    .trust:hover{transform:translateY(-6px);box-shadow:0 20px 36px rgba(0,0,0,.08)}
-    .trust strong{display:block;color:#103628;font-size:20px;margin-bottom:6px}
-    .trust span{color:var(--muted);font-size:13px;line-height:1.6}
-
-    .section-head{text-align:center;margin-bottom:38px}
-    .section-head .overline{display:inline-block;margin-bottom:10px;color:var(--green);font-size:13px;font-weight:800;letter-spacing:.20em;text-transform:uppercase}
-    .section-head h2{margin:0;font-size:46px;line-height:1.06;letter-spacing:-.9px;color:#0d3426}
-    .section-head p{max-width:960px;margin:14px auto 0;color:var(--muted);line-height:1.9;font-size:16px}
-
-    .panel{
-      background:rgba(255,255,255,.82);border:1px solid rgba(226,235,229,.9);border-radius:34px;padding:40px;
-      box-shadow:var(--shadow);backdrop-filter:blur(10px)
-    }
-    .about-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:26px;align-items:start}
-    .about-copy{color:#394551;font-size:16px;line-height:2}
-    .stack{display:grid;gap:16px}
-
-    .mini-card,.card,.logo-card,.gallery-card,.showcase-card,.service-photo-card,.form-box,.request-box{
-      background:#fff;border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow-soft);
-      transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease
-    }
-    .mini-card:hover,.card:hover,.logo-card:hover,.gallery-card:hover,.showcase-card:hover,.service-photo-card:hover,.form-box:hover,.request-box:hover{
-      transform:translateY(-7px);box-shadow:0 20px 38px rgba(0,0,0,.08);border-color:rgba(20,119,71,.16)
-    }
-    .mini-card,.card{padding:24px 22px}
-    .mini-card h3,.card h3{margin:0 0 12px;font-size:22px;line-height:1.25;color:#103628}
-    .mini-card p,.card p{margin:0;color:var(--muted);font-size:15px;line-height:1.9}
-
-    .grid-4,.grid-3,.client-grid,.gallery-grid,.showcase-grid,.service-photo-grid,.careers-grid,.form-grid,.request-grid,.request-form-grid{display:grid;gap:20px}
-    .grid-4{grid-template-columns:repeat(4,1fr)}
-    .grid-3{grid-template-columns:repeat(3,1fr)}
-    .client-grid{grid-template-columns:repeat(6,1fr)}
-    .showcase-grid{grid-template-columns:1.08fr .92fr}
-    .service-photo-grid{grid-template-columns:repeat(4,1fr)}
-    .careers-grid{grid-template-columns:1fr 1fr}
-    .form-grid,.request-form-grid{grid-template-columns:1fr 1fr;gap:14px}
-    .request-grid{grid-template-columns:1fr 1fr}
-
-    .logo-card{padding:20px;text-align:center;background:linear-gradient(180deg,#ffffff,#fbfcfb)}
-    .logo-card img{width:100%;max-width:150px;height:96px;object-fit:contain;margin:0 auto 12px;border-radius:10px;transition:transform .35s ease}
-    .logo-card:hover img{transform:scale(1.05)}
-    .logo-card p{margin:0;font-size:14px;line-height:1.6;font-weight:800;color:#334150}
-
-    .featured,.note-box,.request-note{background:linear-gradient(180deg,#f7fcf8,#ffffff);border-left:5px solid var(--green-2)}
-
-    .manpower-list{list-style:none;padding:0;margin:0}
-    .manpower-list li{
-      padding:10px 0 10px 18px;border-bottom:1px solid #edf2ee;color:#3a4651;font-size:15px;line-height:1.7;position:relative
-    }
-    .manpower-list li::before{content:"";position:absolute;left:0;top:18px;width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,var(--green),var(--gold))}
-    .manpower-list li:last-child{border-bottom:none}
-
-    .showcase-card{overflow:hidden;padding:0;position:relative}
-    .showcase-card img{width:100%;height:100%;min-height:390px;object-fit:cover;transition:transform .55s ease}
-    .showcase-card:hover img{transform:scale(1.06)}
-    .showcase-copy{padding:34px}
-    .showcase-copy h3{margin:0 0 12px;font-size:32px;color:#103628;line-height:1.12}
-    .showcase-copy p{margin:0;font-size:15px;line-height:1.95;color:var(--muted)}
-
-    .service-photo-card,.gallery-card{overflow:hidden;position:relative;padding:0}
-    .service-photo-card{min-height:300px}
-    .service-photo-card img,.gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease, filter .55s ease}
-    .service-photo-card img{min-height:300px}
-    .gallery-card img{height:320px}
-    .service-photo-card:hover img,.gallery-card:hover img{transform:scale(1.08);filter:saturate(1.04)}
-    .service-photo-overlay,.gallery-overlay{
-      position:absolute;inset:auto 0 0 0;padding:18px;background:linear-gradient(to top, rgba(6,25,18,.94), rgba(6,25,18,.08));
-      transform:translateY(0);transition:transform .35s ease
-    }
-    .gallery-card:hover .gallery-overlay,.service-photo-card:hover .service-photo-overlay{transform:translateY(-4px)}
-    .service-photo-overlay h3{margin:0 0 8px;color:#fff;font-size:22px;line-height:1.2}
-    .service-photo-overlay p,.gallery-overlay p{margin:0;color:#e7fff0;font-size:14px;line-height:1.7}
-    .gallery-grid{grid-template-columns:repeat(3,1fr)}
-
-    .contact-card a,.jobs-link{color:var(--green);font-weight:800;word-break:break-word}
-
-    .manpower-hub{display:grid;gap:22px}
-    .manpower-top{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
-    .manpower-panel{background:#fff;border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow-soft);padding:26px}
-    .manpower-panel h3{margin:0 0 12px;font-size:24px;color:#103628}
-    .manpower-panel p{margin:0;color:var(--muted);line-height:1.9;font-size:15px}
-    .manpower-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .stat-pill{padding:18px;border-radius:22px;background:linear-gradient(180deg,#f7fcf8,#ffffff);border:1px solid var(--line)}
-    .stat-pill strong{display:block;font-size:28px;line-height:1;color:#147747;margin-bottom:8px}
-    .stat-pill span{display:block;color:var(--muted);font-size:14px;line-height:1.7}
-    .manpower-toolbar{display:grid;gap:14px}
-    .manpower-search{width:100%;border:1px solid #dbe4df;border-radius:18px;padding:15px 16px;font:inherit;background:#fbfdfb;outline:none}
-    .manpower-search:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(20,119,71,.08)}
-    .chip-row{display:flex;flex-wrap:wrap;gap:10px}
-    .manpower-chip{padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:800;color:#355045}
-    .manpower-accordion{display:grid;gap:14px}
-    .manpower-group{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-soft);overflow:hidden}
-    .manpower-group[open]{border-color:rgba(20,119,71,.2);box-shadow:0 18px 36px rgba(0,0,0,.07)}
-    .manpower-summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:20px 22px;font-weight:800;color:#103628}
-    .manpower-summary::-webkit-details-marker{display:none}
-    .manpower-summary span{display:block}
-    .manpower-summary small{display:block;margin-top:5px;color:var(--muted);font-size:13px;font-weight:700}
-    .manpower-icon{width:38px;height:38px;border-radius:999px;display:grid;place-items:center;background:linear-gradient(180deg,#eff9f2,#ffffff);border:1px solid var(--line);color:var(--green);font-size:20px;flex:0 0 auto}
-    .manpower-body{padding:0 22px 22px;max-height:420px;overflow:auto}
-    .manpower-body::-webkit-scrollbar{width:10px}
-    .manpower-body::-webkit-scrollbar-thumb{background:#d8e6dc;border-radius:999px}
-    .manpower-body::-webkit-scrollbar-track{background:transparent}
-    .manpower-icon{font-size:16px;font-weight:800;line-height:1}
-    .role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .role-item{padding:12px 14px;border-radius:16px;background:linear-gradient(180deg,#fbfdfb,#f6faf7);border:1px solid #e8efea;color:#334150;font-size:14px;line-height:1.55}
-    .role-item mark{background:#dff5e7;color:#0d3426;padding:0 2px;border-radius:4px}
-    .group-hidden{display:none !important}
-    .form-box,.request-box{padding:26px}
-    .form-box h3,.request-box h3{margin:0 0 12px;font-size:24px;color:#103628}
-    .form-box p,.request-box p{margin:0 0 18px;color:var(--muted);line-height:1.9;font-size:15px}
-    .form-grid .full,.request-form-grid .full{grid-column:1 / -1}
-
-    .input,.select,.textarea{
-      width:100%;border:1px solid #dbe4df;border-radius:16px;padding:14px 14px;font:inherit;color:var(--text);
-      background:#fbfdfb;outline:none;transition:border-color .25s ease, box-shadow .25s ease, transform .25s ease
-    }
-    .input:focus,.select:focus,.textarea:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(20,119,71,.08);transform:translateY(-1px)}
-    .textarea{min-height:130px;resize:vertical}
-    .form-actions,.request-actions{margin-top:16px;display:flex;flex-wrap:wrap;gap:12px}
-
-    .cta-panel{
-      position:relative;overflow:hidden;background:
-      linear-gradient(135deg, rgba(7,29,21,.94), rgba(17,87,61,.92)),
-      url('gallery-1.jpg.jpeg') center/cover no-repeat;
-      color:#fff;text-align:center;border-radius:38px;padding:62px 28px;box-shadow:0 24px 50px rgba(0,0,0,.14);isolation:isolate
-    }
-    .cta-panel::before{content:"";position:absolute;inset:-20% auto auto -10%;width:260px;height:260px;border-radius:999px;background:radial-gradient(circle, rgba(71,199,132,.22), transparent 70%);z-index:0;animation:orbFloat 9s ease-in-out infinite}
-    .cta-panel>*{position:relative;z-index:1}
-    .cta-panel h2{margin:0;font-size:48px;line-height:1.06;letter-spacing:-.8px}
-    .cta-panel p{max-width:860px;margin:14px auto 0;color:#e4fff0;font-size:16px;line-height:1.95}
-
-    .footer{
-      margin-top:42px;background:linear-gradient(180deg,#081f17,#061811);color:#fff;padding:48px 20px;text-align:center;position:relative;overflow:hidden
-    }
-    .footer::before{content:"";position:absolute;inset:auto auto -120px -100px;width:260px;height:260px;border-radius:999px;background:radial-gradient(circle, rgba(71,199,132,.12), transparent 70%)}
-    .footer p{margin:8px 0;color:#dff5e7;line-height:1.8;position:relative;z-index:1}
-
-    .reveal{opacity:0;transform:translateY(44px) scale(.985);transition:opacity .9s ease, transform .9s ease}
-    .reveal.visible{opacity:1;transform:translateY(0) scale(1)}
-    .reveal-left{opacity:0;transform:translateX(-44px);transition:opacity .9s ease, transform .9s ease}
-    .reveal-right{opacity:0;transform:translateX(44px);transition:opacity .9s ease, transform .9s ease}
-    .reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateX(0)}
-    .tilt{transform-style:preserve-3d;perspective:900px}
-
-    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes fadeScale{from{opacity:0;transform:translateY(22px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
-    @keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-    @keyframes orbFloat{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(18px,-18px,0) scale(1.06)}}
-    @keyframes logoMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-    @media (max-width:1180px){
-      .manpower-top{grid-template-columns:1fr}
-      .role-grid{grid-template-columns:repeat(2,1fr)}
-      .hero-grid,.about-grid,.showcase-grid,.careers-grid,.request-grid{grid-template-columns:1fr}
-      .client-grid{grid-template-columns:repeat(4,1fr)}
-      .grid-4,.grid-3,.gallery-grid,.service-photo-grid,.trust-strip,.form-grid,.request-form-grid{grid-template-columns:repeat(2,1fr)}
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      color: #effff5;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      backdrop-filter: blur(10px);
+      animation: fadeUp .8s ease both;
     }
 
-    @media (max-width:768px){
-      .manpower-stats,.role-grid{grid-template-columns:1fr}
-      .manpower-panel{padding:22px 18px}
-      .topbar-inner{flex-direction:column;align-items:flex-start}
-      .nav{gap:12px}
-      .hero-wrap{min-height:auto}
-      .hero-grid{min-height:auto;padding:44px 20px 30px}
-      .hero h2{font-size:42px}
-      .hero .tagline{font-size:20px}
-      .hero .desc,.section-head p,.about-copy,.cta-panel p{font-size:15px}
-      .section-head h2,.cta-panel h2{font-size:32px}
-      .grid-4,.grid-3,.gallery-grid,.client-grid,.service-photo-grid,.trust-strip,.form-grid,.request-form-grid{grid-template-columns:1fr}
-      .panel,.form-box,.request-box{padding:24px 18px}
-      .brand-text h1{font-size:18px}
-      .gallery-card img{height:235px}
-      .showcase-card img{min-height:260px}
-      .service-photo-card,.service-photo-card img{min-height:240px}
-      .hero-logo-item{width:108px;height:60px;padding:8px 12px}
-      .hero-logo-item img{max-height:32px}
+    .hero-logo {
+      width: 132px;
+      background: rgba(255,255,255,.98);
+      border-radius: 24px;
+      padding: 12px;
+      margin-bottom: 22px;
+      box-shadow: 0 18px 34px rgba(0,0,0,.18);
+      animation: floatLogo 4.5s ease-in-out infinite;
     }
 
-    @media (prefers-reduced-motion: reduce){
-      *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
-      .reveal,.reveal-left,.reveal-right{opacity:1 !important;transform:none !important}
+    .hero h2 {
+      margin: 0;
+      font-size: 66px;
+      line-height: .98;
+      letter-spacing: -1.6px;
+      max-width: 860px;
+      animation: fadeUp .95s ease both;
+    }
+
+    .hero h2 .accent {
+      display: block;
+      background: linear-gradient(90deg, #ffffff, #d9ffe8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero .tagline {
+      margin-top: 18px;
+      font-size: 23px;
+      color: #e3f8eb;
+      animation: fadeUp 1.08s ease both;
+    }
+
+    .hero .desc {
+      margin-top: 22px;
+      max-width: 760px;
+      font-size: 17px;
+      line-height: 1.95;
+      color: #f1fff5;
+      animation: fadeUp 1.2s ease both;
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      animation: fadeUp 1.3s ease both;
+    }
+
+    .btn-main,
+    .btn-alt,
+    .btn-ghost {
+      min-height: 54px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      transition: transform .28s ease, box-shadow .28s ease, background .28s ease, border-color .28s ease;
+      cursor: pointer;
+    }
+
+    .btn-main {
+      background: #fff;
+      color: #0d3426;
+      box-shadow: 0 14px 28px rgba(255,255,255,.14);
+      border: none;
+    }
+
+    .btn-alt {
+      background: rgba(255,255,255,.06);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,.38);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--green);
+      border: 1.5px solid rgba(20,119,71,.18);
+    }
+
+    .btn-main:hover,
+    .btn-alt:hover,
+    .btn-ghost:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+      align-self: end;
+      min-width: 0;
+    }
+
+    .glass-card,
+    .trust,
+    .mini-card,
+    .card,
+    .logo-card,
+    .gallery-card,
+    .showcase-card,
+    .service-photo-card,
+    .form-box,
+    .request-box,
+    .manpower-panel,
+    .stat-pill,
+    .manpower-group {
+      will-change: transform;
+    }
+
+    .glass-card {
+      min-width: 0;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.08));
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 28px;
+      padding: 22px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 38px rgba(0,0,0,.10);
+      animation: fadeScale 1s ease both;
+    }
+
+    .glass-card h3 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 21px;
+    }
+
+    .glass-card p {
+      margin: 0;
+      color: #e9fff1;
+      font-size: 14px;
+      line-height: 1.8;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      max-width: 100%;
+    }
+
+    .hero-logo-strip {
+      margin-top: 14px;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      position: relative;
+      padding: 8px 0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .hero-logo-strip::before,
+    .hero-logo-strip::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 54px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-logo-strip::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(12,30,23,.98), rgba(12,30,23,0));
+    }
+
+    .hero-logo-strip::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(12,30,23,.98), rgba(12,30,23,0));
+    }
+
+    .hero-logo-track {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: max-content;
+      padding: 6px 12px;
+      animation: logoMarquee 34s linear infinite;
+    }
+
+    .hero-logo-item {
+      width: 132px;
+      height: 72px;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(246,249,247,.96));
+      border: 1px solid rgba(255,255,255,.2);
+      box-shadow: 0 12px 24px rgba(0,0,0,.14);
+    }
+
+    .hero-logo-item img {
+      max-width: 100%;
+      max-height: 40px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .trust-strip {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .trust {
+      background: linear-gradient(180deg,#ffffff,#fbfcfb);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 20px 16px;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+
+    .trust:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 36px rgba(0,0,0,.08);
+    }
+
+    .trust strong {
+      display: block;
+      color: #103628;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .trust span {
+      color: #687783;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-head .overline {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 46px;
+      line-height: 1.06;
+      letter-spacing: -.9px;
+      color: #0d3426;
+    }
+
+    .section-head p {
+      max-width: 960px;
+      margin: 14px auto 0;
+      color: #687783;
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    .panel {
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(226,235,229,.9);
+      border-radius: 34px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .about-copy {
+      color: #394551;
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .stack { display: grid; gap: 16px; }
+
+    .mini-card,
+    .card,
+    .logo-card,
+    .gallery-card,
+    .showcase-card,
+    .service-photo-card,
+    .form-box,
+    .request-box,
+    .manpower-panel,
+    .stat-pill,
+    .manpower-group {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+
+    .mini-card:hover,
+    .card:hover,
+    .logo-card:hover,
+    .gallery-card:hover,
+    .showcase-card:hover,
+    .service-photo-card:hover,
+    .form-box:hover,
+    .request-box:hover,
+    .manpower-panel:hover,
+    .stat-pill:hover,
+    .manpower-group:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 20px 38px rgba(0,0,0,.08);
+      border-color: rgba(20,119,71,.16);
+    }
+
+    .mini-card,
+    .card {
+      padding: 24px 22px;
+    }
+
+    .mini-card h3,
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
+      color: #103628;
+    }
+
+    .mini-card p,
+    .card p {
+      margin: 0;
+      color: #687783;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .grid-4,
+    .grid-3,
+    .client-grid,
+    .gallery-grid,
+    .showcase-grid,
+    .service-photo-grid,
+    .careers-grid,
+    .form-grid,
+    .request-grid,
+    .request-form-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-4 { grid-template-columns: repeat(4,1fr); }
+    .grid-3 { grid-template-columns: repeat(3,1fr); }
+    .client-grid { grid-template-columns: repeat(6,1fr); }
+    .showcase-grid { grid-template-columns: 1.08fr .92fr; }
+    .service-photo-grid { grid-template-columns: repeat(4,1fr); }
+    .careers-grid { grid-template-columns: 1fr 1fr; }
+    .form-grid,
+    .request-form-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .request-grid { grid-template-columns: 1fr 1fr; }
+
+    .logo-card {
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(180deg,#ffffff,#fbfcfb);
+    }
+
+    .logo-card img {
+      width: 100%;
+      max-width: 150px;
+      height: 96px;
+      object-fit: contain;
+      margin: 0 auto 12px;
+      border-radius: 10px;
+      transition: transform .35s ease;
+    }
+
+    .logo-card:hover img { transform: scale(1.05); }
+
+    .logo-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 800;
+      color: #334150;
+    }
+
+    .featured,
+    .note-box,
+    .request-note {
+      background: linear-gradient(180deg,#f7fcf8,#ffffff);
+      border-left: 5px solid var(--green-2);
+    }
+
+    .manpower-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .manpower-list li {
+      padding: 10px 0 10px 18px;
+      border-bottom: 1px solid #edf2ee;
+      color: #3a4651;
+      font-size: 15px;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .manpower-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg,var(--green),var(--gold));
+    }
+
+    .manpower-list li:last-child { border-bottom: none; }
+
+    .showcase-card {
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+    }
+
+    .showcase-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 390px;
+      object-fit: cover;
+      transition: transform .55s ease;
+    }
+
+    .showcase-card:hover img { transform: scale(1.06); }
+
+    .showcase-copy { padding: 34px; }
+
+    .showcase-copy h3 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      color: #103628;
+      line-height: 1.12;
+    }
+
+    .showcase-copy p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.95;
+      color: #687783;
+    }
+
+    .service-photo-card,
+    .gallery-card {
+      overflow: hidden;
+      position: relative;
+      padding: 0;
+    }
+
+    .service-photo-card { min-height: 300px; }
+
+    .service-photo-card img,
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .55s ease, filter .55s ease;
+    }
+
+    .service-photo-card img { min-height: 300px; }
+    .gallery-card img { height: 320px; }
+
+    .service-photo-card:hover img,
+    .gallery-card:hover img {
+      transform: scale(1.08);
+      filter: saturate(1.04);
+    }
+
+    .service-photo-overlay,
+    .gallery-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 18px;
+      background: linear-gradient(to top, rgba(6,25,18,.94), rgba(6,25,18,.08));
+      transform: translateY(0);
+      transition: transform .35s ease;
+    }
+
+    .gallery-card:hover .gallery-overlay,
+    .service-photo-card:hover .service-photo-overlay {
+      transform: translateY(-4px);
+    }
+
+    .service-photo-overlay h3 {
+      margin: 0 0 8px;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .service-photo-overlay p,
+    .gallery-overlay p {
+      margin: 0;
+      color: #e7fff0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .gallery-grid { grid-template-columns: repeat(3,1fr); }
+
+    .contact-card a,
+    .jobs-link {
+      color: var(--green);
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .form-box,
+    .request-box {
+      padding: 26px;
+    }
+
+    .form-box h3,
+    .request-box h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      color: #103628;
+    }
+
+    .form-box p,
+    .request-box p {
+      margin: 0 0 18px;
+      color: #687783;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .form-grid .full,
+    .request-form-grid .full {
+      grid-column: 1 / -1;
+    }
+
+    .input,
+    .select,
+    .textarea,
+    .manpower-search {
+      width: 100%;
+      border: 1px solid #dbe4df;
+      border-radius: 16px;
+      padding: 14px 14px;
+      font: inherit;
+      color: var(--text);
+      background: #fbfdfb;
+      outline: none;
+      transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+    }
+
+    .input:focus,
+    .select:focus,
+    .textarea:focus,
+    .manpower-search:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(20,119,71,.08);
+      transform: translateY(-1px);
+    }
+
+    .textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-actions,
+    .request-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .manpower-hub { display: grid; gap: 22px; }
+    .manpower-top { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; }
+
+    .manpower-panel {
+      padding: 26px;
+    }
+
+    .manpower-panel h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      color: #103628;
+    }
+
+    .manpower-panel p {
+      margin: 0;
+      color: #687783;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .manpower-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+
+    .stat-pill {
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg,#f7fcf8,#ffffff);
+    }
+
+    .stat-pill strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .stat-pill span {
+      display: block;
+      color: #687783;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .manpower-toolbar { display: grid; gap: 14px; }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .manpower-chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+      color: #355045;
+    }
+
+    .manpower-accordion { display: grid; gap: 14px; }
+
+    .manpower-group {
+      overflow: hidden;
+    }
+
+    .manpower-group[open] {
+      border-color: rgba(20,119,71,.2);
+      box-shadow: 0 18px 36px rgba(0,0,0,.07);
+    }
+
+    .manpower-summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 20px 22px;
+      font-weight: 800;
+      color: #103628;
+    }
+
+    .manpower-summary::-webkit-details-marker { display: none; }
+
+    .manpower-summary span { display: block; }
+
+    .manpower-summary small {
+      display: block;
+      margin-top: 5px;
+      color: #687783;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .manpower-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg,#eff9f2,#ffffff);
+      border: 1px solid var(--line);
+      color: var(--green);
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1;
+      flex: 0 0 auto;
+    }
+
+    .manpower-body {
+      padding: 0 22px 22px;
+      max-height: 420px;
+      overflow: auto;
+    }
+
+    .manpower-body::-webkit-scrollbar { width: 10px; }
+    .manpower-body::-webkit-scrollbar-thumb {
+      background: #d8e6dc;
+      border-radius: 999px;
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 10px;
+    }
+
+    .role-item {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: linear-gradient(180deg,#fbfdfb,#f6faf7);
+      border: 1px solid #e8efea;
+      color: #334150;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .role-item mark {
+      background: #dff5e7;
+      color: #0d3426;
+      padding: 0 2px;
+      border-radius: 4px;
+    }
+
+    .group-hidden { display: none !important; }
+
+    .cta-panel {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(7,29,21,.94), rgba(17,87,61,.92)),
+        url('gallery-1.jpg.jpeg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      border-radius: 38px;
+      padding: 62px 28px;
+      box-shadow: 0 24px 50px rgba(0,0,0,.14);
+      isolation: isolate;
+    }
+
+    .cta-panel::before {
+      content: "";
+      position: absolute;
+      inset: -20% auto auto -10%;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(71,199,132,.22), transparent 70%);
+      z-index: 0;
+      animation: orbFloat 9s ease-in-out infinite;
+    }
+
+    .cta-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-panel h2 {
+      margin: 0;
+      font-size: 48px;
+      line-height: 1.06;
+      letter-spacing: -.8px;
+    }
+
+    .cta-panel p {
+      max-width: 860px;
+      margin: 14px auto 0;
+      color: #e4fff0;
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .footer {
+      margin-top: 42px;
+      background: linear-gradient(180deg,#081f17,#061811);
+      color: #fff;
+      padding: 48px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: "";
+      position: absolute;
+      inset: auto auto -120px -100px;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(71,199,132,.12), transparent 70%);
+    }
+
+    .footer p {
+      margin: 8px 0;
+      color: #dff5e7;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(44px) scale(.985);
+      transition: opacity .9s ease, transform .9s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-44px);
+      transition: opacity .9s ease, transform .9s ease;
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(44px);
+      transition: opacity .9s ease, transform .9s ease;
+    }
+
+    .reveal-left.visible,
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .tilt {
+      transform-style: preserve-3d;
+      perspective: 900px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeScale {
+      from { opacity: 0; transform: translateY(22px) scale(.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes floatLogo {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes orbFloat {
+      0%,100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(18px,-18px,0) scale(1.06); }
+    }
+
+    @keyframes logoMarquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @media (max-width: 1180px) {
+      .hero-grid,
+      .about-grid,
+      .showcase-grid,
+      .careers-grid,
+      .request-grid,
+      .manpower-top {
+        grid-template-columns: 1fr;
+      }
+
+      .client-grid { grid-template-columns: repeat(4,1fr); }
+      .grid-4,
+      .grid-3,
+      .gallery-grid,
+      .service-photo-grid,
+      .trust-strip,
+      .form-grid,
+      .request-form-grid,
+      .role-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav { gap: 12px; }
+      .hero-wrap { min-height: auto; }
+      .hero-grid { min-height: auto; padding: 44px 20px 30px; }
+      .hero h2 { font-size: 42px; }
+      .hero .tagline { font-size: 20px; }
+      .hero .desc,
+      .section-head p,
+      .about-copy,
+      .cta-panel p { font-size: 15px; }
+      .section-head h2,
+      .cta-panel h2 { font-size: 32px; }
+
+      .grid-4,
+      .grid-3,
+      .gallery-grid,
+      .client-grid,
+      .service-photo-grid,
+      .trust-strip,
+      .form-grid,
+      .request-form-grid,
+      .manpower-stats,
+      .role-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel,
+      .form-box,
+      .request-box,
+      .manpower-panel {
+        padding: 24px 18px;
+      }
+
+      .brand-text h1 { font-size: 18px; }
+      .gallery-card img { height: 235px; }
+      .showcase-card img { min-height: 260px; }
+      .service-photo-card,
+      .service-photo-card img { min-height: 240px; }
+      .hero-logo-item {
+        width: 108px;
+        height: 60px;
+        padding: 8px 12px;
+      }
+      .hero-logo-item img { max-height: 32px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal,
+      .reveal-left,
+      .reveal-right {
+        opacity: 1 !important;
+        transform: none !important;
+      }
     }
   </style>
 </head>
@@ -453,6 +1277,7 @@
                   <div class="hero-logo-item"><img src="client-sns.png.png" alt="SNS"></div>
                   <div class="hero-logo-item"><img src="client-tecnicas-reunidas.png.png" alt="Tecnicas Reunidas"></div>
                   <div class="hero-logo-item"><img src="client-unicoil.png.png" alt="UNICOIL"></div>
+
                   <div class="hero-logo-item"><img src="client-airproducts.jpg.jpeg" alt="Air Products"></div>
                   <div class="hero-logo-item"><img src="client-alfanar.jpg.jpeg" alt="Alfanar Projects"></div>
                   <div class="hero-logo-item"><img src="client-aramco.jpg.jpeg" alt="Saudi Aramco"></div>
@@ -621,7 +1446,7 @@
         <div class="manpower-top">
           <div class="manpower-panel tilt">
             <h3>Modern Workforce Coverage</h3>
-            <p>To keep this page cleaner and more modern, the full manpower master list is now organized into expandable category groups. This gives visitors a professional overview while still keeping every manpower category available on the website.</p>
+            <p>To keep this page cleaner and more modern, the full manpower master list is organized into expandable category groups. This keeps the website professional while still showing broad coverage.</p>
           </div>
           <div class="manpower-stats">
             <div class="stat-pill tilt"><strong>1000+</strong><span>Reserved skilled manpower categories</span></div>
@@ -646,151 +1471,295 @@
         </div>
 
         <div class="manpower-accordion">
-          <details class="manpower-group" data-group="A. Project Management & Leadership">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>A. Project Management &amp; Leadership<small>Leadership, management, planning, controls, integrity, execution and site management roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Project Director</div><div class="role-item">Project Manager</div><div class="role-item">Deputy Project Manager</div><div class="role-item">Senior Project Manager</div><div class="role-item">Site Manager</div><div class="role-item">Construction Manager</div><div class="role-item">Deputy Construction Manager</div><div class="role-item">Engineering Manager</div><div class="role-item">Procurement Manager</div><div class="role-item">Contracts Manager</div><div class="role-item">Commercial Manager</div><div class="role-item">Planning Manager</div><div class="role-item">Cost Control Manager</div><div class="role-item">Project Controls Manager</div><div class="role-item">QA/QC Manager</div><div class="role-item">HSE Manager</div><div class="role-item">Commissioning Manager</div><div class="role-item">Start-up Manager</div><div class="role-item">Shutdown Manager</div><div class="role-item">Turnaround Manager</div><div class="role-item">Operations Manager</div><div class="role-item">Maintenance Manager</div><div class="role-item">Fabrication Manager</div><div class="role-item">Erection Manager</div><div class="role-item">Material Manager</div><div class="role-item">Logistics Manager</div><div class="role-item">Administration Manager</div><div class="role-item">HR Manager</div><div class="role-item">Camp Manager</div><div class="role-item">Transport Manager</div><div class="role-item">Area Manager</div><div class="role-item">Area Superintendent</div><div class="role-item">Construction Superintendent</div><div class="role-item">Discipline Manager</div><div class="role-item">Interface Manager</div><div class="role-item">Risk Manager</div><div class="role-item">Document Control Manager</div><div class="role-item">Asset Integrity Manager</div><div class="role-item">Inspection Manager</div><div class="role-item">Reliability Manager</div><div class="role-item">Vendor Manager</div><div class="role-item">Supply Chain Manager</div><div class="role-item">Workshop Manager</div><div class="role-item">Plant Manager</div><div class="role-item">Facility Manager</div><div class="role-item">Execution Manager</div><div class="role-item">Site Execution Manager</div><div class="role-item">Field Engineering Manager</div><div class="role-item">Brownfield Manager</div><div class="role-item">Greenfield Manager</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Project Director</div>
+                <div class="role-item">Project Manager</div>
+                <div class="role-item">Deputy Project Manager</div>
+                <div class="role-item">Senior Project Manager</div>
+                <div class="role-item">Site Manager</div>
+                <div class="role-item">Construction Manager</div>
+                <div class="role-item">Engineering Manager</div>
+                <div class="role-item">Procurement Manager</div>
+                <div class="role-item">Contracts Manager</div>
+                <div class="role-item">Commercial Manager</div>
+                <div class="role-item">Planning Manager</div>
+                <div class="role-item">QA/QC Manager</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="B. Project Coordination & Administration">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>B. Project Coordination &amp; Administration<small>Coordination, administration, documentation, clerical and office support roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Project Coordinator</div><div class="role-item">Site Coordinator</div><div class="role-item">Technical Coordinator</div><div class="role-item">Client Coordinator</div><div class="role-item">Vendor Coordinator</div><div class="role-item">Procurement Coordinator</div><div class="role-item">Logistics Coordinator</div><div class="role-item">Material Coordinator</div><div class="role-item">Permit Coordinator</div><div class="role-item">Turnover Coordinator</div><div class="role-item">Handover Coordinator</div><div class="role-item">Training Coordinator</div><div class="role-item">Mobilization Coordinator</div><div class="role-item">Demobilization Coordinator</div><div class="role-item">Resource Coordinator</div><div class="role-item">Equipment Coordinator</div><div class="role-item">Access Coordinator</div><div class="role-item">Gate Pass Coordinator</div><div class="role-item">Accommodation Coordinator</div><div class="role-item">Camp Coordinator</div><div class="role-item">Welfare Officer</div><div class="role-item">Public Relations Officer</div><div class="role-item">Government Relations Officer</div><div class="role-item">Office Manager</div><div class="role-item">Executive Secretary</div><div class="role-item">Secretary</div><div class="role-item">Project Secretary</div><div class="role-item">Technical Clerk</div><div class="role-item">Site Clerk</div><div class="role-item">Office Assistant</div><div class="role-item">Admin Assistant</div><div class="role-item">Admin Officer</div><div class="role-item">Document Controller</div><div class="role-item">QA/QC Document Controller</div><div class="role-item">Vendor Document Controller</div><div class="role-item">DCC Clerk</div><div class="role-item">Data Entry Clerk</div><div class="role-item">Filing Clerk</div><div class="role-item">Record Keeper</div><div class="role-item">Archivist</div><div class="role-item">Receptionist</div><div class="role-item">Messenger</div><div class="role-item">Timekeeper</div><div class="role-item">Attendance Clerk</div><div class="role-item">Payroll Clerk</div><div class="role-item">Invoice Clerk</div><div class="role-item">Permit Expeditor</div><div class="role-item">PTW Clerk</div><div class="role-item">Camp Clerk</div><div class="role-item">Store Clerk</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Project Coordinator</div>
+                <div class="role-item">Site Coordinator</div>
+                <div class="role-item">Client Coordinator</div>
+                <div class="role-item">Permit Coordinator</div>
+                <div class="role-item">Document Controller</div>
+                <div class="role-item">Project Secretary</div>
+                <div class="role-item">Timekeeper</div>
+                <div class="role-item">Attendance Clerk</div>
+                <div class="role-item">Office Assistant</div>
+                <div class="role-item">Receptionist</div>
+                <div class="role-item">Payroll Clerk</div>
+                <div class="role-item">Store Clerk</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="C. Engineering – Civil, Structural & Architectural">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>C. Engineering – Civil, Structural &amp; Architectural<small>Civil, structural, architectural, geotechnical, survey and design engineering roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Civil Engineer</div><div class="role-item">Senior Civil Engineer</div><div class="role-item">Site Civil Engineer</div><div class="role-item">Field Civil Engineer</div><div class="role-item">Structural Engineer</div><div class="role-item">Senior Structural Engineer</div><div class="role-item">Site Structural Engineer</div><div class="role-item">Field Structural Engineer</div><div class="role-item">Architectural Engineer</div><div class="role-item">Site Architectural Engineer</div><div class="role-item">Geotechnical Engineer</div><div class="role-item">Soil Engineer</div><div class="role-item">Foundation Engineer</div><div class="role-item">Concrete Engineer</div><div class="role-item">Rebar Engineer</div><div class="role-item">Formwork Engineer</div><div class="role-item">Finishing Engineer</div><div class="role-item">Road Engineer</div><div class="role-item">Pavement Engineer</div><div class="role-item">Marine Civil Engineer</div><div class="role-item">Offshore Structural Engineer</div><div class="role-item">Structural Analysis Engineer</div><div class="role-item">Temporary Works Engineer</div><div class="role-item">Steel Structure Engineer</div><div class="role-item">Building Engineer</div><div class="role-item">Drainage Engineer</div><div class="role-item">Utility Engineer Civil</div><div class="role-item">Landscape Engineer</div><div class="role-item">Site Development Engineer</div><div class="role-item">Earthworks Engineer</div><div class="role-item">Underground Utilities Engineer</div><div class="role-item">Structural Integrity Engineer</div><div class="role-item">Bridge Engineer</div><div class="role-item">Jetty Engineer</div><div class="role-item">Port Civil Engineer</div><div class="role-item">Coastal Engineer</div><div class="role-item">Survey Engineer</div><div class="role-item">Land Survey Engineer</div><div class="role-item">Quantity Surveyor Civil</div><div class="role-item">Construction Engineer Civil</div><div class="role-item">Civil Design Engineer</div><div class="role-item">Structural Design Engineer</div><div class="role-item">Architectural Design Engineer</div><div class="role-item">BIM Civil Engineer</div><div class="role-item">BIM Structural Engineer</div><div class="role-item">BIM Architectural Engineer</div><div class="role-item">Material Engineer Civil</div><div class="role-item">Civil Method Engineer</div><div class="role-item">Architectural Coordinator</div><div class="role-item">Structural Coordinator</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Civil Engineer</div>
+                <div class="role-item">Structural Engineer</div>
+                <div class="role-item">Architectural Engineer</div>
+                <div class="role-item">Site Civil Engineer</div>
+                <div class="role-item">Survey Engineer</div>
+                <div class="role-item">Land Survey Engineer</div>
+                <div class="role-item">Civil Design Engineer</div>
+                <div class="role-item">Structural Design Engineer</div>
+                <div class="role-item">BIM Civil Engineer</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="D. Engineering – Mechanical, Piping & Process">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>D. Engineering – Mechanical, Piping &amp; Process<small>Mechanical, piping, process, rotating, static and corrosion engineering roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Mechanical Engineer</div><div class="role-item">Senior Mechanical Engineer</div><div class="role-item">Site Mechanical Engineer</div><div class="role-item">Field Mechanical Engineer</div><div class="role-item">Piping Engineer</div><div class="role-item">Senior Piping Engineer</div><div class="role-item">Site Piping Engineer</div><div class="role-item">Field Piping Engineer</div><div class="role-item">Pipeline Engineer</div><div class="role-item">Process Engineer</div><div class="role-item">Senior Process Engineer</div><div class="role-item">Process Safety Engineer</div><div class="role-item">Chemical Engineer</div><div class="role-item">Static Equipment Engineer</div><div class="role-item">Rotating Equipment Engineer</div><div class="role-item">HVAC Engineer</div><div class="role-item">Plumbing Engineer</div><div class="role-item">Fire Protection Engineer</div><div class="role-item">Package Engineer</div><div class="role-item">Pressure Vessel Engineer</div><div class="role-item">Tank Engineer</div><div class="role-item">Boiler Engineer</div><div class="role-item">Heat Exchanger Engineer</div><div class="role-item">Valve Engineer</div><div class="role-item">Pump Engineer</div><div class="role-item">Compressor Engineer</div><div class="role-item">Turbine Engineer</div><div class="role-item">Utilities Mechanical Engineer</div><div class="role-item">Water Treatment Engineer</div><div class="role-item">Wastewater Engineer</div><div class="role-item">Desalination Engineer</div><div class="role-item">Pipeline Integrity Engineer</div><div class="role-item">Mechanical Design Engineer</div><div class="role-item">Piping Design Engineer</div><div class="role-item">Stress Engineer</div><div class="role-item">Pipe Support Engineer</div><div class="role-item">Layout Engineer</div><div class="role-item">Material Engineer Mechanical</div><div class="role-item">Welding Engineer</div><div class="role-item">Metallurgical Engineer</div><div class="role-item">Corrosion Engineer</div><div class="role-item">Coating Engineer</div><div class="role-item">Cathodic Protection Engineer</div><div class="role-item">Reliability Engineer</div><div class="role-item">Maintenance Engineer</div><div class="role-item">Mechanical Package Coordinator</div><div class="role-item">Process Coordinator</div><div class="role-item">Pipeline Coordinator</div><div class="role-item">Shutdown Mechanical Engineer</div><div class="role-item">Turnaround Mechanical Engineer</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Mechanical Engineer</div>
+                <div class="role-item">Piping Engineer</div>
+                <div class="role-item">Pipeline Engineer</div>
+                <div class="role-item">Process Engineer</div>
+                <div class="role-item">Rotating Equipment Engineer</div>
+                <div class="role-item">Static Equipment Engineer</div>
+                <div class="role-item">Welding Engineer</div>
+                <div class="role-item">Corrosion Engineer</div>
+                <div class="role-item">Coating Engineer</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="E. Engineering – Electrical, Instrumentation, Telecom & Automation">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>E. Engineering – Electrical, Instrumentation, Telecom &amp; Automation<small>Electrical, instrument, telecom, automation, control systems and E&amp;I roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Electrical Engineer</div><div class="role-item">Senior Electrical Engineer</div><div class="role-item">Site Electrical Engineer</div><div class="role-item">Field Electrical Engineer</div><div class="role-item">Power System Engineer</div><div class="role-item">Instrumentation Engineer</div><div class="role-item">Senior Instrumentation Engineer</div><div class="role-item">Site Instrument Engineer</div><div class="role-item">Field Instrument Engineer</div><div class="role-item">Control Systems Engineer</div><div class="role-item">Telecom Engineer</div><div class="role-item">ELV Engineer</div><div class="role-item">SCADA Engineer</div><div class="role-item">DCS Engineer</div><div class="role-item">PLC Engineer</div><div class="role-item">Automation Engineer</div><div class="role-item">Analyzer Engineer</div><div class="role-item">Relay Protection Engineer</div><div class="role-item">Earthing Engineer</div><div class="role-item">Lighting Engineer</div><div class="role-item">Lightning Protection Engineer</div><div class="role-item">Substation Engineer</div><div class="role-item">Switchgear Engineer</div><div class="role-item">Transformer Engineer</div><div class="role-item">UPS Engineer</div><div class="role-item">Battery System Engineer</div><div class="role-item">Solar Engineer</div><div class="role-item">Solar PV Engineer</div><div class="role-item">BMS Engineer</div><div class="role-item">Fire Alarm Engineer</div><div class="role-item">PA/GA Engineer</div><div class="role-item">Network Engineer</div><div class="role-item">Fiber Optic Engineer</div><div class="role-item">Communication Engineer</div><div class="role-item">CCTV Engineer</div><div class="role-item">Access Control Engineer</div><div class="role-item">Instrument Design Engineer</div><div class="role-item">Electrical Design Engineer</div><div class="role-item">Telecom Design Engineer</div><div class="role-item">Instrument Coordinator</div><div class="role-item">Electrical Coordinator</div><div class="role-item">Telecom Coordinator</div><div class="role-item">E&amp;I Engineer</div><div class="role-item">E&amp;I Coordinator</div><div class="role-item">Functional Safety Engineer</div><div class="role-item">SIS Engineer</div><div class="role-item">Loop Engineer</div><div class="role-item">Pre-commissioning E&amp;I Engineer</div><div class="role-item">Commissioning E&amp;I Engineer</div><div class="role-item">Start-up E&amp;I Engineer</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Electrical Engineer</div>
+                <div class="role-item">Instrumentation Engineer</div>
+                <div class="role-item">Telecom Engineer</div>
+                <div class="role-item">SCADA Engineer</div>
+                <div class="role-item">PLC Engineer</div>
+                <div class="role-item">DCS Engineer</div>
+                <div class="role-item">E&amp;I Engineer</div>
+                <div class="role-item">Fire Alarm Engineer</div>
+                <div class="role-item">Access Control Engineer</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="F. Engineering – Specialized & Support">
-            <summary class="manpower-summary"><span>F. Engineering – Specialized &amp; Support<small>Commissioning, planning, project controls, support engineering and specialist roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Commissioning Engineer</div><div class="role-item">Pre-commissioning Engineer</div><div class="role-item">Start-up Engineer</div><div class="role-item">Mechanical Completion Engineer</div><div class="role-item">Systems Completion Engineer</div><div class="role-item">Turnover Engineer</div><div class="role-item">Preservation Engineer</div><div class="role-item">Inspection Engineer</div><div class="role-item">NDT Engineer</div><div class="role-item">QA/QC Engineer</div><div class="role-item">HSE Engineer</div><div class="role-item">Environmental Engineer</div><div class="role-item">Safety Engineer</div><div class="role-item">Sustainability Engineer</div><div class="role-item">Marine Engineer</div><div class="role-item">Offshore Engineer</div><div class="role-item">Utility Engineer</div><div class="role-item">Hydraulics Engineer</div><div class="role-item">Subsea Engineer</div><div class="role-item">BIM Engineer</div><div class="role-item">CAD Engineer</div><div class="role-item">Design Engineer</div><div class="role-item">Lead Engineer</div><div class="role-item">Construction Engineer</div><div class="role-item">Workface Engineer</div><div class="role-item">Field Engineer</div><div class="role-item">Site Engineer</div><div class="role-item">Temporary Facility Engineer</div><div class="role-item">Planning Engineer</div><div class="role-item">Cost Engineer</div><div class="role-item">Estimation Engineer</div><div class="role-item">Proposal Engineer</div><div class="role-item">Tendering Engineer</div><div class="role-item">Contracts Engineer</div><div class="role-item">Claims Engineer</div><div class="role-item">Change Control Engineer</div><div class="role-item">Project Controls Engineer</div><div class="role-item">Progress Engineer</div><div class="role-item">Scheduler</div><div class="role-item">Delay Analyst</div><div class="role-item">Inspection Coordinator</div><div class="role-item">Commissioning Coordinator</div><div class="role-item">Start-up Coordinator</div><div class="role-item">Turnover Coordinator Engineer</div><div class="role-item">Technical Support Engineer</div><div class="role-item">Vendor Support Engineer</div><div class="role-item">Material Handling Engineer</div><div class="role-item">Lifting Engineer</div><div class="role-item">Rigging Engineer</div><div class="role-item">Authorized Engineer</div>
-            </div></div>
-          </details>
-
-          <details class="manpower-group" data-group="G. Design, Drafting & BIM">
-            <summary class="manpower-summary"><span>G. Design, Drafting &amp; BIM<small>Designers, BIM, CAD, detailers, modelers and drafting specialists</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Civil Designer</div><div class="role-item">Structural Designer</div><div class="role-item">Architectural Designer</div><div class="role-item">Mechanical Designer</div><div class="role-item">Piping Designer</div><div class="role-item">Pipeline Designer</div><div class="role-item">Electrical Designer</div><div class="role-item">Instrument Designer</div><div class="role-item">Telecom Designer</div><div class="role-item">HVAC Designer</div><div class="role-item">Plumbing Designer</div><div class="role-item">Fire Protection Designer</div><div class="role-item">ELV Designer</div><div class="role-item">3D Modeler</div><div class="role-item">BIM Modeler</div><div class="role-item">CAD Draftsman</div><div class="role-item">Civil Draftsman</div><div class="role-item">Structural Draftsman</div><div class="role-item">Architectural Draftsman</div><div class="role-item">Mechanical Draftsman</div><div class="role-item">Piping Draftsman</div><div class="role-item">Pipeline Draftsman</div><div class="role-item">Electrical Draftsman</div><div class="role-item">Instrument Draftsman</div><div class="role-item">Telecom Draftsman</div><div class="role-item">HVAC Draftsman</div><div class="role-item">Plumbing Draftsman</div><div class="role-item">As-Built Draftsman</div><div class="role-item">Rebar Detailer</div><div class="role-item">Steel Detailer</div><div class="role-item">Spool Draftsman</div><div class="role-item">Isometric Draftsman</div><div class="role-item">Shop Drawing Draftsman</div><div class="role-item">Fabrication Draftsman</div><div class="role-item">Weld Map Draftsman</div><div class="role-item">Pipe Support Draftsman</div><div class="role-item">Temporary Works Draftsman</div><div class="role-item">Survey Draftsman</div><div class="role-item">GIS Draftsman</div><div class="role-item">Document Illustrator</div><div class="role-item">BIM Coordinator</div><div class="role-item">BIM Lead</div><div class="role-item">CAD Coordinator</div><div class="role-item">Model Checker</div><div class="role-item">Clash Detection Specialist</div><div class="role-item">Visualization Specialist</div><div class="role-item">Rendering Specialist</div><div class="role-item">Drawing Checker</div><div class="role-item">Design Checker</div><div class="role-item">Detail Engineering Draftsman</div>
-            </div></div>
-          </details>
-
-          <details class="manpower-group" data-group="H. Procurement, Commercial & Supply Chain">
-            <summary class="manpower-summary"><span>H. Procurement, Commercial &amp; Supply Chain<small>Procurement, vendor, inventory, warehouse, logistics and commercial support roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Procurement Engineer</div><div class="role-item">Buyer</div><div class="role-item">Senior Buyer</div><div class="role-item">Technical Buyer</div><div class="role-item">Strategic Sourcing Specialist</div><div class="role-item">Tendering Specialist</div><div class="role-item">Bid Manager</div><div class="role-item">Bid Engineer</div><div class="role-item">Proposal Coordinator</div><div class="role-item">Estimation Coordinator</div><div class="role-item">Commercial Engineer</div><div class="role-item">Commercial Coordinator</div><div class="role-item">Contracts Administrator</div><div class="role-item">Subcontract Engineer</div><div class="role-item">Subcontract Administrator</div><div class="role-item">Invoicing Coordinator</div><div class="role-item">Invoice Controller</div><div class="role-item">Expeditor</div><div class="role-item">Procurement Expeditor</div><div class="role-item">Material Expeditor</div><div class="role-item">Vendor Inspector</div><div class="role-item">Supplier Quality Engineer</div><div class="role-item">Supply Chain Analyst</div><div class="role-item">Material Controller</div><div class="role-item">Material Coordinator</div><div class="role-item">Inventory Controller</div><div class="role-item">Warehouse Supervisor</div><div class="role-item">Warehouseman</div><div class="role-item">Storekeeper</div><div class="role-item">Store Assistant</div><div class="role-item">Receiving Inspector</div><div class="role-item">Dispatch Coordinator</div><div class="role-item">Packing Supervisor</div><div class="role-item">Packing Helper</div><div class="role-item">Loading Supervisor</div><div class="role-item">Unloading Supervisor</div><div class="role-item">Shipping Coordinator</div><div class="role-item">Transport Coordinator</div><div class="role-item">Fleet Coordinator</div><div class="role-item">Heavy Equipment Coordinator</div><div class="role-item">Customs Clearance Coordinator</div><div class="role-item">Freight Forwarding Coordinator</div><div class="role-item">Logistics Analyst</div><div class="role-item">Delivery Coordinator</div><div class="role-item">Yard Coordinator</div><div class="role-item">Spare Parts Coordinator</div><div class="role-item">Tool Room Coordinator</div><div class="role-item">Tool Keeper</div><div class="role-item">Tool Room Attendant</div><div class="role-item">Tool Technician</div>
-            </div></div>
-          </details>
-
-          <details class="manpower-group" data-group="I. Finance, HR & Business Support">
-            <summary class="manpower-summary"><span>I. Finance, HR &amp; Business Support<small>Finance, HR, camp, welfare, customer support and office service roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Accountant</div><div class="role-item">Senior Accountant</div><div class="role-item">Finance Officer</div><div class="role-item">Finance Manager</div><div class="role-item">Internal Auditor</div><div class="role-item">Tax Coordinator</div><div class="role-item">Payroll Coordinator</div><div class="role-item">Payroll Officer</div><div class="role-item">Cashier</div><div class="role-item">Petty Cash Custodian</div><div class="role-item">HR Officer</div><div class="role-item">HR Coordinator</div><div class="role-item">Recruitment Coordinator</div><div class="role-item">Recruitment Officer</div><div class="role-item">Manpower Coordinator</div><div class="role-item">Resource Coordinator</div><div class="role-item">Training Officer</div><div class="role-item">Competency Coordinator</div><div class="role-item">Welfare Coordinator</div><div class="role-item">Employee Relations Officer</div><div class="role-item">PRO Assistant</div><div class="role-item">Visa Coordinator</div><div class="role-item">Travel Coordinator</div><div class="role-item">Ticketing Coordinator</div><div class="role-item">Camp Administrator</div><div class="role-item">Camp Boss</div><div class="role-item">Camp Supervisor</div><div class="role-item">Accommodation Supervisor</div><div class="role-item">Catering Supervisor</div><div class="role-item">Housekeeping Supervisor</div><div class="role-item">Security Supervisor</div><div class="role-item">Security Guard</div><div class="role-item">Gate Security Officer</div><div class="role-item">Front Desk Officer</div><div class="role-item">Customer Service Assistant</div><div class="role-item">Business Development Coordinator</div><div class="role-item">Marketing Coordinator</div><div class="role-item">Communication Officer</div><div class="role-item">Stakeholder Coordinator</div><div class="role-item">Reception Coordinator</div><div class="role-item">Typist</div><div class="role-item">Office Boy</div><div class="role-item">Tea Boy</div><div class="role-item">Messenger Boy</div><div class="role-item">Cleaner</div><div class="role-item">Janitor</div><div class="role-item">Housekeeping Worker</div><div class="role-item">Laundry Worker</div><div class="role-item">Cook</div><div class="role-item">Assistant Cook</div>
-            </div></div>
-          </details>
-
-          <details class="manpower-group" data-group="J. QA/QC & Inspection">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>J. QA/QC &amp; Inspection<small>Quality control, inspection, completion and material inspection roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">QA/QC Civil Engineer</div><div class="role-item">QA/QC Mechanical Engineer</div><div class="role-item">QA/QC Electrical Engineer</div><div class="role-item">QA/QC Instrument Engineer</div><div class="role-item">QA/QC Telecom Engineer</div><div class="role-item">QA/QC Inspector Civil</div><div class="role-item">QA/QC Inspector Structural</div><div class="role-item">QA/QC Inspector Architectural</div><div class="role-item">QA/QC Inspector Mechanical</div><div class="role-item">QA/QC Inspector Piping</div><div class="role-item">QA/QC Inspector Welding</div><div class="role-item">QA/QC Inspector Electrical</div><div class="role-item">QA/QC Inspector Instrument</div><div class="role-item">QA/QC Inspector Telecom</div><div class="role-item">QA/QC Inspector HVAC</div><div class="role-item">QA/QC Inspector Coating</div><div class="role-item">QA/QC Inspector Painting</div><div class="role-item">QA/QC Inspector Insulation</div><div class="role-item">QA/QC Inspector Refractory</div><div class="role-item">QA/QC Inspector Pipeline</div><div class="role-item">QA/QC Inspector Cathodic Protection</div><div class="role-item">QA/QC Inspector Fireproofing</div><div class="role-item">QA/QC Inspector Material Receiving</div><div class="role-item">Civil Inspector</div><div class="role-item">Structural Inspector</div><div class="role-item">Architectural Inspector</div><div class="role-item">Mechanical Inspector</div><div class="role-item">Piping Inspector</div><div class="role-item">Welding Inspector</div><div class="role-item">Electrical Inspector</div><div class="role-item">Instrument Inspector</div><div class="role-item">Telecom Inspector</div><div class="role-item">HVAC Inspector</div><div class="role-item">Insulation Inspector</div><div class="role-item">Painting Inspector</div><div class="role-item">Coating Inspector</div><div class="role-item">Refractory Inspector</div><div class="role-item">Pipeline Inspector</div><div class="role-item">Tank Inspector</div><div class="role-item">Pressure Vessel Inspector</div><div class="role-item">Rotating Equipment Inspector</div><div class="role-item">Static Equipment Inspector</div><div class="role-item">Preservation Inspector</div><div class="role-item">Material Inspector</div><div class="role-item">NCR Coordinator</div><div class="role-item">Quality Coordinator</div><div class="role-item">Punch List Coordinator</div><div class="role-item">Mechanical Completion Coordinator</div><div class="role-item">Quality Clerk</div><div class="role-item">Inspection Data Controller</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">QA/QC Civil Engineer</div>
+                <div class="role-item">QA/QC Mechanical Engineer</div>
+                <div class="role-item">QA/QC Electrical Engineer</div>
+                <div class="role-item">QA/QC Inspector Civil</div>
+                <div class="role-item">QA/QC Inspector Mechanical</div>
+                <div class="role-item">QA/QC Inspector Piping</div>
+                <div class="role-item">QA/QC Inspector Welding</div>
+                <div class="role-item">QA/QC Inspector Electrical</div>
+                <div class="role-item">QA/QC Inspector Coating</div>
+                <div class="role-item">Mechanical Inspector</div>
+                <div class="role-item">Electrical Inspector</div>
+                <div class="role-item">Material Inspector</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="K. NDT, Testing & Specialized QA">
-            <summary class="manpower-summary"><span>K. NDT, Testing &amp; Specialized QA<small>NDT, testing, hydrotest, calibration and specialized inspection support roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Radiographic Technician</div><div class="role-item">RT Assistant</div><div class="role-item">UT Technician</div><div class="role-item">MT Technician</div><div class="role-item">PT Technician</div><div class="role-item">PMI Technician</div><div class="role-item">Hardness Testing Technician</div><div class="role-item">Ferrite Testing Technician</div><div class="role-item">Holiday Testing Technician</div><div class="role-item">Vacuum Box Technician</div><div class="role-item">Leak Detection Technician</div><div class="role-item">Leak Test Technician</div><div class="role-item">Hydrotest Technician</div><div class="role-item">Pneumatic Test Technician</div><div class="role-item">Flushing Technician</div><div class="role-item">Steam Blowing Technician</div><div class="role-item">Air Blowing Technician</div><div class="role-item">Chemical Cleaning Technician</div><div class="role-item">Rope Access NDT Technician</div><div class="role-item">NDT Assistant</div><div class="role-item">Welding Coordinator</div><div class="role-item">Welding Technician</div><div class="role-item">PWHT Technician</div><div class="role-item">PWHT Supervisor</div><div class="role-item">Weld Map Coordinator</div><div class="role-item">Spool Coordinator</div><div class="role-item">Spool Checker</div><div class="role-item">Calibration Coordinator</div><div class="role-item">Calibration Technician</div><div class="role-item">Functional Test Technician</div><div class="role-item">SAT Technician</div><div class="role-item">FAT Coordinator</div><div class="role-item">Loop Checking Technician</div><div class="role-item">Analyzer Calibration Technician</div><div class="role-item">Electrical Testing Technician</div><div class="role-item">Relay Testing Technician</div><div class="role-item">Transformer Testing Technician</div><div class="role-item">Cable Testing Technician</div><div class="role-item">Concrete Lab Technician</div><div class="role-item">Civil Testing Technician</div><div class="role-item">Soil Technician</div><div class="role-item">Asphalt Technician</div><div class="role-item">Geotechnical Technician</div><div class="role-item">Laboratory Technician Civil</div><div class="role-item">Holiday Detector Technician</div><div class="role-item">Coating Testing Technician</div><div class="role-item">DFT Inspector</div><div class="role-item">Adhesion Test Technician</div><div class="role-item">Hardline Test Technician</div><div class="role-item">Test Pack Coordinator</div>
-            </div></div>
-          </details>
-
-          <details class="manpower-group" data-group="L. HSE, Emergency & Industrial Safety">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>L. HSE, Emergency &amp; Industrial Safety<small>Safety, emergency response, rescue, permit and industrial protection roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">HSE Supervisor</div><div class="role-item">HSE Officer</div><div class="role-item">HSE Coordinator</div><div class="role-item">Safety Supervisor</div><div class="role-item">Safety Officer</div><div class="role-item">Safety Trainer</div><div class="role-item">Safety Inspector</div><div class="role-item">Safety Technician</div><div class="role-item">Environmental Officer</div><div class="role-item">Environmental Supervisor</div><div class="role-item">Waste Management Supervisor</div><div class="role-item">Waste Management Worker</div><div class="role-item">Emergency Response Coordinator</div><div class="role-item">Rescue Team Member</div><div class="role-item">Rescue Technician</div><div class="role-item">First Aider</div><div class="role-item">Industrial Medic</div><div class="role-item">Site Nurse</div><div class="role-item">Occupational Health Nurse</div><div class="role-item">Paramedic</div><div class="role-item">Fire Marshal</div><div class="role-item">Fireman</div><div class="role-item">Firefighter</div><div class="role-item">Breathing Apparatus Technician</div><div class="role-item">Confined Space Attendant</div><div class="role-item">Confined Space Rescue Man</div><div class="role-item">Gas Tester</div><div class="role-item">Authorized Gas Tester</div><div class="role-item">Fire Watcher</div><div class="role-item">Hole Watcher</div><div class="role-item">Standby Man</div><div class="role-item">Road Safety Officer</div><div class="role-item">Traffic Marshal</div><div class="role-item">Traffic Controller</div><div class="role-item">Spotter</div><div class="role-item">Flagman</div><div class="role-item">Banksman</div><div class="role-item">Safety Watchman</div><div class="role-item">Lifting Equipment Inspector</div><div class="role-item">Appointed Person Lifting</div><div class="role-item">Critical Lift Supervisor</div><div class="role-item">Work at Height Supervisor</div><div class="role-item">Fall Protection Technician</div><div class="role-item">Rescue at Height Technician</div><div class="role-item">Lifeline Installer</div><div class="role-item">Safety Net Installer</div><div class="role-item">Permit Receiver</div><div class="role-item">Permit Issuer</div><div class="role-item">Work Permit Coordinator</div><div class="role-item">SIMOPS Coordinator</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">HSE Supervisor</div>
+                <div class="role-item">HSE Officer</div>
+                <div class="role-item">Safety Supervisor</div>
+                <div class="role-item">Safety Officer</div>
+                <div class="role-item">Safety Inspector</div>
+                <div class="role-item">Environmental Officer</div>
+                <div class="role-item">Fire Watcher</div>
+                <div class="role-item">Gas Tester</div>
+                <div class="role-item">Permit Receiver</div>
+                <div class="role-item">Permit Issuer</div>
+                <div class="role-item">Traffic Marshal</div>
+                <div class="role-item">Flagman</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="M. Civil Construction Supervisors & Trades">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>M. Civil Construction Supervisors &amp; Trades<small>Civil supervision, masonry, carpentry, finishing and building trades roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Civil Supervisor</div><div class="role-item">Structural Supervisor</div><div class="role-item">Architectural Supervisor</div><div class="role-item">Finishing Supervisor</div><div class="role-item">Earthworks Supervisor</div><div class="role-item">Concrete Supervisor</div><div class="role-item">Rebar Supervisor</div><div class="role-item">Formwork Supervisor</div><div class="role-item">Road Works Supervisor</div><div class="role-item">Underground Utilities Supervisor</div><div class="role-item">Landscaping Supervisor</div><div class="role-item">Civil Foreman</div><div class="role-item">Structural Foreman</div><div class="role-item">Architectural Foreman</div><div class="role-item">Finishing Foreman</div><div class="role-item">Rebar Foreman</div><div class="role-item">Formwork Foreman</div><div class="role-item">Concrete Foreman</div><div class="role-item">Earthworks Foreman</div><div class="role-item">Road Foreman</div><div class="role-item">General Foreman Civil</div><div class="role-item">Chargehand Civil</div><div class="role-item">Mason</div><div class="role-item">Block Mason</div><div class="role-item">Brick Mason</div><div class="role-item">Tile Mason</div><div class="role-item">Marble Mason</div><div class="role-item">Plaster Mason</div><div class="role-item">Refractory Mason</div><div class="role-item">Carpenter</div><div class="role-item">Shuttering Carpenter</div><div class="role-item">Finishing Carpenter</div><div class="role-item">Furniture Carpenter</div><div class="role-item">Gypsum Carpenter</div><div class="role-item">Joinery Carpenter</div><div class="role-item">Steel Fixer</div><div class="role-item">Rod Buster</div><div class="role-item">Concrete Finisher</div><div class="role-item">Waterproofer</div><div class="role-item">Painter Building</div><div class="role-item">Finishing Painter</div><div class="role-item">Glass Installer</div><div class="role-item">Aluminum Fabricator</div><div class="role-item">Aluminum Installer</div><div class="role-item">Ceiling Installer</div><div class="role-item">Floor Installer</div><div class="role-item">Vinyl Flooring Installer</div><div class="role-item">Door Installer</div><div class="role-item">Window Installer</div><div class="role-item">Handyman</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Civil Supervisor</div>
+                <div class="role-item">Structural Supervisor</div>
+                <div class="role-item">Civil Foreman</div>
+                <div class="role-item">Mason</div>
+                <div class="role-item">Block Mason</div>
+                <div class="role-item">Tile Mason</div>
+                <div class="role-item">Carpenter</div>
+                <div class="role-item">Shuttering Carpenter</div>
+                <div class="role-item">Steel Fixer</div>
+                <div class="role-item">Concrete Finisher</div>
+                <div class="role-item">Painter Building</div>
+                <div class="role-item">Handyman</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="N. Mechanical, Piping, Welding & Fabrication">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>N. Mechanical, Piping, Welding &amp; Fabrication<small>Mechanical supervision, piping, fit-up, fabrication and welding trade roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Mechanical Supervisor</div><div class="role-item">Piping Supervisor</div><div class="role-item">Pipeline Supervisor</div><div class="role-item">Welding Supervisor</div><div class="role-item">Fabrication Supervisor</div><div class="role-item">Static Equipment Supervisor</div><div class="role-item">Rotating Equipment Supervisor</div><div class="role-item">Equipment Erection Supervisor</div><div class="role-item">Mechanical Foreman</div><div class="role-item">Piping Foreman</div><div class="role-item">Pipeline Foreman</div><div class="role-item">Welding Foreman</div><div class="role-item">Fabrication Foreman</div><div class="role-item">Workshop Foreman</div><div class="role-item">Chargehand Mechanical</div><div class="role-item">Chargehand Piping</div><div class="role-item">Chargehand Welding</div><div class="role-item">Pipe Fabricator</div><div class="role-item">Structural Fabricator</div><div class="role-item">Tank Fabricator</div><div class="role-item">Duct Fabricator</div><div class="role-item">Sheet Metal Worker</div><div class="role-item">Pipe Fitter</div><div class="role-item">Pipe Installer</div><div class="role-item">Pipe Erector</div><div class="role-item">Pipe Layer</div><div class="role-item">Mechanical Fitter</div><div class="role-item">Structural Fitter</div><div class="role-item">Tank Fitter</div><div class="role-item">Tube Fitter</div><div class="role-item">Instrument Tube Fitter</div><div class="role-item">Millwright</div><div class="role-item">Boilermaker</div><div class="role-item">Welder SMAW</div><div class="role-item">Welder GTAW</div><div class="role-item">Welder FCAW</div><div class="role-item">Welder GMAW</div><div class="role-item">MIG Welder</div><div class="role-item">TIG Welder</div><div class="role-item">6G Pipe Welder</div><div class="role-item">Structural Welder</div><div class="role-item">Tack Welder</div><div class="role-item">Tube Welder</div><div class="role-item">Tank Welder</div><div class="role-item">Brazing Technician</div><div class="role-item">Bolt Torquing Technician</div><div class="role-item">Tensioning Technician</div><div class="role-item">Gasketing Technician</div><div class="role-item">Joint Integrity Technician</div><div class="role-item">Flange Management Technician</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Mechanical Supervisor</div>
+                <div class="role-item">Piping Supervisor</div>
+                <div class="role-item">Welding Supervisor</div>
+                <div class="role-item">Pipe Fabricator</div>
+                <div class="role-item">Pipe Fitter</div>
+                <div class="role-item">Mechanical Fitter</div>
+                <div class="role-item">Boilermaker</div>
+                <div class="role-item">Welder SMAW</div>
+                <div class="role-item">Welder GTAW</div>
+                <div class="role-item">TIG Welder</div>
+                <div class="role-item">6G Pipe Welder</div>
+                <div class="role-item">Flange Management Technician</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="O. Rigging, Lifting, Scaffolding & Erection">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>O. Rigging, Lifting, Scaffolding &amp; Erection<small>Rigging, lifting, erection, alignment, grouting and scaffold support roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Rigger</div><div class="role-item">Rigger I</div><div class="role-item">Rigger II</div><div class="role-item">Rigger III</div><div class="role-item">Junior Rigger</div><div class="role-item">Senior Rigger</div><div class="role-item">Lead Rigger</div><div class="role-item">Certified Rigger</div><div class="role-item">Aramco Certified Rigger</div><div class="role-item">Rigger Helper</div><div class="role-item">Rigging Supervisor</div><div class="role-item">Rigging Inspector</div><div class="role-item">Rigging Coordinator</div><div class="role-item">Lifting Supervisor</div><div class="role-item">Lifting Coordinator</div><div class="role-item">Lifting Inspector</div><div class="role-item">Lifting Plan Engineer</div><div class="role-item">Heavy Lift Specialist</div><div class="role-item">Crane Supervisor</div><div class="role-item">Crane Coordinator</div><div class="role-item">Crane Inspector</div><div class="role-item">Signalman</div><div class="role-item">Tagline Man</div><div class="role-item">Lifting Gear Inspector</div><div class="role-item">Sling Inspector</div><div class="role-item">Shackles and Rigging Gear Inspector</div><div class="role-item">Rigging Equipment Technician</div><div class="role-item">Hoist Operator</div><div class="role-item">Winch Operator</div><div class="role-item">Jacking Technician</div><div class="role-item">Skidding Technician</div><div class="role-item">Loadout Technician</div><div class="role-item">Heavy Transport Coordinator</div><div class="role-item">Steel Erector</div><div class="role-item">Structural Erector</div><div class="role-item">Mechanical Erector</div><div class="role-item">Equipment Erector</div><div class="role-item">Pipe Rack Erector</div><div class="role-item">Tank Erector</div><div class="role-item">Vessel Erector</div><div class="role-item">Alignment Technician</div><div class="role-item">Leveling Technician</div><div class="role-item">Grouting Technician</div><div class="role-item">Base Plate Installer</div><div class="role-item">Anchor Bolt Installer</div><div class="role-item">Scaffolder</div><div class="role-item">Scaffolder Helper</div><div class="role-item">Junior Scaffolder</div><div class="role-item">Senior Scaffolder</div><div class="role-item">Certified Scaffolder</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Rigger</div>
+                <div class="role-item">Rigger I</div>
+                <div class="role-item">Rigger II</div>
+                <div class="role-item">Rigger III</div>
+                <div class="role-item">Rigging Supervisor</div>
+                <div class="role-item">Lifting Supervisor</div>
+                <div class="role-item">Signalman</div>
+                <div class="role-item">Tagline Man</div>
+                <div class="role-item">Steel Erector</div>
+                <div class="role-item">Equipment Erector</div>
+                <div class="role-item">Scaffolder</div>
+                <div class="role-item">Scaffolder Helper</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="P. Scaffolding, Rope Access & Height Work">
-            <summary class="manpower-summary"><span>P. Scaffolding, Rope Access &amp; Height Work<small>Scaffolding, rope access, temporary access and work-at-height support roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Tube and Clamp Scaffolder</div><div class="role-item">System Scaffolder</div><div class="role-item">Scaffold Erection Supervisor</div><div class="role-item">Scaffold Inspector</div><div class="role-item">Scaffold Designer</div><div class="role-item">Scaffold Coordinator</div><div class="role-item">Scaffold Tag Controller</div><div class="role-item">Access Platform Installer</div><div class="role-item">Temporary Access Supervisor</div><div class="role-item">Suspended Scaffold Technician</div><div class="role-item">Mobile Tower Scaffolder</div><div class="role-item">Rope Access Technician Level 1</div><div class="role-item">Rope Access Technician Level 2</div><div class="role-item">Rope Access Technician Level 3</div><div class="role-item">Rope Access Supervisor</div><div class="role-item">Rope Access Rigger</div><div class="role-item">Work at Height Technician</div><div class="role-item">Height Rescue Technician</div><div class="role-item">Fall Arrest Technician</div><div class="role-item">Lifeline Installer</div><div class="role-item">Handrail Installer</div><div class="role-item">Safety Barrier Installer</div><div class="role-item">Barricade Man</div><div class="role-item">Access Controller</div><div class="role-item">Temporary Works Installer</div><div class="role-item">Climbing Access Technician</div><div class="role-item">Man Basket Technician</div><div class="role-item">Elevated Work Platform Operator</div><div class="role-item">Rescue Standby Man</div><div class="role-item">Industrial Access Technician</div>
-            </div></div>
-          </details>
-
-          <details class="manpower-group" data-group="Q. Electrical, Instrument & Telecom Trades">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>Q. Electrical, Instrument &amp; Telecom Trades<small>Trade-level electrical, instrument, telecom and technician roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Electrical Supervisor</div><div class="role-item">Instrument Supervisor</div><div class="role-item">Telecom Supervisor</div><div class="role-item">E&amp;I Supervisor</div><div class="role-item">Electrical Foreman</div><div class="role-item">Instrument Foreman</div><div class="role-item">Telecom Foreman</div><div class="role-item">E&amp;I Foreman</div><div class="role-item">Chargehand Electrical</div><div class="role-item">Chargehand Instrument</div><div class="role-item">Electrician</div><div class="role-item">Industrial Electrician</div><div class="role-item">Building Electrician</div><div class="role-item">Electrical Technician</div><div class="role-item">Electrical Fitter</div><div class="role-item">Cable Jointer</div><div class="role-item">Cable Puller</div><div class="role-item">Cable Tray Installer</div><div class="role-item">Earthing Technician</div><div class="role-item">Lightning Protection Technician</div><div class="role-item">Instrument Technician</div><div class="role-item">Instrument Fitter</div><div class="role-item">Instrument Pipe Fitter</div><div class="role-item">Analyzer Technician</div><div class="role-item">Analyzer Specialist</div><div class="role-item">DCS Technician</div><div class="role-item">PLC Technician</div><div class="role-item">SCADA Technician</div><div class="role-item">Loop Checking Technician</div><div class="role-item">Impulse Line Technician</div><div class="role-item">JB Installer</div><div class="role-item">Panel Technician</div><div class="role-item">Switchgear Technician</div><div class="role-item">Transformer Technician</div><div class="role-item">Relay Technician</div><div class="role-item">UPS Technician</div><div class="role-item">Battery Technician</div><div class="role-item">Fire Alarm Technician</div><div class="role-item">PA/GA Technician</div><div class="role-item">CCTV Technician</div><div class="role-item">Access Control Technician</div><div class="role-item">Telecom Technician</div><div class="role-item">Fiber Optic Technician</div><div class="role-item">Network Technician</div><div class="role-item">Radio Technician</div><div class="role-item">Server Room Technician</div><div class="role-item">Solar Technician</div><div class="role-item">Solar PV Installer</div><div class="role-item">Telecom Rigger</div><div class="role-item">Communication Technician</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Electrical Supervisor</div>
+                <div class="role-item">Instrument Supervisor</div>
+                <div class="role-item">Electrician</div>
+                <div class="role-item">Industrial Electrician</div>
+                <div class="role-item">Electrical Technician</div>
+                <div class="role-item">Cable Jointer</div>
+                <div class="role-item">Instrument Technician</div>
+                <div class="role-item">Analyzer Technician</div>
+                <div class="role-item">PLC Technician</div>
+                <div class="role-item">Fire Alarm Technician</div>
+                <div class="role-item">CCTV Technician</div>
+                <div class="role-item">Fiber Optic Technician</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="R. HVAC, Plumbing, Firefighting & Utilities">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>R. HVAC, Plumbing, Firefighting &amp; Utilities<small>HVAC, plumbing, utilities, firefighting and water system roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">HVAC Supervisor</div><div class="role-item">Plumbing Supervisor</div><div class="role-item">Firefighting Supervisor</div><div class="role-item">Ducting Supervisor</div><div class="role-item">HVAC Foreman</div><div class="role-item">Plumbing Foreman</div><div class="role-item">Ducting Foreman</div><div class="role-item">HVAC Technician</div><div class="role-item">AC Technician</div><div class="role-item">Chiller Technician</div><div class="role-item">Ductman</div><div class="role-item">Plumber</div><div class="role-item">Sanitary Worker</div><div class="role-item">Firefighting Technician</div><div class="role-item">Fire Pump Technician</div><div class="role-item">Sprinkler Technician</div><div class="role-item">Plumbing Technician</div><div class="role-item">Utility Operator</div><div class="role-item">Water Supply Technician</div><div class="role-item">Sewage Technician</div><div class="role-item">RO Plant Operator</div><div class="role-item">Desalination Technician</div><div class="role-item">Water Treatment Technician</div><div class="role-item">Wastewater Technician</div><div class="role-item">Pump Operator</div><div class="role-item">Generator Operator</div><div class="role-item">Generator Technician</div><div class="role-item">Boiler Technician</div><div class="role-item">Utility Maintenance Technician</div><div class="role-item">Multi Technician</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">HVAC Supervisor</div>
+                <div class="role-item">Plumbing Supervisor</div>
+                <div class="role-item">HVAC Technician</div>
+                <div class="role-item">AC Technician</div>
+                <div class="role-item">Plumber</div>
+                <div class="role-item">Firefighting Technician</div>
+                <div class="role-item">Fire Pump Technician</div>
+                <div class="role-item">Sprinkler Technician</div>
+                <div class="role-item">RO Plant Operator</div>
+                <div class="role-item">Water Treatment Technician</div>
+                <div class="role-item">Generator Operator</div>
+                <div class="role-item">Multi Technician</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="S. Pipeline, Tank, Shutdown & Turnaround Support">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>S. Pipeline, Tank, Shutdown &amp; Turnaround Support<small>Shutdown, turnaround, tank, pipeline and cleaning support roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Shutdown Planner</div><div class="role-item">Shutdown Coordinator</div><div class="role-item">Turnaround Planner</div><div class="role-item">Turnaround Coordinator</div><div class="role-item">Shutdown Supervisor</div><div class="role-item">Turnaround Supervisor</div><div class="role-item">Shutdown Rigger</div><div class="role-item">Turnaround Rigger</div><div class="role-item">Shutdown Rigging Supervisor</div><div class="role-item">Turnaround Lifting Coordinator</div><div class="role-item">Pipeline QA/QC Engineer</div><div class="role-item">Pipeline Coating Inspector</div><div class="role-item">Holiday Detector Technician</div><div class="role-item">Pigging Operator</div><div class="role-item">Piggery Technician</div><div class="role-item">Pipeline Flushing Technician</div><div class="role-item">Hydrojetting Technician</div><div class="role-item">Dewatering Technician</div><div class="role-item">Trenching Supervisor</div><div class="role-item">HDD Supervisor</div><div class="role-item">HDD Operator</div><div class="role-item">Boring Machine Operator</div><div class="role-item">Pipe Stringing Supervisor</div><div class="role-item">ROW Supervisor</div><div class="role-item">ROW Patrolman</div><div class="role-item">Welding Helper Pipeline</div><div class="role-item">Pipe Fitter Pipeline</div><div class="role-item">Pipeline Marker Installer</div><div class="role-item">Tank Blasting Technician</div><div class="role-item">Tank Painting Technician</div><div class="role-item">Tank Cleaning Technician</div><div class="role-item">Vacuum Truck Operator</div><div class="role-item">Jetting Operator</div><div class="role-item">Bundle Pulling Technician</div><div class="role-item">Exchanger Tube Cleaning Technician</div><div class="role-item">Industrial Cleaning Supervisor</div><div class="role-item">Mechanical Cleaner</div><div class="role-item">Steam Blowing Technician</div><div class="role-item">Air Blowing Technician</div><div class="role-item">Rope Access Shutdown Technician</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Shutdown Planner</div>
+                <div class="role-item">Shutdown Coordinator</div>
+                <div class="role-item">Turnaround Planner</div>
+                <div class="role-item">Turnaround Coordinator</div>
+                <div class="role-item">Pipeline QA/QC Engineer</div>
+                <div class="role-item">Pipeline Coating Inspector</div>
+                <div class="role-item">Pigging Operator</div>
+                <div class="role-item">Pipeline Flushing Technician</div>
+                <div class="role-item">Tank Blasting Technician</div>
+                <div class="role-item">Tank Painting Technician</div>
+                <div class="role-item">Tank Cleaning Technician</div>
+                <div class="role-item">Industrial Cleaning Supervisor</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="T. Operators, Drivers & Heavy Equipment">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>T. Operators, Drivers &amp; Heavy Equipment<small>Heavy equipment operators, marine support, drivers and maintenance roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Crane Operator</div><div class="role-item">Mobile Crane Operator</div><div class="role-item">Crawler Crane Operator</div><div class="role-item">Tower Crane Operator</div><div class="role-item">Overhead Crane Operator</div><div class="role-item">Gantry Crane Operator</div><div class="role-item">Rough Terrain Crane Operator</div><div class="role-item">Truck Mounted Crane Operator</div><div class="role-item">Forklift Operator</div><div class="role-item">Boom Truck Operator</div><div class="role-item">Telehandler Operator</div><div class="role-item">Manlift Operator</div><div class="role-item">Excavator Operator</div><div class="role-item">Backhoe Operator</div><div class="role-item">Bulldozer Operator</div><div class="role-item">Roller Operator</div><div class="role-item">Grader Operator</div><div class="role-item">Bobcat Operator</div><div class="role-item">Skid Steer Operator</div><div class="role-item">Dump Truck Driver</div><div class="role-item">Water Tanker Driver</div><div class="role-item">Trailer Driver</div><div class="role-item">Heavy Driver</div><div class="role-item">Light Driver</div><div class="role-item">Bus Driver</div><div class="role-item">Ambulance Driver</div><div class="role-item">Fuel Truck Driver</div><div class="role-item">Barge Operator</div><div class="role-item">Boat Captain</div><div class="role-item">Coxswain</div><div class="role-item">Deck Crew</div><div class="role-item">Marine Rigger</div><div class="role-item">Offshore Rigger</div><div class="role-item">Offshore Scaffolder</div><div class="role-item">Offshore Welder</div><div class="role-item">Offshore Electrician</div><div class="role-item">Offshore Mechanic</div><div class="role-item">Rig Mechanic</div><div class="role-item">Rig Electrician</div><div class="role-item">Rig Welder</div><div class="role-item">Drilling Support Crew</div><div class="role-item">Helideck Assistant</div><div class="role-item">Port Coordinator</div><div class="role-item">Jetty Supervisor</div><div class="role-item">Marine Supervisor</div><div class="role-item">Offshore Foreman</div><div class="role-item">Heavy Equipment Mechanic</div><div class="role-item">Diesel Mechanic</div><div class="role-item">Auto Electrician</div><div class="role-item">Tire Technician</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Crane Operator</div>
+                <div class="role-item">Mobile Crane Operator</div>
+                <div class="role-item">Forklift Operator</div>
+                <div class="role-item">Boom Truck Operator</div>
+                <div class="role-item">Manlift Operator</div>
+                <div class="role-item">Excavator Operator</div>
+                <div class="role-item">Dump Truck Driver</div>
+                <div class="role-item">Heavy Driver</div>
+                <div class="role-item">Light Driver</div>
+                <div class="role-item">Bus Driver</div>
+                <div class="role-item">Diesel Mechanic</div>
+                <div class="role-item">Auto Electrician</div>
+              </div>
+            </div>
           </details>
 
-          <details class="manpower-group" data-group="U. Helpers, Labor & General Support">
+          <details class="manpower-group">
             <summary class="manpower-summary"><span>U. Helpers, Labor &amp; General Support<small>Helpers, labor, support workforce and general site service roles</small></span><span class="manpower-icon">+</span></summary>
-            <div class="manpower-body"><div class="role-grid">
-              <div class="role-item">Helper</div><div class="role-item">General Helper</div><div class="role-item">Mechanical Helper</div><div class="role-item">Electrical Helper</div><div class="role-item">Instrument Helper</div><div class="role-item">Telecom Helper</div><div class="role-item">Pipe Fitter Helper</div><div class="role-item">Welder Helper</div><div class="role-item">Rigger Helper</div><div class="role-item">Scaffolding Helper</div><div class="role-item">Mason Helper</div><div class="role-item">Carpenter Helper</div><div class="role-item">Painter Helper</div><div class="role-item">Insulator Helper</div><div class="role-item">Cladder Helper</div><div class="role-item">Fabricator Helper</div><div class="role-item">Store Helper</div><div class="role-item">Warehouse Helper</div><div class="role-item">Packing Helper</div><div class="role-item">Loading Helper</div><div class="role-item">Unloading Helper</div><div class="role-item">Camp Helper</div><div class="role-item">Kitchen Helper</div><div class="role-item">Office Helper</div><div class="role-item">Workshop Helper</div><div class="role-item">Maintenance Helper</div><div class="role-item">Building Maintenance Helper</div><div class="role-item">Utility Helper</div><div class="role-item">Erection Helper</div><div class="role-item">Shutdown Helper</div><div class="role-item">Civil Helper</div><div class="role-item">Structural Helper</div><div class="role-item">Road Works Helper</div><div class="role-item">Housekeeping Helper</div><div class="role-item">Cleaner Helper</div><div class="role-item">General Laborer</div><div class="role-item">Skilled Laborer</div><div class="role-item">Semi-Skilled Laborer</div><div class="role-item">Unskilled Laborer</div><div class="role-item">Industrial Worker</div><div class="role-item">Yard Worker</div><div class="role-item">Field Worker</div><div class="role-item">Barricade Man</div><div class="role-item">Material Handler</div><div class="role-item">Spare Parts Handler</div><div class="role-item">Equipment Cleaner</div><div class="role-item">Handyman Helper</div><div class="role-item">General Maintenance Technician</div><div class="role-item">Multi Technician Support</div><div class="role-item">Utility Support Worker</div>
-            </div></div>
+            <div class="manpower-body">
+              <div class="role-grid">
+                <div class="role-item">Helper</div>
+                <div class="role-item">General Helper</div>
+                <div class="role-item">Mechanical Helper</div>
+                <div class="role-item">Electrical Helper</div>
+                <div class="role-item">Pipe Fitter Helper</div>
+                <div class="role-item">Welder Helper</div>
+                <div class="role-item">Rigger Helper</div>
+                <div class="role-item">Scaffolding Helper</div>
+                <div class="role-item">Camp Helper</div>
+                <div class="role-item">Kitchen Helper</div>
+                <div class="role-item">General Laborer</div>
+                <div class="role-item">Utility Support Worker</div>
+              </div>
+            </div>
           </details>
         </div>
       </div>
@@ -824,12 +1793,30 @@
         <p>A visual look at field support, project execution, industrial operations, and project environments connected to our support scope.</p>
       </div>
       <div class="gallery-grid">
-        <div class="gallery-card tilt"><img src="gallery-1.jpg.jpeg" alt="Project image 1"><div class="gallery-overlay"><p>Construction and field support environment.</p></div></div>
-        <div class="gallery-card tilt"><img src="gallery-2.jpg.jpeg" alt="Project image 2"><div class="gallery-overlay"><p>Industrial and operational support environment.</p></div></div>
-        <div class="gallery-card tilt"><img src="gallery-3.jpg.jpeg" alt="Project image 3"><div class="gallery-overlay"><p>Workforce and field-level support presence.</p></div></div>
-        <div class="gallery-card tilt"><img src="gallery-4.jpg.jpeg" alt="Project image 4"><div class="gallery-overlay"><p>Project execution and structural support activities.</p></div></div>
-        <div class="gallery-card tilt"><img src="gallery-5.jpg.jpeg" alt="Project image 5"><div class="gallery-overlay"><p>Pipeline and site support activities.</p></div></div>
-        <div class="gallery-card tilt"><img src="gallery-6.jpg.jpeg" alt="Project image 6"><div class="gallery-overlay"><p>Operational and project continuity support.</p></div></div>
+        <div class="gallery-card tilt">
+          <img src="gallery-1.jpg.jpeg" alt="Project image 1">
+          <div class="gallery-overlay"><p>Construction and field support environment.</p></div>
+        </div>
+        <div class="gallery-card tilt">
+          <img src="gallery-2.jpg.jpeg" alt="Project image 2">
+          <div class="gallery-overlay"><p>Pipeline and site support activities.</p></div>
+        </div>
+        <div class="gallery-card tilt">
+          <img src="gallery-3.jpg.jpeg" alt="Project image 3">
+          <div class="gallery-overlay"><p>Workforce and field-level support presence.</p></div>
+        </div>
+        <div class="gallery-card tilt">
+          <img src="gallery-4.jpg.jpeg" alt="Project image 4">
+          <div class="gallery-overlay"><p>Project execution and structural support activities.</p></div>
+        </div>
+        <div class="gallery-card tilt">
+          <img src="gallery-5.jpg.jpeg" alt="Project image 5">
+          <div class="gallery-overlay"><p>Industrial and operational support environment.</p></div>
+        </div>
+        <div class="gallery-card tilt">
+          <img src="gallery-6.jpg.jpeg" alt="Project image 6">
+          <div class="gallery-overlay"><p>Operational and project continuity support.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -842,7 +1829,13 @@
         <p>Green Asia LLC welcomes job applications from skilled, semi-skilled, and professional candidates for industrial, construction, commercial, camp, transportation, catering, and support-related roles.</p>
       </div>
       <div class="careers-grid">
-        <div class="form-box note-box tilt"><h3>Career Opportunities at Green Asia LLC</h3><p>We are always interested in hearing from qualified candidates for manpower, industrial support, operational support, field services, and business support roles. Applicants may apply for current or future opportunities depending on project and client requirements.</p><p>You may send your CV directly to:<br><strong><a class="jobs-link" href="mailto:jobs@greenasia.llc">jobs@greenasia.llc</a></strong></p><p>Common positions include civil, mechanical, piping, electrical, welding, scaffolding, coating, safety, documentation, logistics, transportation, camp services, catering, and general support roles.</p></div>
+        <div class="form-box note-box tilt">
+          <h3>Career Opportunities at Green Asia LLC</h3>
+          <p>We are always interested in hearing from qualified candidates for manpower, industrial support, operational support, field services, and business support roles. Applicants may apply for current or future opportunities depending on project and client requirements.</p>
+          <p>You may send your CV directly to:<br><strong><a class="jobs-link" href="mailto:jobs@greenasia.llc">jobs@greenasia.llc</a></strong></p>
+          <p>Common positions include civil, mechanical, piping, electrical, welding, scaffolding, coating, safety, documentation, logistics, transportation, camp services, catering, and general support roles.</p>
+        </div>
+
         <div class="form-box tilt">
           <h3>Quick Job Application</h3>
           <p>Fill in your basic information and then send your CV to <strong>jobs@greenasia.llc</strong>.</p>
@@ -875,7 +1868,14 @@
         <p>Green Asia LLC supports manpower supply, equipment support, transportation, camp services, catering, real estate support, industrial assistance, and project coordination across Saudi Arabia.</p>
       </div>
       <div class="request-grid">
-        <div class="request-box request-note tilt"><h3>Business Service Request</h3><p>Clients may contact Green Asia LLC for manpower requirements, equipment-related support, transportation services, camp setup and accommodation support, catering, real estate-related assistance, and other project or business support needs.</p><p>Service request email:<br><strong><a class="jobs-link" href="mailto:services@greenasia.llc">services@greenasia.llc</a></strong></p><p>Quick WhatsApp support:<br><strong><a class="jobs-link" href="https://wa.me/966599027308" target="_blank">+966 59 902 7308</a></strong></p><p>Common request types include workforce supply, project support, transport, camp operations, food services, equipment coordination, and facility-related support.</p></div>
+        <div class="request-box request-note tilt">
+          <h3>Business Service Request</h3>
+          <p>Clients may contact Green Asia LLC for manpower requirements, equipment-related support, transportation services, camp setup and accommodation support, catering, real estate-related assistance, and other project or business support needs.</p>
+          <p>Service request email:<br><strong><a class="jobs-link" href="mailto:services@greenasia.llc">services@greenasia.llc</a></strong></p>
+          <p>Quick WhatsApp support:<br><strong><a class="jobs-link" href="https://wa.me/966599027308" target="_blank">+966 59 902 7308</a></strong></p>
+          <p>Common request types include workforce supply, project support, transport, camp operations, food services, equipment coordination, and facility-related support.</p>
+        </div>
+
         <div class="request-box tilt">
           <h3>Quick Service Request</h3>
           <p>Fill in your requirement details and send your request directly to <strong>services@greenasia.llc</strong>.</p>
@@ -885,7 +1885,20 @@
               <div><input class="input" type="text" name="Contact Person" placeholder="Contact Person" required></div>
               <div><input class="input" type="tel" name="Phone Number" placeholder="Phone Number" required></div>
               <div><input class="input" type="email" name="Email" placeholder="Email Address" required></div>
-              <div><select class="select" name="Service Required"><option value="">Select Service Required</option><option>Manpower Supply</option><option>Equipment Support</option><option>Transportation Service</option><option>Camp Services</option><option>Catering Services</option><option>Real Estate Support</option><option>Industrial Support</option><option>Project Coordination</option><option>Documentation Support</option></select></div>
+              <div>
+                <select class="select" name="Service Required">
+                  <option value="">Select Service Required</option>
+                  <option>Manpower Supply</option>
+                  <option>Equipment Support</option>
+                  <option>Transportation Service</option>
+                  <option>Camp Services</option>
+                  <option>Catering Services</option>
+                  <option>Real Estate Support</option>
+                  <option>Industrial Support</option>
+                  <option>Project Coordination</option>
+                  <option>Documentation Support</option>
+                </select>
+              </div>
               <div><input class="input" type="text" name="Project Location" placeholder="Project Location"></div>
               <div><input class="input" type="text" name="Required Duration" placeholder="Required Duration"></div>
               <div><input class="input" type="text" name="Manpower or Equipment Needed" placeholder="Manpower / Equipment Needed"></div>
@@ -951,8 +1964,10 @@
     revealElements.forEach(el => revealObserver.observe(el));
 
     document.querySelectorAll('.manpower-group').forEach(group => {
+      const icon = group.querySelector('.manpower-icon');
+      if (icon) icon.textContent = group.open ? '−' : '+';
+
       group.addEventListener('toggle', () => {
-        const icon = group.querySelector('.manpower-icon');
         if (icon) icon.textContent = group.open ? '−' : '+';
       });
     });
@@ -960,22 +1975,31 @@
     const manpowerSearch = document.getElementById('manpowerSearch');
     if (manpowerSearch) {
       const groups = document.querySelectorAll('.manpower-group');
+
+      function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      }
+
       manpowerSearch.addEventListener('input', () => {
         const term = manpowerSearch.value.trim().toLowerCase();
+
         groups.forEach(group => {
           const items = [...group.querySelectorAll('.role-item')];
           let matches = 0;
+
           items.forEach(item => {
             const raw = item.dataset.raw || item.textContent;
             if (!item.dataset.raw) item.dataset.raw = raw;
+
             const text = raw.toLowerCase();
+
             if (!term) {
               item.innerHTML = raw;
               item.classList.remove('group-hidden');
               matches++;
             } else if (text.includes(term)) {
-              const escaped = raw.replace(/[.*+?^${}()|[\]\]/g, '\$&');
-              const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\]/g, '\$&')})`, 'ig');
+              const safeTerm = escapeRegExp(term);
+              const regex = new RegExp('(' + safeTerm + ')', 'ig');
               item.innerHTML = raw.replace(regex, '<mark>$1</mark>');
               item.classList.remove('group-hidden');
               matches++;
@@ -984,6 +2008,7 @@
               item.classList.add('group-hidden');
             }
           });
+
           if (!term) {
             group.classList.remove('group-hidden');
           } else if (matches > 0) {
@@ -991,6 +2016,7 @@
             group.open = true;
           } else {
             group.classList.add('group-hidden');
+            group.open = false;
           }
         });
       });
@@ -1009,7 +2035,10 @@
         const rotateX = -((y - midY) / midY) * 4;
         card.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       });
-      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
     });
   </script>
 </body>
