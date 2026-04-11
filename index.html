@@ -1077,6 +1077,198 @@
       perspective: 900px;
     }
 
+    .map-card {
+      grid-column: 1 / -1;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .map-card-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      min-height: 360px;
+    }
+
+    .map-info {
+      padding: 28px;
+      background: linear-gradient(180deg,#f7fcf8,#ffffff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .map-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(20,119,71,.08);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .map-pin {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(20,119,71,.12);
+      flex: 0 0 auto;
+    }
+
+    .map-info h3 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      color: #103628;
+      line-height: 1.15;
+    }
+
+    .map-info p {
+      margin: 0 0 16px;
+      color: #687783;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .map-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .map-preview {
+      position: relative;
+      min-height: 360px;
+      display: block;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(9,35,25,.08), rgba(9,35,25,.02)),
+        radial-gradient(circle at 20% 30%, rgba(20,119,71,.10), transparent 18%),
+        radial-gradient(circle at 80% 20%, rgba(215,177,106,.10), transparent 18%),
+        linear-gradient(135deg, #edf6f0 0%, #dfeee4 100%);
+    }
+
+    .map-preview::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(20,119,71,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20,119,71,.06) 1px, transparent 1px);
+      background-size: 34px 34px;
+      opacity: .7;
+    }
+
+    .map-preview::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 52%, rgba(20,119,71,.10), transparent 16%);
+    }
+
+    .map-road {
+      position: absolute;
+      background: rgba(255,255,255,.9);
+      border-radius: 999px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.06);
+    }
+
+    .map-road.one {
+      width: 140%;
+      height: 18px;
+      left: -12%;
+      top: 46%;
+      transform: rotate(-8deg);
+    }
+
+    .map-road.two {
+      width: 20px;
+      height: 120%;
+      left: 54%;
+      top: -10%;
+      transform: rotate(8deg);
+    }
+
+    .map-road.three {
+      width: 78%;
+      height: 14px;
+      left: 14%;
+      top: 68%;
+      transform: rotate(14deg);
+    }
+
+    .map-label {
+      position: absolute;
+      left: 50%;
+      top: 18%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,.96);
+      color: #103628;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(0,0,0,.08);
+      z-index: 3;
+    }
+
+    .map-marker {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(180deg, #1da15f, #147747);
+      border-radius: 50% 50% 50% 0;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      box-shadow: 0 18px 28px rgba(20,119,71,.22);
+      z-index: 4;
+    }
+
+    .map-marker::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border-radius: 999px;
+      left: 9px;
+      top: 9px;
+    }
+
+    .map-pulse {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 90px;
+      height: 90px;
+      border-radius: 999px;
+      background: rgba(20,119,71,.12);
+      transform: translate(-50%, -50%);
+      animation: mapPulse 2s ease-out infinite;
+      z-index: 2;
+    }
+
+    .map-open-note {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      background: rgba(255,255,255,.96);
+      color: #103628;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(0,0,0,.08);
+      z-index: 3;
+    }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to { opacity: 1; transform: translateY(0); }
@@ -1102,6 +1294,12 @@
       to { transform: translateX(-50%); }
     }
 
+    @keyframes mapPulse {
+      0% { transform: translate(-50%, -50%) scale(.5); opacity: .7; }
+      70% { transform: translate(-50%, -50%) scale(1.25); opacity: 0; }
+      100% { transform: translate(-50%, -50%) scale(1.25); opacity: 0; }
+    }
+
     @media (max-width: 1180px) {
       .hero-grid,
       .about-grid,
@@ -1122,6 +1320,16 @@
       .request-form-grid,
       .role-grid {
         grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .map-card-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .map-preview {
+        min-height: 280px;
       }
     }
 
@@ -1927,6 +2135,33 @@
         <div class="card contact-card tilt"><h3>Jobs Email</h3><p><a href="mailto:jobs@greenasia.llc">jobs@greenasia.llc</a></p></div>
         <div class="card contact-card tilt"><h3>Service Request Email</h3><p><a href="mailto:services@greenasia.llc">services@greenasia.llc</a></p></div>
         <div class="card contact-card tilt"><h3>WhatsApp</h3><p><a href="https://wa.me/966599027308" target="_blank">+966 59 902 7308</a></p></div>
+
+        <div class="card map-card tilt">
+          <div class="map-card-wrap">
+            <div class="map-info">
+              <div class="map-badge">
+                <span class="map-pin"></span>
+                Our Office Location
+              </div>
+              <h3>Visit Green Asia LLC</h3>
+              <p>8289 Hofof St., Al Safah Dist., Jubail, Kingdom of Saudi Arabia</p>
+              <p>You can open the company location directly in Google Maps from the button below.</p>
+              <div class="map-links">
+                <a class="btn-main" href="https://maps.app.goo.gl/Ac5ePLjSxk4gC2Px9" target="_blank">Open in Google Maps</a>
+              </div>
+            </div>
+
+            <a class="map-preview" href="https://maps.app.goo.gl/Ac5ePLjSxk4gC2Px9" target="_blank" aria-label="Open Green Asia LLC location in Google Maps">
+              <div class="map-road one"></div>
+              <div class="map-road two"></div>
+              <div class="map-road three"></div>
+              <div class="map-label">Green Asia LLC</div>
+              <div class="map-pulse"></div>
+              <div class="map-marker"></div>
+              <div class="map-open-note">Open Map ↗</div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
